@@ -1,6 +1,5 @@
 import { Providers } from "@/components/Providers"
 
-
 const Layout = ({ children }) => {
     return (
         <html lang="en">

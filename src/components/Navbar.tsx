@@ -32,8 +32,8 @@ import {
     UserGroupIcon,
     Cog6ToothIcon,
 } from '@heroicons/react/24/outline'
-import ProfileMenu from './Landlord/ProfileMenu'
-import { NotificationsMenu } from './Landlord/NotificationsMenu'
+import ProfileMenu from './locals/Landlord/ProfileMenu'
+import { NotificationsMenu } from './locals/Landlord/NotificationsMenu'
 import Link from 'next/link'
 
 const NavbarSimple = ({ title }) => {
