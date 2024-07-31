@@ -21,6 +21,9 @@ import {
     TabsHeader,
     Tab,
     Tooltip,
+    Accordion,
+    AccordionHeader,
+    AccordionBody,
 } from '@material-tailwind/react'
 
 export {
@@ -44,4 +47,7 @@ export {
     TabsHeader,
     Tab,
     Tooltip,
+    Accordion,
+    AccordionHeader,
+    AccordionBody,
 }

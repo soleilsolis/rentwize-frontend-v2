@@ -59,6 +59,12 @@ const ViewProperty = ({
                             value="For Rent"
                             className="w-auto"
                         />
+
+                        <Chip
+                            color="blue"
+                            value="For Rent"
+                            className="w-auto"
+                        />
                     </div>
                     <Typography variant="h2" className="text-5xl">
                         $100,000
