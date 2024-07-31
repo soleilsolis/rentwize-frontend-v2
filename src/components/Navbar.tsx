@@ -68,19 +68,19 @@ const NavbarSimple = ({ title }) => {
                     {
                         name: 'Applications',
                         icon: <WrenchIcon className="h-5 w-5" />,
-                        link: '/',
+                        link: '/landlord/properties/applications',
                     },
 
                     {
                         name: 'Prequalifications',
                         icon: <WrenchIcon className="h-5 w-5" />,
-                        link: '/',
+                        link: '/landlord/properties/prequalifications',
                     },
 
                     {
                         name: 'Maintenance',
                         icon: <WrenchIcon className="h-5 w-5" />,
-                        link: '/',
+                        link: '/landlord/properties/maintenance',
                     },
                 ],
             },
@@ -91,13 +91,13 @@ const NavbarSimple = ({ title }) => {
                     {
                         name: 'All Tenants',
                         icon: <HomeModernIcon className="h-5 w-5" />,
-                        link: '/',
+                        link: '/landlord/tenants',
                     },
 
                     {
                         name: 'Maintenance',
                         icon: <WrenchIcon className="h-5 w-5" />,
-                        link: '/',
+                        link: '/landlord/maintenance',
                     },
                 ],
             },
@@ -108,13 +108,14 @@ const NavbarSimple = ({ title }) => {
                     {
                         name: 'Invoices',
                         icon: <HomeModernIcon className="h-5 w-5" />,
-                        link: '/',
+                        link: '/billing/invoices',
                     },
 
                     {
                         name: 'Payments',
                         icon: <WrenchIcon className="h-5 w-5" />,
-                        link: '/',
+                        link: '/billing/payments',
+
                     },
                 ],
             },
