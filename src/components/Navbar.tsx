@@ -54,7 +54,7 @@ const NavbarSimple = ({ title }) => {
             {
                 name: 'Dashboard',
                 icon: <PresentationChartBarIcon className="h-5 w-5" />,
-                link: '/',
+                link: '/landlord',
             },
             {
                 name: 'Properties',
@@ -63,7 +63,7 @@ const NavbarSimple = ({ title }) => {
                     {
                         name: 'All Properties',
                         icon: <HomeModernIcon className="h-5 w-5" />,
-                        link: '/properties',
+                        link: '/landlord/properties',
                     },
                     {
                         name: 'Applications',
@@ -191,9 +191,10 @@ const NavbarSimple = ({ title }) => {
                                     {!listItem.items ? (
                                         <ListItem
                                             key={listItemKey}
-                                            onClick={() =>
+                                            onClick={() => {
+                                                setIsDrawerOpen(false)
                                                 router.push(listItem.link)
-                                            }>
+                                            }}>
                                             <ListItemPrefix>
                                                 {listItem.icon}
                                             </ListItemPrefix>
@@ -238,11 +239,14 @@ const NavbarSimple = ({ title }) => {
                                                         (item, itemKey) => (
                                                             <ListItem
                                                                 key={itemKey}
-                                                                onClick={() =>
+                                                                onClick={() => {
                                                                     router.push(
                                                                         item.link,
                                                                     )
-                                                                }>
+                                                                    setIsDrawerOpen(
+                                                                        false,
+                                                                    )
+                                                                }}>
                                                                 <ListItemPrefix>
                                                                     <ChevronRightIcon
                                                                         strokeWidth={

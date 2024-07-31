@@ -3,21 +3,13 @@
 import { AcademicCapIcon } from '@heroicons/react/24/outline'
 import {
     Avatar,
-    breadcrumbs,
-    Breadcrumbs,
-    Carousel,
     List,
     ListItem,
     ListItemPrefix,
-    Tab,
-    TabPanel,
-    Tabs,
-    TabsBody,
-    TabsHeader,
     Typography,
 } from '@material-tailwind/react'
 import Image from 'next/image'
-import DetailedProperty from '@/components/globals/DetailedProperty'
+import DetailedProperty from '@/components/globals/Properties/DetailedProperty'
 
 const ViewProperty = ({ params }: { params: { id: string } }) => {
     const data = [
@@ -105,25 +97,7 @@ const ViewProperty = ({ params }: { params: { id: string } }) => {
         },
     ]
 
-    const  breadcrumbs = [
-        {
-            href: 'sample',
-            name: 'Overview'
-
-        },
-        {
-            href: 'sample',
-            name: 'Property'
-            
-
-        },
-        {
-            href: 'sample',
-            name: 'Docs'
-
-        }
-    ]
-    return (<DetailedProperty data={ data } breadcrumbs={ breadcrumbs }/>);
+    return <DetailedProperty data={data} />
 }
 
 export default ViewProperty

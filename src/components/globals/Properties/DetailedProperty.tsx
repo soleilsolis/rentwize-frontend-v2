@@ -5,6 +5,7 @@ import {
     Avatar,
     Breadcrumbs,
     Carousel,
+    Chip,
     List,
     ListItem,
     ListItemPrefix,
@@ -20,25 +21,12 @@ import Image from 'next/image'
 const ViewProperty = ({
     params,
     data,
-    breadcrumbs
 }: {
     params: { id: string }
     data: []
-    breadcrumbs: []
 }) => {
     return (
         <div className="space-y-6">
-            <Breadcrumbs>
-                {breadcrumbs.map(({ href, name }) => (
-                    <a href={href} className="opacity-60">
-                        {name}
-                    </a>
-                ))}
-                <a href="#" className="opacity-60">
-                    Docs
-                </a>
-            </Breadcrumbs>
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <section>
                     <Carousel className="rounded-xl">
@@ -60,13 +48,18 @@ const ViewProperty = ({
                     </Carousel>
                 </section>
 
-                <section className="space-y-2">
+                <section className="space-y-4">
                     <Typography variant="h1" className="text-4xl font-semibold">
                         34 Hong Kong St. Onitsuka Tiger Village, Davao
                     </Typography>
-                    <Typography variant="lead" color="gray">
-                        Bungalow
-                    </Typography>
+
+                    <div className="flex gap-2">
+                        <Chip
+                            color="blue"
+                            value="For Rent"
+                            className="w-auto"
+                        />
+                    </div>
                     <Typography variant="h2" className="text-5xl">
                         $100,000
                     </Typography>
@@ -106,6 +99,46 @@ const ViewProperty = ({
                                         color="gray"
                                         className="font-normal">
                                         Backend Developer @ Material Tailwind
+                                    </Typography>
+                                </div>
+                            </ListItem>
+                            <ListItem>
+                                <ListItemPrefix>
+                                    <Avatar
+                                        variant="circular"
+                                        alt="emma"
+                                        src="https://docs.material-tailwind.com/img/face-3.jpg"
+                                    />
+                                </ListItemPrefix>
+                                <div>
+                                    <Typography variant="h6" color="blue-gray">
+                                        Emma Willever
+                                    </Typography>
+                                    <Typography
+                                        variant="small"
+                                        color="gray"
+                                        className="font-normal">
+                                        UI/UX Designer @ Material Tailwind
+                                    </Typography>
+                                </div>
+                            </ListItem>
+                            <ListItem>
+                                <ListItemPrefix>
+                                    <Avatar
+                                        variant="circular"
+                                        alt="emma"
+                                        src="https://docs.material-tailwind.com/img/face-3.jpg"
+                                    />
+                                </ListItemPrefix>
+                                <div>
+                                    <Typography variant="h6" color="blue-gray">
+                                        Emma Willever
+                                    </Typography>
+                                    <Typography
+                                        variant="small"
+                                        color="gray"
+                                        className="font-normal">
+                                        UI/UX Designer @ Material Tailwind
                                     </Typography>
                                 </div>
                             </ListItem>
@@ -196,7 +229,7 @@ const ViewProperty = ({
                     </div>
                 </section>
 
-                <section>
+                <section className="md:col-span-2">
                     <Tabs value="html">
                         <TabsHeader>
                             {data.map(({ label, value }) => (

@@ -1,13 +1,34 @@
 import useSWR from 'swr'
 import axios from '@/lib/axios'
 import { useEffect } from 'react'
-import { useParams, useRouter } from 'next/navigation'
+import { useRouter } from 'next/router'
 
-export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
+declare type AuthMiddleware = 'auth' | 'guest'
+
+interface IUseAuth {
+    middleware: AuthMiddleware
+    redirectIfAuthenticated?: string
+}
+
+interface IApiRequest {
+    setErrors: React.Dispatch<React.SetStateAction<never[]>>
+    setStatus: React.Dispatch<React.SetStateAction<any | null>>
+    [key: string]: any
+}
+
+export interface User {
+    id?: number
+    name?: string
+    email?: string
+    email_verified_at?: string
+    created_at?: string
+    updated_at?: string
+}
+
+export const useAuth = ({ middleware, redirectIfAuthenticated }: IUseAuth) => {
     const router = useRouter()
-    const params = useParams()
 
-    const { data: user, error, mutate } = useSWR('/api/user', () =>
+    const { data: user, error, mutate } = useSWR<User>('/api/user', () =>
         axios
             .get('/api/user')
             .then(res => res.data)
@@ -20,7 +41,9 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
 
     const csrf = () => axios.get('/sanctum/csrf-cookie')
 
-    const register = async ({ setErrors, ...props }) => {
+    const register = async (args: IApiRequest) => {
+        const { setErrors, ...props } = args
+
         await csrf()
 
         setErrors([])
@@ -35,7 +58,9 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
             })
     }
 
-    const login = async ({ setErrors, setStatus, ...props }) => {
+    const login = async (args: IApiRequest) => {
+        const { setErrors, setStatus, ...props } = args
+
         await csrf()
 
         setErrors([])
@@ -46,12 +71,12 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
             .then(() => mutate())
             .catch(error => {
                 if (error.response.status !== 422) throw error
-
                 setErrors(error.response.data.errors)
             })
     }
 
-    const forgotPassword = async ({ setErrors, setStatus, email }) => {
+    const forgotPassword = async (args: IApiRequest) => {
+        const { setErrors, setStatus, email } = args
         await csrf()
 
         setErrors([])
@@ -67,14 +92,15 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
             })
     }
 
-    const resetPassword = async ({ setErrors, setStatus, ...props }) => {
+    const resetPassword = async (args: IApiRequest) => {
+        const { setErrors, setStatus, ...props } = args
         await csrf()
 
         setErrors([])
         setStatus(null)
 
         axios
-            .post('/reset-password', { token: params.token, ...props })
+            .post('/reset-password', { token: router.query.token, ...props })
             .then(response =>
                 router.push('/login?reset=' + btoa(response.data.status)),
             )
@@ -85,7 +111,9 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
             })
     }
 
-    const resendEmailVerification = ({ setStatus }) => {
+    const resendEmailVerification = (args: IApiRequest) => {
+        const { setStatus } = args
+
         axios
             .post('/email/verification-notification')
             .then(response => setStatus(response.data.status))

@@ -1,3 +1,4 @@
+
 import { Metadata } from 'next'
 
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
@@ -18,6 +19,11 @@ import {
     IconButton,
     Tooltip,
 } from '@/components/MaterialTailwind'
+
+import properties from './properties.json'
+import Link from 'next/link'
+
+import { usePathname } from 'next/navigation'
 
 export const metadata: Metadata = {
     title: 'All Properties > Landlord - Rentwize',
@@ -40,28 +46,7 @@ const TABS = [
 
 const TABLE_HEAD = ['Property', 'Price', 'Type', 'Status', 'Created', '']
 
-const TABLE_ROWS = [
-    {
-        img: 'https://picsum.photos/200',
-        name: '#5 Mariveles St.',
-        price: 500,
-        email: 'john@creative-tim.com',
-        job: 'Bungalow',
-        org: 'For Rent',
-        occupied: true,
-        date: '23/04/18',
-    },
-    {
-        img: 'https://picsum.photos/200',
-        name: '34 Hong Kong St. Onitsuka Tiger Village, Davao',
-        price: 500,
-        email: 'alexa@creative-tim.com',
-        job: 'Studio',
-        org: 'For Sale',
-        occupied: false,
-        date: '23/04/18',
-    },
-]
+const TABLE_ROWS = properties
 
 const Properties = () => {
     return (
@@ -234,9 +219,11 @@ const Properties = () => {
                                             </td>
                                             <td className={classes}>
                                                 <Tooltip content="Edit Property">
-                                                    <IconButton variant="text">
-                                                        <PencilIcon className="h-4 w-4" />
-                                                    </IconButton>
+                                                    <Link href="properties/1">
+                                                        <IconButton variant="text">
+                                                            <PencilIcon className="h-4 w-4" />
+                                                        </IconButton>
+                                                    </Link>
                                                 </Tooltip>
                                             </td>
                                         </tr>
