@@ -68,7 +68,7 @@ const NavbarSimple = ({ title }) => {
                     {
                         name: 'Applications',
                         icon: <WrenchIcon className="h-5 w-5" />,
-                        link: '/',
+                        link: '/landlord/properties/applications',
                     },
 
                     {
@@ -91,7 +91,7 @@ const NavbarSimple = ({ title }) => {
                     {
                         name: 'All Tenants',
                         icon: <HomeModernIcon className="h-5 w-5" />,
-                        link: '/',
+                        link: '/landlord/tenants',
                     },
 
                     {
