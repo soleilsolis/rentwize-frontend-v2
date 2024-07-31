@@ -219,7 +219,7 @@ const Properties = () => {
                                             </td>
                                             <td className={classes}>
                                                 <Tooltip content="Edit Property">
-                                                    <Link href="properties/1">
+                                                    <Link href="/landlord/properties/view/1">
                                                         <IconButton variant="text">
                                                             <PencilIcon className="h-4 w-4" />
                                                         </IconButton>
