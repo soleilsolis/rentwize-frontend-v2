@@ -13,55 +13,61 @@ export const metadata: Metadata = {
     title: 'All Properties > Landlord - Rentwize',
 }
 
-const heading = 'Tenants'
-const subHeading = 'See All Tenants'
+const heading = 'Maintenance'
+const subHeading = 'See All Jobs'
 //const data = axios
-const tableHeader = ['Name', 'Property', 'End of Contract', 'Actions']
+const tableHeader = ['Contractor', 'Property', 'Schedule', 'Type', 'Actions']
 const tableRows = [
     {
         img: 'https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg',
-        name: 'John Michael',
+        name: 'John Michael Corp.',
         email: 'john@creative-tim.com',
         property: '123, Onitsuka Tiger Village, Colorado',
         property_type: 'Studio',
         online: true,
         date: '23/04/18',
+        job: 'Plumbing'
+
     },
     {
         img: 'https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-2.jpg',
-        name: 'Alexa Liras',
+        name: 'Alexa Corp',
         email: 'alexa@creative-tim.com',
         property: '20 Cooper Square, New York, NY 10003, USA',
         property_type: 'Duplex',
         online: false,
         date: '23/04/18',
+        job: 'Plumbing'
     },
     {
         img: 'https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-1.jpg',
-        name: 'Laurent Perrier',
+        name: 'Laurent Corp',
         email: 'laurent@creative-tim.com',
         property: ' USA 2nd Street Dorm 1 E 2nd St, New York, NY 10003, USA',
         property_type: 'Condo Unit',
         online: false,
         date: '19/09/17',
+        job: 'Finishing'
     },
     {
         img: 'https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-4.jpg',
-        name: 'Michael Levi',
+        name: 'Michael Builders',
         email: 'michael@creative-tim.com',
         property: '22 Washington Square N, New York, NY 10011, USA',
         property_type: '2 Storey House',
         online: true,
         date: '24/12/08',
+        job: 'Repaint'
     },
     {
         img: 'https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-5.jpg',
-        name: 'Richard Gran',
+        name: 'Richard The Builder',
         email: 'richard@creative-tim.com',
         property: '853 Broadway, New York, NY 10003, USA',
         property_type: 'Bungalow',
         online: false,
         date: '04/10/21',
+        job: 'Install door lock security'
     },
 ]
 const tabs = [
@@ -70,14 +76,15 @@ const tabs = [
         value: 'all',
     },
     {
-        label: 'Overdue',
-        value: 'overdue',
+        label: 'Urgent',
+        value: 'urgent',
     },
+
 ]
 
 const controls = (
     <Button className="flex items-center gap-3" size="sm">
-        <PlusIcon strokeWidth={2} className="h-4 w-4" /> Add Tenant
+        <PlusIcon strokeWidth={2} className="h-4 w-4" /> Request Job
     </Button>
 )
 
@@ -85,7 +92,7 @@ const table = (
     <>
         {tableRows.map(
             (
-                { img, name, email, property, property_type, online, date },
+                { img, name, email, property, property_type, online, date, job },
                 index,
             ) => {
                 const isLast = index === tableRows.length - 1
@@ -136,6 +143,14 @@ const table = (
                                 color="blue-gray"
                                 className="font-normal">
                                 {date}
+                            </Typography>
+                        </td>
+                        <td className={classes}>
+                            <Typography
+                                variant="small"
+                                color="blue-gray"
+                                className="font-normal">
+                                {job}
                             </Typography>
                         </td>
                         <td className={classes}>

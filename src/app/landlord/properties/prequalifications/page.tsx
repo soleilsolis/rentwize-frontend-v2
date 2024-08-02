@@ -13,10 +13,10 @@ export const metadata: Metadata = {
     title: 'All Properties > Landlord - Rentwize',
 }
 
-const heading = 'Tenants'
-const subHeading = 'See All Tenants'
+const heading = 'Prequalifications'
+const subHeading = 'See All Prequalifications'
 //const data = axios
-const tableHeader = ['Name', 'Property', 'End of Contract', 'Actions']
+const tableHeader = ['Name', 'Property', 'Planned Move in Date', 'Actions']
 const tableRows = [
     {
         img: 'https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg',
@@ -70,16 +70,10 @@ const tabs = [
         value: 'all',
     },
     {
-        label: 'Overdue',
-        value: 'overdue',
+        label: 'Prospect',
+        value: 'prospect',
     },
 ]
-
-const controls = (
-    <Button className="flex items-center gap-3" size="sm">
-        <PlusIcon strokeWidth={2} className="h-4 w-4" /> Add Tenant
-    </Button>
-)
 
 const table = (
     <>
@@ -157,7 +151,7 @@ const Applications = () => (
         heading={heading}
         subHeading={subHeading}
         tableHeader={tableHeader}
-        controls={controls}
+        controls={null}
         tabs={tabs}
         tbody={table}
     />

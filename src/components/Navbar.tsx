@@ -97,7 +97,7 @@ const NavbarSimple = ({ title }) => {
                     {
                         name: 'Maintenance',
                         icon: <WrenchIcon className="h-5 w-5" />,
-                        link: '/landlord/maintenance',
+                        link: '/landlord/tenants/maintenance',
                     },
                 ],
             },
@@ -108,13 +108,13 @@ const NavbarSimple = ({ title }) => {
                     {
                         name: 'Invoices',
                         icon: <HomeModernIcon className="h-5 w-5" />,
-                        link: '/billing/invoices',
+                        link: '/landlord/billing/invoices',
                     },
 
                     {
                         name: 'Payments',
                         icon: <WrenchIcon className="h-5 w-5" />,
-                        link: '/billing/payments',
+                        link: '/landlord/billing/payments',
                     },
                 ],
             },

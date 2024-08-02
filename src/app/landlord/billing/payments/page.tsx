@@ -13,10 +13,10 @@ export const metadata: Metadata = {
     title: 'All Properties > Landlord - Rentwize',
 }
 
-const heading = 'Tenants'
-const subHeading = 'See All Tenants'
+const heading = 'Payments'
+const subHeading = 'See All Paymentss'
 //const data = axios
-const tableHeader = ['Name', 'Property', 'End of Contract', 'Actions']
+const tableHeader = ['Name', 'Property', 'Date Paid', 'Amount', 'Actions']
 const tableRows = [
     {
         img: 'https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg',
@@ -26,6 +26,7 @@ const tableRows = [
         property_type: 'Studio',
         online: true,
         date: '23/04/18',
+        amount: 2500
     },
     {
         img: 'https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-2.jpg',
@@ -35,6 +36,7 @@ const tableRows = [
         property_type: 'Duplex',
         online: false,
         date: '23/04/18',
+        amount: 3000
     },
     {
         img: 'https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-1.jpg',
@@ -44,6 +46,7 @@ const tableRows = [
         property_type: 'Condo Unit',
         online: false,
         date: '19/09/17',
+        amount: 800
     },
     {
         img: 'https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-4.jpg',
@@ -53,6 +56,7 @@ const tableRows = [
         property_type: '2 Storey House',
         online: true,
         date: '24/12/08',
+        amount: 1000
     },
     {
         img: 'https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-5.jpg',
@@ -62,6 +66,7 @@ const tableRows = [
         property_type: 'Bungalow',
         online: false,
         date: '04/10/21',
+        amount: 500
     },
 ]
 const tabs = [
@@ -75,17 +80,11 @@ const tabs = [
     },
 ]
 
-const controls = (
-    <Button className="flex items-center gap-3" size="sm">
-        <PlusIcon strokeWidth={2} className="h-4 w-4" /> Add Tenant
-    </Button>
-)
-
 const table = (
     <>
         {tableRows.map(
             (
-                { img, name, email, property, property_type, online, date },
+                { img, name, email, property, property_type, online, date, amount },
                 index,
             ) => {
                 const isLast = index === tableRows.length - 1
@@ -139,6 +138,14 @@ const table = (
                             </Typography>
                         </td>
                         <td className={classes}>
+                            <Typography
+                                variant="small"
+                                color="blue-gray"
+                                className="font-normal">
+                                ${amount}
+                            </Typography>
+                        </td>
+                        <td className={classes}>
                             <Tooltip content="Edit User">
                                 <IconButton variant="text">
                                     <PencilIcon className="h-4 w-4" />
@@ -157,7 +164,7 @@ const Applications = () => (
         heading={heading}
         subHeading={subHeading}
         tableHeader={tableHeader}
-        controls={controls}
+        controls={null}
         tabs={tabs}
         tbody={table}
     />
