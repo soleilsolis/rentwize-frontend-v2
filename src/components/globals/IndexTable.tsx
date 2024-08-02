@@ -33,10 +33,8 @@ const IndexTable = ({
                 className="rounded-none space-y-4">
                 <div className="mb-8 md:flex space-y-6 items-center justify-between gap-8">
                     <div>
-                        <Typography
-                            variant="h1"
-                            className="mb-6 font-semibold text-2xl text-gray-900">
-                            {heading}
+                        <Typography variant="h3" as="h1" className='text-gray-900'>
+                            New {heading}
                         </Typography>
 
                         <Typography color="gray" className="mt-1 font-normal">

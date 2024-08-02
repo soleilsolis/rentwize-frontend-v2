@@ -24,6 +24,10 @@ import {
     Accordion,
     AccordionHeader,
     AccordionBody,
+    Select,
+    Option,
+    Textarea,
+    Carousel,
 } from '@material-tailwind/react'
 
 export {
@@ -50,4 +54,8 @@ export {
     Accordion,
     AccordionHeader,
     AccordionBody,
+    Select,
+    Option,
+    Textarea,
+    Carousel,
 }

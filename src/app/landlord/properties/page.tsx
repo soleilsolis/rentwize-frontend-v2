@@ -37,9 +37,6 @@ const tabs = [
     },
 ]
 
-const heading = 'Properties'
-const subHeading = 'See All of Your Properties'
-
 const tableHeader = ['Property', 'Price', 'Type', 'Status', 'Created', '']
 
 const data = properties
@@ -145,8 +142,8 @@ const controls = (
 
 const Properties = () => (
     <IndexTable
-        heading={heading}
-        subHeading={subHeading}
+        heading='Properties'
+        subHeading='See All of Your Properties'
         tableHeader={tableHeader}
         controls={controls}
         tabs={tabs}
