@@ -115,7 +115,6 @@ const NavbarSimple = ({ title }) => {
                         name: 'Payments',
                         icon: <WrenchIcon className="h-5 w-5" />,
                         link: '/billing/payments',
-
                     },
                 ],
             },

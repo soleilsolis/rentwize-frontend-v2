@@ -17,6 +17,7 @@ import {
     Typography,
 } from '@material-tailwind/react'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
 const ViewProperty = ({
     params,
@@ -25,6 +26,7 @@ const ViewProperty = ({
     params: { id: string }
     data: []
 }) => {
+    const router = useRouter()
     return (
         <div className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -171,7 +173,12 @@ const ViewProperty = ({
                         </List>
 
                         <List>
-                            <ListItem>
+                            <ListItem
+                                onClick={() =>
+                                    router.push(
+                                        '/landlord/properties/applications/1',
+                                    )
+                                }>
                                 <ListItemPrefix>
                                     <Avatar
                                         variant="circular"

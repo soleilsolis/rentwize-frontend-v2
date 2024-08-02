@@ -7,22 +7,34 @@ import Link from 'next/link'
 const Breadcrumb = () => {
     const pathname = usePathname().split('/')
 
-    return (
-        <Breadcrumbs>
-            {/* <a href={`/`+ pathname[1]} className="opacity-60">
-                <HomeIcon className="w-4 h-4" />
-            </a> */}
+    delete pathname[0]
 
+    return pathname[2] ? (
+        <Breadcrumbs>
             {pathname.map((page, index) => (
                 <Link
-                    href={"/"+ pathname.slice(1, index + 1).toString().replaceAll(",", "/")}
+                    href={
+                        '/' +
+                        pathname
+                            .slice(1, index + 1)
+                            .toString()
+                            .replaceAll(',', '/')
+                    }
                     className={
                         pathname.length - 1 != index ? 'opacity-60' : ''
                     }>
-                    <span>{page.charAt(0).toUpperCase() + page.slice(1)}</span>
+                    <span>
+                        {index > 1 ? (
+                            page.charAt(0).toUpperCase() + page.slice(1)
+                        ) : (
+                            <HomeIcon className="w-4 h-4" />
+                        )}
+                    </span>
                 </Link>
             ))}
         </Breadcrumbs>
+    ) : (
+        ''
     )
 }
 

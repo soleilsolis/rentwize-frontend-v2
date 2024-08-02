@@ -1,6 +1,6 @@
 'use client'
 
-import { AcademicCapIcon } from '@heroicons/react/24/outline'
+
 import {
     Avatar,
     List,
@@ -8,10 +8,12 @@ import {
     ListItemPrefix,
     Typography,
 } from '@material-tailwind/react'
-import Image from 'next/image'
+
 import DetailedProperty from '@/components/globals/Properties/DetailedProperty'
+import { useRouter } from 'next/navigation'
 
 const ViewProperty = ({ params }: { params: { id: string } }) => {
+    const router = useRouter()
     const data = [
         {
             label: 'Overview',
@@ -25,7 +27,11 @@ const ViewProperty = ({ params }: { params: { id: string } }) => {
             value: 'applications',
             desc: (
                 <List>
-                    <ListItem>
+                    <ListItem
+                        key={'meow'}
+                        onClick={() =>
+                            router.push('/landlord/properties/applications/1')
+                        }>
                         <ListItemPrefix>
                             <Avatar
                                 variant="circular"
