@@ -34,11 +34,11 @@ const IndexTable = ({
                 <div className="mb-8 md:flex space-y-6 items-center justify-between gap-8">
                     <div>
                         <Typography variant="h3" as="h1" className='text-gray-900'>
-                            New {heading}
+                            {heading ?? ''}
                         </Typography>
 
                         <Typography color="gray" className="mt-1 font-normal">
-                            {subHeading}
+                            {subHeading ?? ''}
                         </Typography>
                     </div>
                     <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
@@ -48,7 +48,7 @@ const IndexTable = ({
                 <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
                     <Tabs value="all" className="w-full md:w-max">
                         <TabsHeader>
-                            {tabs.map(({ label, value }) => (
+                            {tabs?.map(({ label, value }) => (
                                 <Tab key={value} value={value}>
                                     &nbsp;&nbsp;{label}&nbsp;&nbsp;
                                 </Tab>

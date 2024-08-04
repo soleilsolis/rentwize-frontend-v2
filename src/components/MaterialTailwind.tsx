@@ -28,6 +28,10 @@ import {
     Option,
     Textarea,
     Carousel,
+    Dialog,
+    DialogHeader,
+    DialogBody,
+    DialogFooter,
 } from '@material-tailwind/react'
 
 export {
@@ -58,4 +62,8 @@ export {
     Option,
     Textarea,
     Carousel,
+    Dialog,
+    DialogHeader,
+    DialogBody,
+    DialogFooter,
 }

@@ -1,0 +1,104 @@
+[
+    {
+        "id": 1,
+        "clientId": 1,
+        "number": "2016050025",
+        "createdDate": "2016-09-12T00:00:00+0000",
+        "emailSentDate": "2016-09-12T00:00:00+0000",
+        "maturityDays": 14,
+        "notes": "",
+        "discount": 5,
+        "discountLabel": "Quantity discount",
+        "adminNotes": "",
+        "invoiceTemplateId": 1,
+        "proformaInvoiceTemplateId": 1,
+        "organizationName": "Your ISP inc.",
+        "organizationRegistrationNumber": "RN123456",
+        "organizationTaxId": "TI123456",
+        "organizationStreet1": "2580 Orchard Parkway",
+        "organizationStreet2": "Suite G",
+        "organizationCity": "San Jose",
+        "organizationCountryId": 249,
+        "organizationStateId": 1,
+        "organizationZipCode": "95131",
+        "organizationBankAccountName": "Primary",
+        "organizationBankAccountField1": "12345",
+        "organizationBankAccountField2": "6789",
+        "clientFirstName": "John",
+        "clientLastName": "Doe",
+        "clientCompanyName": "John Doe Company inc.",
+        "clientCompanyRegistrationNumber": "CRN123",
+        "clientCompanyTaxId": "CTI123",
+        "clientStreet1": "2580 Orchard Parkway",
+        "clientStreet2": "Suite E",
+        "clientCity": "San Jose",
+        "clientCountryId": 249,
+        "clientStateId": 1,
+        "clientZipCode": "95131",
+        "proforma": false,
+        "payAutomatically": false,
+        "dueDate": "2016-09-26T00:00:00+0000",
+        "taxableSupplyDate": "2016-09-26T00:00:00+0000",
+        "items": [
+            {
+                "id": 1,
+                "serviceId": 1,
+                "serviceSurchargeId": 1,
+                "productId": 1,
+                "feeId": 1,
+                "total": 10,
+                "type": "service",
+                "discountPrice": 10,
+                "discountQuantity": null,
+                "discountTotal": null,
+                "label": "Internet",
+                "price": 10,
+                "quantity": 1,
+                "unit": "",
+                "tax1Id": 1,
+                "tax2Id": 2,
+                "tax3Id": 3
+            }
+        ],
+        "subtotal": 15,
+        "taxes": [
+            {
+                "name": "VAT 19% - 19%",
+                "totalValue": 2.58
+            }
+        ],
+        "total": 10,
+        "amountPaid": 10,
+        "amountToPay": 0,
+        "totalUntaxed": 10,
+        "totalDiscount": 5,
+        "totalTaxAmount": 0,
+        "currencyCode": "USD",
+        "status": "3",
+        "paymentCovers": [
+            {
+                "id": 1,
+                "paymentId": 1,
+                "creditNoteId": 1,
+                "invoiceId": 1,
+                "refundId": 75,
+                "amount": 123.23
+            }
+        ],
+        "uncollectible": true,
+        "proformaInvoiceId": 7,
+        "generatedInvoiceId": 15,
+        "attributes": [
+            {
+                "id": 2000,
+                "invoiceId": 1000,
+                "name": "Personal Code",
+                "key": "personalCode",
+                "clientZoneVisible": true,
+                "value": "lorem ipsum",
+                "customAttributeId": 1
+            }
+        ],
+        "appliedVatReverseCharge": false
+    }
+]

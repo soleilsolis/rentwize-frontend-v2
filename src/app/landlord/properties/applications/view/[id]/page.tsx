@@ -1,4 +1,5 @@
 'use client'
+import { Modal } from '@/components/globals/Modal'
 import {
     Button,
     Typography,
@@ -7,23 +8,27 @@ import {
     AccordionBody,
 } from '@/components/MaterialTailwind'
 import {
+    CheckCircleIcon,
     CheckIcon,
     DocumentMagnifyingGlassIcon,
+    XCircleIcon,
     XMarkIcon,
 } from '@heroicons/react/24/solid'
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
 const ViewApplication = () => {
-    const [openAcc1, setOpenAcc1] = useState(true)
-    const [openAcc2, setOpenAcc2] = useState(true)
-    const [openAcc3, setOpenAcc3] = useState(true)
+    const [generalAcc, setGeneralAcc] = useState(false)
+    const [creditAcc, setCreditAcc] = useState(false)
+    const [criminalAcc, setCriminalAcc] = useState(false)
 
-    const handleOpenAcc1 = () => setOpenAcc1(cur => !cur)
-    const handleOpenAcc2 = () => setOpenAcc2(cur => !cur)
-    const handleOpenAcc3 = () => setOpenAcc3(cur => !cur)
+    const handleGeneralAcc = () => setGeneralAcc(cur => !cur)
+    const handleCreditAcc = () => setCreditAcc(cur => !cur)
+    const handleCriminalAcc = () => setCriminalAcc(cur => !cur)
 
+    const router = useRouter()
     return (
         <div className="grid grid-cols-1 lg:grid-cols-4 min-h-100 h-100 gap-8">
             <div className="">
@@ -41,7 +46,7 @@ const ViewApplication = () => {
                     className="text-lg tracking-wide">
                     APPLICANT
                 </Typography>
-                <Typography variant="h1">Hisun Carly</Typography>
+                <Typography variant="h1">Hilgen Joy Rabot</Typography>
                 <Typography
                     variant="paragraph"
                     className="text-lg font-medium text-gray-700">
@@ -52,18 +57,45 @@ const ViewApplication = () => {
 
                 <section className="space-y-8">
                     <div className="flex gap-4 max-w-md mt-4">
-                        <Button
-                            className="grow flex items-center gap-3 justify-center"
-                            color="blue">
-                            <CheckIcon className="h-5 w-5" />
-                            Accept
-                        </Button>
-                        <Button
-                            className="grow flex items-center gap-3 justify-center"
-                            color="red">
-                            <XMarkIcon className="h-5 w-5"></XMarkIcon>
-                            Reject
-                        </Button>
+                        <Modal
+                            label={
+                                <span className="flex items-center gap-3 justify-center">
+                                    <CheckIcon className="h-5 w-5" />
+                                    Accept
+                                </span>
+                            }
+                            buttonColor="blue"
+                            heading="Accept Applicant"
+                            controls={
+                                <Button color="blue" variant="gradient" onClick={() => router.push('/landlord/properties/prequalifications')}>
+                                    Yes
+                                </Button>
+                            }
+                            size="md">
+                            <span className="font-medium">
+                                Accept Hilgen Joy Rabot to Prequalify?
+                            </span>
+                        </Modal>
+
+                        <Modal
+                            label={
+                                <span className="flex items-center gap-3 justify-center">
+                                    <XMarkIcon className="h-5 w-5"></XMarkIcon>
+                                    Reject
+                                </span>
+                            }
+                            buttonColor="red"
+                            heading="Reject Hilgen Joy Rabot?"
+                            controls={
+                                <Button color="blue" variant="gradient" onClick={() => router.push('/landlord/properties/applications')}>
+                                    Yes
+                                </Button>
+                            }
+                            size="md">
+                            <span className="font-medium">
+                                Reject Hilgen Joy Rabot as an Applicant?
+                            </span>
+                        </Modal>
                     </div>
 
                     <Typography variant="h2" className="font-semibold text-3xl">
@@ -82,8 +114,10 @@ const ViewApplication = () => {
                         Run Background Check
                     </Button>
 
-                    <Accordion open={openAcc1}>
-                        <AccordionHeader onClick={handleOpenAcc1}>
+                    <Accordion open={generalAcc} disabled>
+                        <AccordionHeader
+                            onClick={handleGeneralAcc}
+                            className="flex justify-start gap-1 items-center px-2 rounded-md">
                             General
                         </AccordionHeader>
                         <AccordionBody>
@@ -94,8 +128,11 @@ const ViewApplication = () => {
                             dreams.
                         </AccordionBody>
                     </Accordion>
-                    <Accordion open={openAcc2}>
-                        <AccordionHeader onClick={handleOpenAcc2}>
+                    <Accordion open={creditAcc}>
+                        <AccordionHeader
+                            onClick={handleCreditAcc}
+                            className="flex justify-start gap-1 items-center text-red-400 bg-red-50 px-2 rounded-t-md">
+                            <XCircleIcon className="w-6 h-6" />
                             Credit Record
                         </AccordionHeader>
                         <AccordionBody>
@@ -106,8 +143,11 @@ const ViewApplication = () => {
                             dreams.
                         </AccordionBody>
                     </Accordion>
-                    <Accordion open={openAcc3}>
-                        <AccordionHeader onClick={handleOpenAcc3}>
+                    <Accordion open={criminalAcc}>
+                        <AccordionHeader
+                            onClick={handleCriminalAcc}
+                            className="flex justify-start gap-1 items-center text-green-600 px-2 rounded-md rounded-t-md">
+                            <CheckCircleIcon className="w-6 h-6" />
                             Criminal Record
                         </AccordionHeader>
                         <AccordionBody>

@@ -3,7 +3,6 @@
 import { AcademicCapIcon } from '@heroicons/react/24/outline'
 import {
     Avatar,
-    Breadcrumbs,
     Carousel,
     Chip,
     List,
@@ -16,16 +15,10 @@ import {
     TabsHeader,
     Typography,
 } from '@material-tailwind/react'
-import Image from 'next/image'
+
 import { useRouter } from 'next/navigation'
 
-const ViewProperty = ({
-    params,
-    data,
-}: {
-    params: { id: string }
-    data: []
-}) => {
+const ViewProperty = ({ data }: { params: { id: string }; data: [] }) => {
     const router = useRouter()
     return (
         <div className="space-y-6">
