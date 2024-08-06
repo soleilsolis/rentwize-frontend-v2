@@ -10,12 +10,7 @@ import {
     Input,
     Textarea,
 } from '@/components/MaterialTailwind'
-import { ArrowLeftEndOnRectangleIcon } from '@heroicons/react/24/outline'
-import {
-    DocumentArrowUpIcon,
-    ArrowRightIcon,
-    PhotoIcon,
-} from '@heroicons/react/24/solid'
+import { ArrowRightIcon, PhotoIcon } from '@heroicons/react/24/solid'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'

@@ -80,6 +80,10 @@ const tabs = [
     },
 ]
 
+const controls = [
+    
+]
+
 const table = (
     <>
         {tableRows.map(

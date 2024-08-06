@@ -5,13 +5,12 @@ import Link from 'next/link'
 
 import invoices from './invoices.json'
 
-const Invoices = () => {
+const Payments = () => {
     const tableHeader = [
-        'Invoice Number',
-        'Total',
-        'Amount Due',
+        'Payment Number',
+        'Method',
+        'Amount',
         'Created Date',
-        'Due Date',
         '',
     ]
 
@@ -27,14 +26,7 @@ const Invoices = () => {
     ]
     const tbody = invoices.map(
         (
-            {
-                number,
-                items,
-                amountToPay,
-                total,
-                createdDate,
-                dueDate,
-            },
+            { number, items, amountToPay, total, createdDate, dueDate },
             index,
         ) => {
             const isLast = index === invoices.length - 1
@@ -53,22 +45,13 @@ const Invoices = () => {
                                     className="font-normal">
                                     # {number}
                                 </Typography>
-                                <Typography
-                                    variant="small"
-                                    color="blue-gray"
-                                    className="font-normal opacity-70">
-                                    {items[0].label}
-                                </Typography>
                             </div>
                         </div>
                     </td>
                     <td className={classes}>
                         <div className="flex items-center gap-3">
-                            <Typography
-                                variant="large"
-                                color="blue-gray"
-                                className="font-bold">
-                                ${total.toFixed(2)}
+                            <Typography variant="large" color="blue-gray">
+                                Cash
                             </Typography>
                         </div>
                     </td>
@@ -85,10 +68,7 @@ const Invoices = () => {
 
                     <td className={classes}>
                         <div className="flex items-center gap-3">
-                            <Typography
-                                variant="large"
-                                color="blue-gray"
-                                className="font-bold">
+                            <Typography variant="large" color="blue-gray">
                                 {dateCreated.toLocaleDateString('en-US', {
                                     year: 'numeric',
                                     month: 'long',
@@ -98,22 +78,7 @@ const Invoices = () => {
                         </div>
                     </td>
                     <td className={classes}>
-                        <div className="flex items-center gap-3">
-                            <Typography
-                                variant="large"
-                                color="blue-gray"
-                                className="font-bold">
-                                {due.toLocaleDateString('en-US', {
-                                    year: 'numeric',
-                                    month: 'long',
-                                    day: 'numeric',
-                                })}
-                            </Typography>
-                        </div>
-                    </td>
-
-                    <td className={classes}>
-                        <Tooltip content="View Invoice">
+                        <Tooltip content="Edit Property">
                             <Link href="/landlord/invoices/view/1">
                                 <IconButton variant="text">
                                     <PencilIcon className="h-4 w-4" />
@@ -129,12 +94,12 @@ const Invoices = () => {
     return (
         <IndexTable
             tabs={tabs}
-            heading="Invoices"
-            subHeading="List of invoices"
+            heading="Payments"
+            subHeading="List of payments"
             tableHeader={tableHeader}
             tbody={tbody}
         />
     )
 }
 
-export default Invoices
+export default Payments

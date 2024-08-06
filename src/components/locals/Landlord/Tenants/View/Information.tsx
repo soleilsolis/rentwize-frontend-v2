@@ -47,9 +47,21 @@ const Information = () => {
             value: 'February 5, 2038',
         },
     ]
+
+    const initialStats = [
+        {
+            label: 'Total Income From Tenant',
+            value: 500.0,
+        },
+
+        {
+            label: 'Initial Deposit Amount',
+            value: 0,
+        },
+    ]
     return (
         <>
-            <div>
+            <div className='space-y-5'>
                 <Card className="">
                     <CardBody>
                         <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
@@ -78,7 +90,7 @@ const Information = () => {
                     </CardBody>
                 </Card>
 
-                <Card className="mt-5">
+                <Card>
                     <CardBody>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                             {paymentStats.map((stat, index) => {
@@ -93,6 +105,34 @@ const Information = () => {
                                             <span className="font-bold text-black">
                                                 {stat.value}
                                             </span>
+                                        </Typography>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </CardBody>
+                </Card>
+
+                <Card className="">
+                    <CardBody>
+                        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+                            {initialStats.map((stat, index) => {
+                                return (
+                                    <div
+                                        className={`space-y-2 ${initialStats.length - 1 !== index ? 'border-r-2' : ''}`}>
+                                        <Typography variant="h6" as="h2">
+                                            {stat.label}
+                                        </Typography>
+
+                                        <Typography
+                                            variant="h3"
+                                            as="p"
+                                            className={
+                                                stat.value < 0
+                                                    ? 'text-red-600'
+                                                    : 'text-gray-900'
+                                            }>
+                                            ${stat.value.toFixed(2)}
                                         </Typography>
                                     </div>
                                 )

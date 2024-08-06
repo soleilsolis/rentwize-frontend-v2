@@ -2,9 +2,13 @@
 
 import Information from '@/components/locals/Landlord/Tenants/View/Information'
 import Invoices from '@/components/locals/Landlord/Tenants/View/Invoices'
+import Stats from '@/components/locals/Landlord/Tenants/View/Stats'
+import Actions from '@/components/locals/Landlord/Tenants/View/Actions'
+import Payments from '@/components/locals/Landlord/Tenants/View/Payments'
 import { Typography } from '@/components/MaterialTailwind'
 import {
     BanknotesIcon,
+    PresentationChartLineIcon,
     CogIcon,
     DocumentCurrencyDollarIcon,
     InformationCircleIcon,
@@ -27,6 +31,15 @@ const ViewTenant = () => {
             content: <Information />,
         },
         {
+            label: 'Stats',
+            icon: PresentationChartLineIcon,
+            content: <Stats />,
+            notification: {
+                count: 0,
+                color: 'red',
+            },
+        },
+        {
             label: 'Invoices',
             icon: DocumentCurrencyDollarIcon,
             content: <Invoices />,
@@ -38,7 +51,7 @@ const ViewTenant = () => {
         {
             label: 'Payments',
             icon: BanknotesIcon,
-            content: <></>,
+            content: <Payments />,
             notification: {
                 count: 0,
                 color: 'red',
@@ -47,7 +60,7 @@ const ViewTenant = () => {
         {
             label: 'Actions',
             icon: CogIcon,
-            content: <></>,
+            content: <Actions />,
             notification: {
                 count: 0,
                 color: 'red',
@@ -103,7 +116,6 @@ const ViewTenant = () => {
                     Tenant
                 </Typography>
                 <Typography variant="h1">Hilgen Joy Rabot</Typography>
-      
 
                 <section className="space-y-8 pt-4">
                     {pages[selected - 1].content}
