@@ -22,7 +22,7 @@ export function Modal({
 }) {
     const [dialogSize, setSize] = useState(null)
 
-    const handleOpen = value => setSize(value)
+    const handleOpen = (value: any) => setSize(value)
 
     return (
         <>

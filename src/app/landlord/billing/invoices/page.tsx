@@ -6,9 +6,12 @@ import {
     Typography,
     Tooltip,
     IconButton,
+    Select,
+    Option,
 } from '@/components/MaterialTailwind'
 import { PencilIcon, PlusIcon } from '@heroicons/react/24/outline'
 import { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
     title: 'All Properties > Landlord - Rentwize',
@@ -87,13 +90,6 @@ const tabs = [
         value: 'overdue',
     },
 ]
-
-const controls = (
-    <>
-
-        <Modal label="Invoice" buttonSize="sm"  buttonIcon={<PlusIcon className="w-3 h-3" />} />
-    </>
-)
 
 const table = tableRows.map(
     (
@@ -178,15 +174,37 @@ const table = tableRows.map(
     },
 )
 
-const Applications = () => (
-    <IndexTable
-        heading={heading}
-        subHeading={subHeading}
-        tableHeader={tableHeader}
-        controls={controls}
-        tabs={tabs}
-        tbody={table}
-    />
-)
+const Applications = () => {
+    const controls = () => {
+        const modalControls = (
+            <Link href="/landlord/billing/invoices/new/1">
+                <PrimaryButton children="Select" />
+            </Link>
+        )
+        return (
+            <Modal
+                label="Invoice"
+                size="md"
+                controls={modalControls}
+                buttonSize="sm"
+                heading="Select Tenant"
+                buttonIcon={<PlusIcon className="w-3 h-3" />}>
+                <Select label="Tenant">
+                    <Option></Option>
+                </Select>
+            </Modal>
+        )
+    }
+    return (
+        <IndexTable
+            heading={heading}
+            subHeading={subHeading}
+            tableHeader={tableHeader}
+            controls={controls()}
+            tabs={tabs}
+            tbody={table}
+        />
+    )
+}
 
 export default Applications
