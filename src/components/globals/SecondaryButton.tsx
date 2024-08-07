@@ -1,17 +1,17 @@
 'use client'
 import { Button } from '@material-tailwind/react'
 
-const PrimaryButton = ({ children, ...params }) => (
+const SecondaryButton = ({ children, ...params }) => (
     <Button
         className="flex gap-3 items-center justify-center"
         size={params.size}
         onClick={params.onClick}
-        color={params.color ?? "blue"}
-        variant={params.variant ?? "gradient"}>
+        color={params.color ?? "black"}
+        variant="text">
         {params.icon ?? ''}
 
         {children}
     </Button>
 )
 
-export default PrimaryButton
+export default SecondaryButton

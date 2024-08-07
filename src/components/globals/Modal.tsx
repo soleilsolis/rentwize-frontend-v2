@@ -7,6 +7,7 @@ import {
     DialogBody,
     DialogFooter,
 } from '@material-tailwind/react'
+import PrimaryButton from './PrimaryButton'
 
 export function Modal({
     size,
@@ -15,6 +16,8 @@ export function Modal({
     controls,
     buttonColor,
     buttonVariant,
+    buttonSize,
+    buttonIcon,
     heading,
 }) {
     const [dialogSize, setSize] = useState(null)
@@ -23,12 +26,14 @@ export function Modal({
 
     return (
         <>
-            <Button
+            <PrimaryButton
                 onClick={() => handleOpen(size)}
+                children={label}
+                size={buttonSize ?? 'md'}
                 variant={buttonVariant ?? 'gradient'}
-                color={buttonColor ?? 'black'}>
-                {label}
-            </Button>
+                color={buttonColor ?? 'black'}
+                icon={buttonIcon}
+            />
 
             <Dialog
                 open={

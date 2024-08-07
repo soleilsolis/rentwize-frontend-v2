@@ -1,7 +1,7 @@
 import IndexTable from '@/components/globals/IndexTable'
+import { Modal } from '@/components/globals/Modal'
 import PrimaryButton from '@/components/globals/PrimaryButton'
 import {
-    Button,
     Avatar,
     Typography,
     Tooltip,
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const heading = 'Invoices'
 const subHeading = 'See All Invoices'
 //const data = axios
-const tableHeader = ['Name', 'Property', 'Due Date', 'Amount', 'Actions']
+const tableHeader = ['#', 'Name', 'Property', 'Due Date', 'Amount', 'Actions']
 const tableRows = [
     {
         number: '3',
@@ -91,101 +91,91 @@ const tabs = [
 const controls = (
     <>
 
-    <PrimaryButton children="Invoice" size="sm" icon={<PlusIcon className="w-3 h-3" />} />
-    
-        <Button className="flex gap-3 items-center justify-center" size="sm" color='blue' variant='gradient'>
-            <PlusIcon className="w-3 h-3" />
-            Invoice
-        </Button>
+        <Modal label="Invoice" buttonSize="sm"  buttonIcon={<PlusIcon className="w-3 h-3" />} />
     </>
 )
 
-const table = (
-    <>
-        {tableRows.map(
-            (
-                {
-                    img,
-                    number,
-                    name,
-                    email,
-                    property,
-                    property_type,
-                    date,
-                    amount,
-                },
-                index,
-            ) => {
-                const isLast = index === tableRows.length - 1
-                const classes = isLast
-                    ? 'p-4'
-                    : 'p-4 border-b border-blue-gray-50'
+const table = tableRows.map(
+    (
+        { img, number, name, email, property, property_type, date, amount },
+        index,
+    ) => {
+        const isLast = index === tableRows.length - 1
+        const classes = isLast ? 'p-4' : 'p-4 border-b border-blue-gray-50'
 
-                return (
-                    <tr key={name}>
-                        <td className={classes}>
-                            <div className="flex items-center gap-3">
-                                <Avatar src={img} alt={name} size="sm" />
-                                <div className="flex flex-col">
-                                    <Typography
-                                        variant="small"
-                                        color="blue-gray"
-                                        className="font-normal">
-                                        {name}
-                                    </Typography>
-                                    <Typography
-                                        variant="small"
-                                        color="blue-gray"
-                                        className="font-normal opacity-70">
-                                        {email}
-                                    </Typography>
-                                </div>
-                            </div>
-                        </td>
-                        <td className={classes}>
-                            <div className="flex flex-col">
-                                <Typography
-                                    variant="small"
-                                    color="blue-gray"
-                                    className="font-normal">
-                                    {property}
-                                </Typography>
-                                <Typography
-                                    variant="small"
-                                    color="blue-gray"
-                                    className="font-normal opacity-70">
-                                    {property_type}
-                                </Typography>
-                            </div>
-                        </td>
-                        <td className={classes}>
+        return (
+            <tr key={name}>
+                <td className={classes}>
+                    <div className="flex flex-col">
+                        <Typography
+                            variant="small"
+                            color="blue-gray"
+                            className="font-normal">
+                            {number}
+                        </Typography>
+                    </div>
+                </td>
+                <td className={classes}>
+                    <div className="flex items-center gap-3">
+                        <Avatar src={img} alt={name} size="sm" />
+                        <div className="flex flex-col">
                             <Typography
                                 variant="small"
                                 color="blue-gray"
                                 className="font-normal">
-                                {date}
+                                {name}
                             </Typography>
-                        </td>
-                        <td className={classes}>
                             <Typography
                                 variant="small"
                                 color="blue-gray"
-                                className="font-normal">
-                                ${amount}
+                                className="font-normal opacity-70">
+                                {email}
                             </Typography>
-                        </td>
-                        <td className={classes}>
-                            <Tooltip content="Edit User">
-                                <IconButton variant="text">
-                                    <PencilIcon className="h-4 w-4" />
-                                </IconButton>
-                            </Tooltip>
-                        </td>
-                    </tr>
-                )
-            },
-        )}
-    </>
+                        </div>
+                    </div>
+                </td>
+                <td className={classes}>
+                    <div className="flex flex-col">
+                        <Typography
+                            variant="small"
+                            color="blue-gray"
+                            className="font-normal">
+                            {property}
+                        </Typography>
+                        <Typography
+                            variant="small"
+                            color="blue-gray"
+                            className="font-normal opacity-70">
+                            {property_type}
+                        </Typography>
+                    </div>
+                </td>
+                <td className={classes}>
+                    <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal">
+                        {date}
+                    </Typography>
+                </td>
+                <td className={classes}>
+                    <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal">
+                        ${amount}
+                    </Typography>
+                </td>
+                <td className={classes}>
+                    <Tooltip content="Edit User">
+                        <IconButton variant="text">
+                            <PencilIcon className="h-4 w-4" />
+                        </IconButton>
+                    </Tooltip>
+                </td>
+            </tr>
+        )
+    },
 )
 
 const Applications = () => (
