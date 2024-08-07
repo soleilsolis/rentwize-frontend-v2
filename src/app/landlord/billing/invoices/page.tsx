@@ -1,4 +1,5 @@
 import IndexTable from '@/components/globals/IndexTable'
+import PrimaryButton from '@/components/globals/PrimaryButton'
 import {
     Button,
     Avatar,
@@ -19,6 +20,8 @@ const subHeading = 'See All Invoices'
 const tableHeader = ['Name', 'Property', 'Due Date', 'Amount', 'Actions']
 const tableRows = [
     {
+        number: '3',
+
         img: 'https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg',
         name: 'John Michael',
         email: 'john@creative-tim.com',
@@ -26,7 +29,7 @@ const tableRows = [
         property_type: 'Studio',
         online: true,
         date: '23/04/18',
-        amount: 2500
+        amount: 2500,
     },
     {
         img: 'https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-2.jpg',
@@ -36,9 +39,11 @@ const tableRows = [
         property_type: 'Duplex',
         online: false,
         date: '23/04/18',
-        amount: 3000
+        amount: 3000,
     },
     {
+        number: '3',
+
         img: 'https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-1.jpg',
         name: 'Laurent Perrier',
         email: 'laurent@creative-tim.com',
@@ -46,9 +51,10 @@ const tableRows = [
         property_type: 'Condo Unit',
         online: false,
         date: '19/09/17',
-        amount: 800
+        amount: 800,
     },
     {
+        number: '3',
         img: 'https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-4.jpg',
         name: 'Michael Levi',
         email: 'michael@creative-tim.com',
@@ -56,9 +62,11 @@ const tableRows = [
         property_type: '2 Storey House',
         online: true,
         date: '24/12/08',
-        amount: 1000
+        amount: 1000,
     },
     {
+        number: '3',
+
         img: 'https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-5.jpg',
         name: 'Richard Gran',
         email: 'richard@creative-tim.com',
@@ -66,7 +74,7 @@ const tableRows = [
         property_type: 'Bungalow',
         online: false,
         date: '04/10/21',
-        amount: 500
+        amount: 500,
     },
 ]
 const tabs = [
@@ -80,15 +88,32 @@ const tabs = [
     },
 ]
 
-const controls = [
+const controls = (
+    <>
+
+    <PrimaryButton children="Invoice" size="sm" icon={<PlusIcon className="w-3 h-3" />} />
     
-]
+        <Button className="flex gap-3 items-center justify-center" size="sm" color='blue' variant='gradient'>
+            <PlusIcon className="w-3 h-3" />
+            Invoice
+        </Button>
+    </>
+)
 
 const table = (
     <>
         {tableRows.map(
             (
-                { img, name, email, property, property_type, online, date, amount },
+                {
+                    img,
+                    number,
+                    name,
+                    email,
+                    property,
+                    property_type,
+                    date,
+                    amount,
+                },
                 index,
             ) => {
                 const isLast = index === tableRows.length - 1
@@ -168,7 +193,7 @@ const Applications = () => (
         heading={heading}
         subHeading={subHeading}
         tableHeader={tableHeader}
-        controls={null}
+        controls={controls}
         tabs={tabs}
         tbody={table}
     />

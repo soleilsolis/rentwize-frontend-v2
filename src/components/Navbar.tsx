@@ -31,6 +31,7 @@ import {
     ReceiptPercentIcon,
     UserGroupIcon,
     Cog6ToothIcon,
+    MinusIcon,
 } from '@heroicons/react/24/outline'
 import ProfileMenu from './locals/Landlord/ProfileMenu'
 import { NotificationsMenu } from './locals/Landlord/NotificationsMenu'
@@ -53,68 +54,60 @@ const NavbarSimple = ({ title }) => {
         [
             {
                 name: 'Dashboard',
-                icon: <PresentationChartBarIcon className="h-5 w-5" />,
+                icon: PresentationChartBarIcon,
                 link: '/landlord',
             },
             {
                 name: 'Properties',
-                icon: <HomeIcon className="h-5 w-5" />,
+                icon: HomeIcon,
                 items: [
                     {
                         name: 'All Properties',
-                        icon: <HomeModernIcon className="h-5 w-5" />,
                         link: '/landlord/properties',
                     },
                     {
                         name: 'Applications',
-                        icon: <WrenchIcon className="h-5 w-5" />,
                         link: '/landlord/properties/applications',
                     },
 
                     {
                         name: 'Prequalifications',
-                        icon: <WrenchIcon className="h-5 w-5" />,
                         link: '/landlord/properties/prequalifications',
                     },
 
                     {
                         name: 'Maintenance',
-                        icon: <WrenchIcon className="h-5 w-5" />,
                         link: '/landlord/properties/maintenance',
                     },
                 ],
             },
             {
                 name: 'Tenants',
-                icon: <UserGroupIcon className="h-5 w-5" />,
+                icon: UserGroupIcon,
                 items: [
                     {
                         name: 'All Tenants',
-                        icon: <HomeModernIcon className="h-5 w-5" />,
                         link: '/landlord/tenants',
                     },
 
                     {
                         name: 'Maintenance',
-                        icon: <WrenchIcon className="h-5 w-5" />,
                         link: '/landlord/maintenance',
                     },
                 ],
             },
             {
                 name: 'Billing',
-                icon: <ReceiptPercentIcon className="h-5 w-5" />,
+                icon: ReceiptPercentIcon,
                 items: [
                     {
                         name: 'Invoices',
-                        icon: <HomeModernIcon className="h-5 w-5" />,
-                        link: '/billing/invoices',
+                        link: '/landlord/billing/invoices',
                     },
 
                     {
                         name: 'Payments',
-                        icon: <WrenchIcon className="h-5 w-5" />,
-                        link: '/billing/payments',
+                        link: '/landlord/billing/payments',
                     },
                 ],
             },
@@ -196,7 +189,7 @@ const NavbarSimple = ({ title }) => {
                                                 router.push(listItem.link)
                                             }}>
                                             <ListItemPrefix>
-                                                {listItem.icon}
+                                                <listItem.icon className="w-5 h-5" />
                                             </ListItemPrefix>
                                             {listItem.name}
                                         </ListItem>
@@ -224,7 +217,7 @@ const NavbarSimple = ({ title }) => {
                                                     }
                                                     className="border-b-0 p-3">
                                                     <ListItemPrefix>
-                                                        {listItem.icon}
+                                                        <listItem.icon className="w-5 h-5" />
                                                     </ListItemPrefix>
                                                     <Typography
                                                         color="blue-gray"
@@ -248,7 +241,7 @@ const NavbarSimple = ({ title }) => {
                                                                     )
                                                                 }}>
                                                                 <ListItemPrefix>
-                                                                    <ChevronRightIcon
+                                                                    <MinusIcon
                                                                         strokeWidth={
                                                                             3
                                                                         }

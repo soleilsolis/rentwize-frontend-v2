@@ -29,7 +29,7 @@ const ViewProperty = ({ params }: { params: { id: string } }) => {
                     <ListItem
                         key={'meow'}
                         onClick={() =>
-                            router.push('/landlord/properties/applications/1')
+                            router.push('/landlord/properties/applications/view/1')
                         }>
                         <ListItemPrefix>
                             <Avatar
