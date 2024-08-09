@@ -37,7 +37,7 @@ import ProfileMenu from './locals/Landlord/ProfileMenu'
 import { NotificationsMenu } from './locals/Landlord/NotificationsMenu'
 import Link from 'next/link'
 
-const NavbarSimple = ({ title }) => {
+const NavbarSimple = ({ title , menuLists}) => {
     const [open, setOpen] = useState(0)
     const [openAlert, setOpenAlert] = useState(true)
     const [isDrawerOpen, setIsDrawerOpen] = useState(false)
@@ -49,70 +49,6 @@ const NavbarSimple = ({ title }) => {
 
     const openDrawer = () => setIsDrawerOpen(true)
     const closeDrawer = () => setIsDrawerOpen(false)
-
-    const menuLists = [
-        [
-            {
-                name: 'Dashboard',
-                icon: PresentationChartBarIcon,
-                link: '/landlord',
-            },
-            {
-                name: 'Properties',
-                icon: HomeIcon,
-                items: [
-                    {
-                        name: 'All Properties',
-                        link: '/landlord/properties',
-                    },
-                    {
-                        name: 'Applications',
-                        link: '/landlord/properties/applications',
-                    },
-
-                    {
-                        name: 'Prequalifications',
-                        link: '/landlord/properties/prequalifications',
-                    },
-
-                    {
-                        name: 'Maintenance',
-                        link: '/landlord/properties/maintenance',
-                    },
-                ],
-            },
-            {
-                name: 'Tenants',
-                icon: UserGroupIcon,
-                items: [
-                    {
-                        name: 'All Tenants',
-                        link: '/landlord/tenants',
-                    },
-
-                    {
-                        name: 'Maintenance',
-                        link: '/landlord/maintenance',
-                    },
-                ],
-            },
-            {
-                name: 'Billing',
-                icon: ReceiptPercentIcon,
-                items: [
-                    {
-                        name: 'Invoices',
-                        link: '/landlord/billing/invoices',
-                    },
-
-                    {
-                        name: 'Payments',
-                        link: '/landlord/billing/payments',
-                    },
-                ],
-            },
-        ],
-    ]
 
     return (
         <>
