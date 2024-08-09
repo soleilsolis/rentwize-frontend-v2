@@ -1,7 +1,7 @@
 'use client'
+import { Modal } from '@/components/globals/Modal'
 import PrimaryButton from '@/components/globals/PrimaryButton'
 import {
-    Button,
     Card,
     CardBody,
     Input,
@@ -82,8 +82,22 @@ const NewInvoice = () => {
                         color="black"
                     />
                 </Link>
-                <PrimaryButton children="Save" color="gray" />
-                <PrimaryButton children="Send and Save" />
+                <Link href="/landlord/billing/invoices/view/1">
+                    <PrimaryButton children="Save" color="gray" />
+                </Link>
+
+                <Modal
+                    buttonColor="blue"
+                    label="Save and Send"
+                    children="Do you want to send the invoice to the tenant?"
+                    size="md"
+                    heading="Send and Save Invoice?"
+                    controls={
+                        <Link href="/landlord/billing/invoices/view/1">
+                            <PrimaryButton children="Yes" />
+                        </Link>
+                    }
+                />
             </section>
         </div>
     )

@@ -1,4 +1,3 @@
-import SalesChart from '@/components/locals/Landlord/Home/SalesChart'
 import LatestCustomers from '@/components/locals/Landlord/Home/LatestPayments'
 import { Button, ButtonGroup, Typography } from '@/components/MaterialTailwind'
 

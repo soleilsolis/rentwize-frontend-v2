@@ -1,5 +1,8 @@
+"use client"
+import { Button } from "@material-tailwind/react";
+
 const Home = () => {
-    return <div>ng</div>;
+    return <Button>Click me</Button>;
 }
 
 export default Home
