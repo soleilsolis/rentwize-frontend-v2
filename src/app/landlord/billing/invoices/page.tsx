@@ -184,7 +184,7 @@ const Applications = () => {
         return (
             <Modal
                 label="Invoice"
-                size="md"
+                size="sm"
                 controls={modalControls}
                 buttonSize="sm"
                 heading="Select Tenant"

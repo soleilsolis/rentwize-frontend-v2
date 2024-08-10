@@ -10,15 +10,15 @@ import {
 import PrimaryButton from './PrimaryButton'
 
 export function Modal({
-    size,
-    label,
     children,
     controls,
+    heading,
+    label,
+    size,
     buttonColor,
     buttonVariant,
     buttonSize,
     buttonIcon,
-    heading,
 }) {
     const [dialogSize, setSize] = useState(null)
 
@@ -51,7 +51,7 @@ export function Modal({
                 <DialogFooter>
                     <Button
                         variant="text"
-                        color="red"
+                    
                         onClick={() => handleOpen(null)}
                         className="mr-1">
                         <span>Cancel</span>

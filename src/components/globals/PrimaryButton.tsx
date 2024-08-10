@@ -12,7 +12,8 @@ const PrimaryButton = ({ children, onClick, ...params }) => {
             size={params.size}
             onClick={onClick}
             color={params.color ?? 'blue'}
-            variant={params.variant ?? 'gradient'}>
+            variant={params.variant ?? 'gradient'}
+            disabled={params.disabled ?? false}>
             {params.icon ?? ''}
 
             {children}
