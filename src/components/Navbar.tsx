@@ -52,7 +52,7 @@ const NavbarSimple = ({ title , menuLists}) => {
 
     return (
         <>
-            <header>
+            <header className='sticky top-0 w-full z-10'>
                 <Navbar className="absolute mx-auto max-w-full px-6 py-3 rounded-none shadow-none border-gray-200 border-b">
                     <div className="flex items-center justify-between text-blue-gray-900 gap-2">
                         <div className="flex items-center text-blue-gray-900 gap-2">

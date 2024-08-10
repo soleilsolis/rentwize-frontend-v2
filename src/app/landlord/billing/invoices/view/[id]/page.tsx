@@ -1,5 +1,6 @@
 'use client'
 import { ClassContext } from '@/components/contexts/ClassContext'
+import AccordionGlobal from '@/components/globals/AccordionGlobal'
 import PrimaryButton from '@/components/globals/PrimaryButton'
 import {
     ArrowDownTrayIcon,
@@ -12,6 +13,12 @@ import {
     CardBody,
     Chip,
     Typography,
+    Menu,
+    MenuHandler,
+    MenuList,
+    MenuItem,
+    Button,
+    Accordion,
 } from '@material-tailwind/react'
 
 const TABLE_HEAD = ['Property', 'Qty', 'Total']
@@ -72,12 +79,22 @@ const ViewInvoice = () => {
                                             <ArrowDownTrayIcon className="w-5" />
                                         }
                                     />
-                                    <PrimaryButton
-                                        variant="text"
-                                        icon={
-                                            <EllipsisHorizontalIcon className="w-5" />
-                                        }
-                                    />
+
+                                    <Menu>
+                                        <MenuHandler>
+                                            <PrimaryButton
+                                                variant="text"
+                                                icon={
+                                                    <EllipsisHorizontalIcon className="w-5" />
+                                                }
+                                            />
+                                        </MenuHandler>
+                                        <MenuList>
+                                            <MenuItem>Menu Item 1</MenuItem>
+                                            <MenuItem>Menu Item 2</MenuItem>
+                                            <MenuItem>Menu Item 3</MenuItem>
+                                        </MenuList>
+                                    </Menu>
                                 </ClassContext.Provider>
                             </div>
                         </section>
@@ -93,7 +110,7 @@ const ViewInvoice = () => {
                                         {TABLE_HEAD.map(head => (
                                             <th
                                                 key={head}
-                                                className="border-b border-blue-gray-100 bg-blue-gray-50 p-4">
+                                                className="border-b border-blue-gray-100 p-4">
                                                 <Typography
                                                     variant="small"
                                                     color="blue-gray"
@@ -199,26 +216,62 @@ const ViewInvoice = () => {
                 </Card>
             </div>
 
-            <div>
+            <div className="space-y-8">
                 <Card>
-                    <CardBody className='space-y-4'>
+                    <CardBody className="space-y-4">
                         <Typography variant="h6" as="h2" className="uppercase">
                             Payments
                         </Typography>
 
-                        <table className='w-full text-left space-y-4'>
-                            <thead className='mb-2' >
-                                <th className='uppercase font-normal text-xs py-2 border-b border-blue-gray-100'>Created Date</th>
-                                <th className='uppercase font-normal text-xs py-2 border-b border-blue-gray-100'>Method</th>
-                                <th className='uppercase font-normal text-xs py-2 border-b border-blue-gray-100 text-right'>Amount</th>
+                        <table className="w-full text-left space-y-4">
+                            <thead>
+                                <tr>
+                                    <th className="uppercase font-normal text-xs py-2 border-b border-blue-gray-100">
+                                        Created Date
+                                    </th>
+                                    <th className="uppercase font-normal text-xs py-2 border-b border-blue-gray-100">
+                                        Method
+                                    </th>
+                                    <th className="uppercase font-normal text-xs py-2 border-b border-blue-gray-100 text-right">
+                                        Amount
+                                    </th>
+                                </tr>
                             </thead>
 
-                            <tbody>
+                            <tbody className="mt-4">
                                 <tr>
-                                    <td>asdfadfs</td>
+                                    <td className="border-r-[1px] border-blue-gray-100">
+                                        1 Aug 2024
+                                    </td>
+                                    <td className="border-r-[1px] pl-2 border-blue-gray-100">
+                                        Credit Card
+                                    </td>
+                                    <td className="text-right">$55.00</td>
                                 </tr>
                             </tbody>
                         </table>
+                    </CardBody>
+                </Card>
+
+               
+            </div>
+
+            <div>
+            <Card className='col-span-2'>
+                    <CardBody>
+                        <AccordionGlobal
+                            heading={
+                                <>
+                                    <Typography
+                                        variant="h6"
+                                        as="h2"
+                                        className="uppercase">
+                                        PDF Preview
+                                    </Typography>
+                                </>
+                            }>
+                            <object data=" https://pdfobject.com/pdf/sample.pdf" type='application/pdf' className='w-full h-full'></object>
+                        </AccordionGlobal>
                     </CardBody>
                 </Card>
             </div>

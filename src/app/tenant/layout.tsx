@@ -44,9 +44,10 @@ const Layout = ({ children }) => {
             <main className="container mx-auto p-6 py-24 space-y-4 h-full">
                 <Breadcrumb></Breadcrumb>
                 {children}
-        <NotificationAlert />
+    
 
             </main>
+            <NotificationAlert />
         </>
     )
 }
