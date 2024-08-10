@@ -1,4 +1,5 @@
-import { Providers } from "@/components/Providers"
+"use client"
+import { Providers } from '@/components/Providers'
 
 const Layout = ({ children }) => {
     return (
