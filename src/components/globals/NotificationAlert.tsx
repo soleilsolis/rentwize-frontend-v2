@@ -10,7 +10,7 @@ const NotificationAlert = () => {
                     open={open}
                     className="max-w-lg"
                     icon={null}
-                    onClose={() => setOpen(false)}>
+                    onClose={() => setOpen(false)} variant="outlined">
                     <Typography variant="h5" color="white">
                         Success
                     </Typography>
