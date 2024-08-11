@@ -114,7 +114,7 @@ const Invoices = () => {
 
                     <td className={classes}>
                         <Tooltip content="View Invoice">
-                            <Link href="/landlord/invoices/view/1">
+                            <Link href="/landlord/billing/invoices/view/1">
                                 <IconButton variant="text">
                                     <PencilIcon className="h-4 w-4" />
                                 </IconButton>

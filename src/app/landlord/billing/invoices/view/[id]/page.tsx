@@ -20,6 +20,7 @@ import {
     Button,
     Accordion,
 } from '@material-tailwind/react'
+import { useRouter } from 'next/navigation'
 
 const TABLE_HEAD = ['Property', 'Qty', 'Total']
 
@@ -31,6 +32,8 @@ const TABLE_ROWS = [
     },
 ]
 const ViewInvoice = () => {
+
+    const router = useRouter()
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div>
@@ -239,7 +242,7 @@ const ViewInvoice = () => {
                             </thead>
 
                             <tbody className="mt-4">
-                                <tr>
+                                <tr className='hover:bg-gray-100' onClick={() => router.push("/landlord/billing/payments/view/1")}>
                                     <td className="border-r-[1px] border-blue-gray-100">
                                         1 Aug 2024
                                     </td>
@@ -252,12 +255,10 @@ const ViewInvoice = () => {
                         </table>
                     </CardBody>
                 </Card>
-
-               
             </div>
 
-            <div>
-            <Card className='col-span-2'>
+            <div className="lg:col-span-2">
+                <Card>
                     <CardBody>
                         <AccordionGlobal
                             heading={
@@ -270,7 +271,10 @@ const ViewInvoice = () => {
                                     </Typography>
                                 </>
                             }>
-                            <object data=" https://pdfobject.com/pdf/sample.pdf" type='application/pdf' className='w-full h-full'></object>
+                            <object
+                                data=" https://pdfobject.com/pdf/sample.pdf"
+                                type="application/pdf"
+                                className="w-full h-[100vh] md:h-[1366px]"></object>
                         </AccordionGlobal>
                     </CardBody>
                 </Card>

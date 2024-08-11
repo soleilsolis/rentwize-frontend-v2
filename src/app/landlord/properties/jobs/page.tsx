@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'All Properties > Landlord - Rentwize',
 }
 
-const heading = 'Maintenance'
+const heading = 'Jobs'
 const subHeading = 'See All Jobs'
 //const data = axios
 const tableHeader = ['Contractor', 'Property', 'Schedule', 'Type', 'Actions']
@@ -167,7 +167,7 @@ const table = (
     </>
 )
 
-const Applications = () => (
+const Jobs = () => (
     <IndexTable
         heading={heading}
         subHeading={subHeading}
@@ -178,4 +178,4 @@ const Applications = () => (
     />
 )
 
-export default Applications
+export default Jobs

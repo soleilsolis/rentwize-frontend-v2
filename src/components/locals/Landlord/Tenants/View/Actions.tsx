@@ -12,7 +12,7 @@ import {
 import { useState } from 'react'
 
 const Actions = () => {
-    const [confirm, setConfirm] = useState(false)
+    const [confirm, setConfirm] = useState(true)
 
     const controls = (
         <PrimaryButton color="red" children="Confirm" disabled={confirm} />

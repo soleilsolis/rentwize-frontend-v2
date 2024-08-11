@@ -8,6 +8,7 @@ import {
 } from '@/components/MaterialTailwind'
 import { PencilIcon, PlusIcon } from '@heroicons/react/24/outline'
 import { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
     title: 'All Properties > Landlord - Rentwize',
@@ -26,7 +27,7 @@ const tableRows = [
         property_type: 'Studio',
         online: true,
         date: '23/04/18',
-        amount: 2500
+        amount: 2500,
     },
     {
         img: 'https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-2.jpg',
@@ -36,7 +37,7 @@ const tableRows = [
         property_type: 'Duplex',
         online: false,
         date: '23/04/18',
-        amount: 3000
+        amount: 3000,
     },
     {
         img: 'https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-1.jpg',
@@ -46,7 +47,7 @@ const tableRows = [
         property_type: 'Condo Unit',
         online: false,
         date: '19/09/17',
-        amount: 800
+        amount: 800,
     },
     {
         img: 'https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-4.jpg',
@@ -56,7 +57,7 @@ const tableRows = [
         property_type: '2 Storey House',
         online: true,
         date: '24/12/08',
-        amount: 1000
+        amount: 1000,
     },
     {
         img: 'https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-5.jpg',
@@ -66,7 +67,7 @@ const tableRows = [
         property_type: 'Bungalow',
         online: false,
         date: '04/10/21',
-        amount: 500
+        amount: 500,
     },
 ]
 const tabs = [
@@ -84,7 +85,16 @@ const table = (
     <>
         {tableRows.map(
             (
-                { img, name, email, property, property_type, online, date, amount },
+                {
+                    img,
+                    name,
+                    email,
+                    property,
+                    property_type,
+                    online,
+                    date,
+                    amount,
+                },
                 index,
             ) => {
                 const isLast = index === tableRows.length - 1
@@ -146,10 +156,12 @@ const table = (
                             </Typography>
                         </td>
                         <td className={classes}>
-                            <Tooltip content="Edit User">
-                                <IconButton variant="text">
-                                    <PencilIcon className="h-4 w-4" />
-                                </IconButton>
+                            <Tooltip content="View Payment">
+                                <Link href="/landlord/billing/payments/view/1">
+                                    <IconButton variant="text">
+                                        <PencilIcon className="h-4 w-4" />
+                                    </IconButton>
+                                </Link>
                             </Tooltip>
                         </td>
                     </tr>
@@ -159,7 +171,7 @@ const table = (
     </>
 )
 
-const Applications = () => (
+const Payments = () => (
     <IndexTable
         heading={heading}
         subHeading={subHeading}
@@ -170,4 +182,4 @@ const Applications = () => (
     />
 )
 
-export default Applications
+export default Payments

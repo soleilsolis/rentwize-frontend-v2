@@ -9,7 +9,7 @@ import {
     Select,
     Option,
 } from '@/components/MaterialTailwind'
-import { PencilIcon, PlusIcon } from '@heroicons/react/24/outline'
+import { EyeIcon, PencilIcon, PlusIcon } from '@heroicons/react/24/outline'
 import { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -163,10 +163,12 @@ const table = tableRows.map(
                     </Typography>
                 </td>
                 <td className={classes}>
-                    <Tooltip content="Edit User">
-                        <IconButton variant="text">
-                            <PencilIcon className="h-4 w-4" />
-                        </IconButton>
+                    <Tooltip content="View Invoice">
+                        <Link href="/landlord/billing/invoices/view/1">
+                            <IconButton variant="text">
+                                <EyeIcon className="h-4 w-4" />
+                            </IconButton>
+                        </Link>
                     </Tooltip>
                 </td>
             </tr>
