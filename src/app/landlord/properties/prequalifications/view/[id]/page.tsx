@@ -39,7 +39,7 @@ const ViewApplication = () => {
                     className="text-lg tracking-wide">
                     PREQUALIFICATIONS
                 </Typography>
-                <Typography variant="h1">Hilgen Joy Rabot</Typography>
+                <Typography variant="h1">Hissune Carly</Typography>
                 <Typography
                     variant="paragraph"
                     className="text-lg font-medium text-gray-700">
@@ -81,7 +81,7 @@ const ViewApplication = () => {
                             }
                             buttonColor="red"
                             buttonVariant="text"
-                            heading="Reject Hilgen Joy Rabot?"
+                            heading="Reject Hissune Carly?"
                             controls={
                                 <Button
                                     color="blue"
@@ -96,7 +96,7 @@ const ViewApplication = () => {
                             }
                             size="md">
                             <span className="font-medium">
-                                Reject Hilgen Joy Rabot as an Applicant?
+                                Reject Hissune Carly as an Applicant?
                             </span>
                         </Modal>
                     </div>

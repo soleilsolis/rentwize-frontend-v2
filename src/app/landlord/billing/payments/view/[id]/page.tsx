@@ -31,7 +31,7 @@ const TABLE_ROWS = [
         value: 5000,
     },
 ]
-const ViewInvoice = () => {
+const ViewPayment = () => {
     const router = useRouter()
     return (
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -45,8 +45,8 @@ const ViewInvoice = () => {
                                     as="h1"
                                     color="black"
                                     className="flex items-center gap-2">
-                                    Invoice #00001
-                                    <Chip color="blue" value="Unpaid" />
+                                    Payment #00001
+                                    <Chip color="blue" value="Partial" />
                                 </Typography>
                                 <div className="flex items-center gap-4">
                                     <Avatar
@@ -102,8 +102,8 @@ const ViewInvoice = () => {
                         </div>
 
                         <div className="space-y-2">
-                            <Typography as="h2" variant="h6">
-                                Sender: Blissful Homes, LLC
+                            <Typography variant="paragraph">
+                                <span>Sender</span>: Blissful Homes, LLC
                             </Typography>
 
                             <table className="w-full table-auto text-right">
@@ -222,20 +222,20 @@ const ViewInvoice = () => {
                 <Card className='h-full'>
                     <CardBody className="space-y-4">
                         <Typography variant="h6" as="h2" className="uppercase">
-                            Payments
+                            Invoices
                         </Typography>
 
                         <table className="w-full text-left space-y-4">
                             <thead>
                                 <tr>
                                     <th className="uppercase font-normal text-xs py-2 border-b border-blue-gray-100">
-                                        Created Date
+                                        Invoice Number
                                     </th>
                                     <th className="uppercase font-normal text-xs py-2 border-b border-blue-gray-100">
-                                        Method
+                                        Total
                                     </th>
                                     <th className="uppercase font-normal text-xs py-2 border-b border-blue-gray-100 text-right">
-                                        Amount
+                                        Payment Amount
                                     </th>
                                 </tr>
                             </thead>
@@ -245,7 +245,7 @@ const ViewInvoice = () => {
                                     className="hover:bg-gray-100"
                                     onClick={() =>
                                         router.push(
-                                            '/landlord/billing/payments/view/1',
+                                            '/landlord/billing/invoices/view/1',
                                         )
                                     }>
                                     <td className="border-r-[1px] border-blue-gray-100">
@@ -261,29 +261,8 @@ const ViewInvoice = () => {
                     </CardBody>
                 </Card>
             </div>
-
-            <div className="lg:col-span-2">
-                <Card>
-                    <CardBody>
-                        <AccordionGlobal
-                            heading={
-                                <Typography
-                                    variant="h6"
-                                    as="h2"
-                                    className="uppercase">
-                                    PDF Preview
-                                </Typography>
-                            }>
-                            <object
-                                data=" https://pdfobject.com/pdf/sample.pdf"
-                                type="application/pdf"
-                                className="w-full h-[100vh] md:h-[1366px]"></object>
-                        </AccordionGlobal>
-                    </CardBody>
-                </Card>
-            </div>
         </section>
     )
 }
 
-export default ViewInvoice
+export default ViewPayment

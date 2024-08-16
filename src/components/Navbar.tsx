@@ -18,18 +18,11 @@ import {
 } from '@material-tailwind/react'
 
 import {
-    ChevronRightIcon,
     ChevronDownIcon,
     CubeTransparentIcon,
     MagnifyingGlassIcon,
     Bars2Icon,
     XMarkIcon,
-    PresentationChartBarIcon,
-    HomeModernIcon,
-    HomeIcon,
-    WrenchIcon,
-    ReceiptPercentIcon,
-    UserGroupIcon,
     Cog6ToothIcon,
     MinusIcon,
 } from '@heroicons/react/24/outline'
@@ -37,7 +30,7 @@ import ProfileMenu from './locals/Landlord/ProfileMenu'
 import { NotificationsMenu } from './locals/Landlord/NotificationsMenu'
 import Link from 'next/link'
 
-const NavbarSimple = ({ title , menuLists}) => {
+const NavbarSimple = ({ title, menuLists }) => {
     const [open, setOpen] = useState(0)
     const [openAlert, setOpenAlert] = useState(true)
     const [isDrawerOpen, setIsDrawerOpen] = useState(false)
@@ -52,7 +45,7 @@ const NavbarSimple = ({ title , menuLists}) => {
 
     return (
         <>
-            <header className='sticky top-0 w-full z-10'>
+            <header className="sticky top-0 w-full z-10">
                 <Navbar className="absolute mx-auto max-w-full px-6 py-3 rounded-none shadow-none border-gray-200 border-b">
                     <div className="flex items-center justify-between text-blue-gray-900 gap-2">
                         <div className="flex items-center text-blue-gray-900 gap-2">
@@ -113,89 +106,97 @@ const NavbarSimple = ({ title , menuLists}) => {
                         />
                     </div>
 
-                    {menuLists.map((list, listKey) => (
-                        <List key={listKey}>
-                            {list.map((listItem, listItemKey) => (
-                                <>
-                                    {!listItem.items ? (
-                                        <ListItem
-                                            key={listItemKey}
-                                            onClick={() => {
-                                                setIsDrawerOpen(false)
-                                                router.push(listItem.link)
-                                            }}>
-                                            <ListItemPrefix>
-                                                <listItem.icon className="w-5 h-5" />
-                                            </ListItemPrefix>
-                                            {listItem.name}
-                                        </ListItem>
-                                    ) : (
-                                        <Accordion
-                                            key={listItemKey}
-                                            open={open === listItemKey}
-                                            icon={
-                                                <ChevronDownIcon
-                                                    strokeWidth={2.5}
-                                                    className={`mx-auto h-4 w-4 transition-transform ${
-                                                        open === listItemKey
-                                                            ? 'rotate-180'
-                                                            : ''
-                                                    }`}
-                                                />
-                                            }>
+                    <nav>
+                        {menuLists.map((list, listKey) => (
+                            <List key={listKey}>
+                                {list.map((listItem, listItemKey) => (
+                                    <>
+                                        {!listItem.items ? (
                                             <ListItem
                                                 key={listItemKey}
-                                                className="p-0"
-                                                selected={open === listItemKey}>
-                                                <AccordionHeader
-                                                    onClick={() =>
-                                                        handleOpen(listItemKey)
-                                                    }
-                                                    className="border-b-0 p-3">
-                                                    <ListItemPrefix>
-                                                        <listItem.icon className="w-5 h-5" />
-                                                    </ListItemPrefix>
-                                                    <Typography
-                                                        color="blue-gray"
-                                                        className="mr-auto font-normal w-full">
-                                                        {listItem.name}
-                                                    </Typography>
-                                                </AccordionHeader>
+                                                onClick={() => {
+                                                    setIsDrawerOpen(false)
+                                                    router.push(listItem.link)
+                                                }}>
+                                                <ListItemPrefix>
+                                                    <listItem.icon className="w-5 h-5" />
+                                                </ListItemPrefix>
+                                                {listItem.name}
                                             </ListItem>
-                                            <AccordionBody className="py-1">
-                                                <List className="p-0">
-                                                    {listItem.items.map(
-                                                        (item, itemKey) => (
-                                                            <ListItem
-                                                                key={itemKey}
-                                                                onClick={() => {
-                                                                    router.push(
-                                                                        item.link,
-                                                                    )
-                                                                    setIsDrawerOpen(
-                                                                        false,
-                                                                    )
-                                                                }}>
-                                                                <ListItemPrefix>
-                                                                    <MinusIcon
-                                                                        strokeWidth={
-                                                                            3
-                                                                        }
-                                                                        className="h-3 w-5"
-                                                                    />
-                                                                </ListItemPrefix>
-                                                                {item.name}
-                                                            </ListItem>
-                                                        ),
-                                                    )}
-                                                </List>
-                                            </AccordionBody>
-                                        </Accordion>
-                                    )}
-                                </>
-                            ))}
-                        </List>
-                    ))}
+                                        ) : (
+                                            <Accordion
+                                                key={listItemKey}
+                                                open={open === listItemKey}
+                                                icon={
+                                                    <ChevronDownIcon
+                                                        strokeWidth={2.5}
+                                                        className={`mx-auto h-4 w-4 transition-transform ${
+                                                            open === listItemKey
+                                                                ? 'rotate-180'
+                                                                : ''
+                                                        }`}
+                                                    />
+                                                }>
+                                                <ListItem
+                                                    key={listItemKey}
+                                                    className="p-0"
+                                                    selected={
+                                                        open === listItemKey
+                                                    }>
+                                                    <AccordionHeader
+                                                        onClick={() =>
+                                                            handleOpen(
+                                                                listItemKey,
+                                                            )
+                                                        }
+                                                        className="border-b-0 p-3">
+                                                        <ListItemPrefix>
+                                                            <listItem.icon className="w-5 h-5" />
+                                                        </ListItemPrefix>
+                                                        <Typography
+                                                            color="blue-gray"
+                                                            className="mr-auto font-normal w-full">
+                                                            {listItem.name}
+                                                        </Typography>
+                                                    </AccordionHeader>
+                                                </ListItem>
+                                                <AccordionBody className="py-1">
+                                                    <List className="p-0">
+                                                        {listItem.items.map(
+                                                            (item, itemKey) => (
+                                                                <ListItem
+                                                                    key={
+                                                                        itemKey
+                                                                    }
+                                                                    onClick={() => {
+                                                                        router.push(
+                                                                            item.link,
+                                                                        )
+                                                                        setIsDrawerOpen(
+                                                                            false,
+                                                                        )
+                                                                    }}>
+                                                                    <ListItemPrefix>
+                                                                        <MinusIcon
+                                                                            strokeWidth={
+                                                                                3
+                                                                            }
+                                                                            className="h-3 w-5"
+                                                                        />
+                                                                    </ListItemPrefix>
+                                                                    {item.name}
+                                                                </ListItem>
+                                                            ),
+                                                        )}
+                                                    </List>
+                                                </AccordionBody>
+                                            </Accordion>
+                                        )}
+                                    </>
+                                ))}
+                            </List>
+                        ))}
+                    </nav>
 
                     <Alert
                         open={openAlert}

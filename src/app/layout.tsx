@@ -2,7 +2,7 @@
 
 import { Providers } from '@/components/Providers'
 
-const Layout = ({ children }) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
     return (
         <html lang="en">
             <body className="relative antialiased bg-blue-50/10 h-screen min-h-screen">

@@ -46,7 +46,7 @@ const ViewApplication = () => {
                     className="text-lg tracking-wide">
                     APPLICANT
                 </Typography>
-                <Typography variant="h1">Hilgen Joy Rabot</Typography>
+                <Typography variant="h1">Hissune Carly</Typography>
                 <Typography
                     variant="paragraph"
                     className="text-lg font-medium text-gray-700">
@@ -73,7 +73,7 @@ const ViewApplication = () => {
                             }
                             size="md">
                             <span className="font-medium">
-                                Accept Hilgen Joy Rabot to Prequalify?
+                                Accept Hissune Carly to Prequalify?
                             </span>
                         </Modal>
 
@@ -85,7 +85,7 @@ const ViewApplication = () => {
                                 </span>
                             }
                             buttonColor="red"
-                            heading="Reject Hilgen Joy Rabot?"
+                            heading="Reject Hissune Carly?"
                             controls={
                                 <Button color="blue" variant="gradient" onClick={() => router.push('/landlord/properties/applications')}>
                                     Yes
@@ -93,7 +93,7 @@ const ViewApplication = () => {
                             }
                             size="md">
                             <span className="font-medium">
-                                Reject Hilgen Joy Rabot as an Applicant?
+                                Reject Hissune Carly as an Applicant?
                             </span>
                         </Modal>
                     </div>

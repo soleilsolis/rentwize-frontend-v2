@@ -37,11 +37,11 @@ const menuLists = [
     ],
 ]
 
-const Layout = ({ children }) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
     return (
         <>
             <Navbar title={null} menuLists={menuLists}></Navbar>
-            <main className="container mx-auto p-6 py-24 space-y-4 h-full">
+            <main className="container mx-auto p-6 py-24 space-y-4 min-h-full">
                 <Breadcrumb></Breadcrumb>
                 {children}
     

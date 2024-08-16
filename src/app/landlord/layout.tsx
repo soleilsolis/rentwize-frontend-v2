@@ -7,7 +7,12 @@ import Navbar from '@/components/Navbar'
 import { DefaultSkeleton } from '@/components/Skeleton'
 
 import { useAuth } from '@/hooks/auth'
-import { HomeIcon, PresentationChartBarIcon, ReceiptPercentIcon, UserGroupIcon } from '@heroicons/react/24/outline'
+import {
+    HomeIcon,
+    PresentationChartBarIcon,
+    ReceiptPercentIcon,
+    UserGroupIcon,
+} from '@heroicons/react/24/outline'
 
 import { useParams } from 'next/navigation'
 
@@ -75,18 +80,18 @@ const menuLists = [
     ],
 ]
 
-const Layout = ({ children }) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
     //const { user } = useAuth({ middleware: 'auth' })
 
     return (
         <>
             <Navbar title={null} menuLists={menuLists}></Navbar>
-            <main className="container mx-auto p-6 py-24 space-y-4">
+            <div className="container mx-auto p-6 py-24 space-y-4">
                 <Breadcrumb></Breadcrumb>
 
                 {/* {!user ? <DefaultSkeleton /> : children} */}
-                {children}
-            </main>
+                <main>{children}</main>
+            </div>
         </>
     )
 }

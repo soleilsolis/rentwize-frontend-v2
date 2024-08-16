@@ -73,7 +73,7 @@ const ViewTenant = () => {
             <div className="space-y-4">
                 <img
                     className="object-cover object-center w-full aspect-1 rounded-lg"
-                    src="https://scontent.fmnl38-1.fna.fbcdn.net/v/t1.6435-9/58381640_2263950487205981_712399563893243904_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeEMtzw7l_ZVIcmjj-e6eEJEAoXmJhkY9E8CheYmGRj0T1cKAS52F4ZfPOITYShrcFgURIDA-8e2vB4JfVCkgdA5&_nc_ohc=CJr3ePG71nUQ7kNvgGXFjA6&_nc_ht=scontent.fmnl38-1.fna&oh=00_AYCc2CmcsV9GGOUHW9XEquarYxYdy9MdCuZ5V9tQVsmFnw&oe=66D6DDD4"
+                    src="https://plus.unsplash.com/premium_photo-1689551670902-19b441a6afde?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fHww"
                     alt=""
                 />
 
@@ -115,7 +115,7 @@ const ViewTenant = () => {
                     className="mb-4 uppercase">
                     Tenant
                 </Typography>
-                <Typography variant="h1">Hilgen Joy Rabot</Typography>
+                <Typography variant="h1">Hissune Carly</Typography>
 
                 <section className="space-y-8 pt-4">
                     {pages[selected - 1].content}
