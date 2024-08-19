@@ -2,14 +2,16 @@
 import IndexTable from '@/components/globals/IndexTable'
 import {
     Avatar,
-    Typography,
     Tooltip,
-    IconButton,
     Button,
+    Typography,
+    IconButton,
 } from '@/components/MaterialTailwind'
 import { PencilIcon, PlusIcon } from '@heroicons/react/24/outline'
+import { Drawer } from '@material-tailwind/react'
 import { Metadata } from 'next'
 import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 
 const heading = 'Payments'
 const subHeading = 'See All Payments'
@@ -81,14 +83,59 @@ const tabs = [
         value: 'oldest',
     },
 ]
-const controls = (
-    <Button className="flex items-center gap-3" size="sm">
-        <PlusIcon strokeWidth={2} className="h-4 w-4" /> Create Payment
-    </Button>
-)
 
 const Applications = () => {
+    const [openRight, setOpenRight] = useState(false)
+    const openDrawerRight = () => setOpenRight(true)
+    const closeDrawerRight = () => setOpenRight(false)
     const router = useRouter()
+    const drawer = (
+        <>
+            <Drawer
+                placement="right"
+                open={openRight}
+                onClose={closeDrawerRight}
+                className="p-4">
+                <div className="mb-6 flex items-center justify-between">
+                    <Typography variant="h5" color="blue-gray">
+                        Material Tailwind
+                    </Typography>
+                    <IconButton
+                        variant="text"
+                        color="blue-gray"
+                        onClick={closeDrawerRight}>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={2}
+                            stroke="currentColor"
+                            className="h-5 w-5">
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M6 18L18 6M6 6l12 12"
+                            />
+                        </svg>
+                    </IconButton>
+                </div>
+                <Typography color="gray" className="mb-8 pr-4 font-normal">
+                    Material Tailwind features multiple React and HTML
+                    components, all written with Tailwind CSS classes and
+                    Material Design guidelines.
+                </Typography>
+                <div className="flex gap-2">
+                    <Button size="sm" variant="outlined">
+                        Documentation
+                    </Button>
+                    <Button size="sm">Get Started</Button>
+                </div>
+            </Drawer>
+            <Button className="flex items-center gap-3" size="sm">
+                <PlusIcon strokeWidth={2} className="h-4 w-4" /> Create Payment
+            </Button>
+        </>
+    )
     const tbody = tableRows.map(
         (
             { img, name, email, property, property_type, online, date, amount },
@@ -98,7 +145,10 @@ const Applications = () => {
             const classes = isLast ? 'p-4' : 'p-4 border-b border-blue-gray-50'
 
             return (
-                <tr key={name}>
+                <tr
+                    key={name}
+                    className="hover:bg-gray-100 cursor-pointer"
+                    onClick={openDrawerRight}>
                     <td className={classes}>
                         <div className="flex items-center gap-3">
                             <Avatar src={img} alt={name} size="sm" />
@@ -172,9 +222,10 @@ const Applications = () => {
             heading={heading}
             subHeading={subHeading}
             tableHeader={tableHeader}
-            controls={controls}
+            controls={null}
             tabs={tabs}
             tbody={tbody}
+            drawer={drawer}
         />
     )
 }
