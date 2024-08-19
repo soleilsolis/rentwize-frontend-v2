@@ -5,7 +5,7 @@ import { Typography } from '@material-tailwind/react'
 
 const Index = () => (
     <>
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-y-4 md:gap-4 h-full">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-y-4 md:gap-4 h-screen">
             <div className="space-y-4 h-full border-r-2">
                 <div className="space-y-2">
                     <Typography variant="h6" as={'h1'} className="font-medium">

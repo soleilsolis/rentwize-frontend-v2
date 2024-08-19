@@ -7,7 +7,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <html lang="en">
             <body className="relative antialiased bg-blue-50/10 h-screen min-h-screen">
                 <Providers>
-                    <div className="relative h-screen min-h-screen">
+                    <div className="relative ">
                         {children}
                     </div>
                 </Providers>
