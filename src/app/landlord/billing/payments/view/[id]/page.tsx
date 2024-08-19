@@ -19,6 +19,7 @@ import {
     MenuItem,
     Button,
     Accordion,
+    Textarea,
 } from '@material-tailwind/react'
 import { useRouter } from 'next/navigation'
 
@@ -46,7 +47,9 @@ const ViewPayment = () => {
                                     color="black"
                                     className="flex items-center gap-2">
                                     Payment #00001
+                                    <Chip color="yellow" value="Unpaid" />
                                     <Chip color="blue" value="Partial" />
+                                    <Chip color="gray" value="Paid" />
                                 </Typography>
                                 <div className="flex items-center gap-4">
                                     <Avatar
@@ -101,118 +104,19 @@ const ViewPayment = () => {
                             </div>
                         </div>
 
-                        <div className="space-y-2">
+                        <div className="space-y-4">
                             <Typography variant="paragraph">
-                                <span>Sender</span>: Blissful Homes, LLC
+                                Sender: <strong>Blissful Homes, LLC</strong>
+                            </Typography>
+                            <Typography variant="paragraph">
+                                Method: <strong>Credit Card</strong>
+                            </Typography>
+                            <Typography variant="paragraph">
+                                Amount: <strong>$5,000.00</strong>
                             </Typography>
 
-                            <table className="w-full table-auto text-right">
-                                <thead>
-                                    <tr>
-                                        {TABLE_HEAD.map(head => (
-                                            <th
-                                                key={head}
-                                                className="border-b border-blue-gray-100 p-4">
-                                                <Typography
-                                                    variant="small"
-                                                    color="blue-gray"
-                                                    className="font-normal leading-none opacity-70">
-                                                    {head}
-                                                </Typography>
-                                            </th>
-                                        ))}
-                                    </tr>
-                                </thead>
-                                <tbody className="text-right">
-                                    {TABLE_ROWS.map(
-                                        ({ label, quantity, value }, index) => {
-                                            const isLast =
-                                                index === TABLE_ROWS.length - 1
-                                            const classes = isLast
-                                                ? 'p-4 border-b'
-                                                : 'p-4 border-b border-blue-gray-50'
 
-                                            return (
-                                                <tr key={label}>
-                                                    <td className={classes}>
-                                                        <Typography
-                                                            variant="small"
-                                                            color="blue-gray"
-                                                            className="font-normal">
-                                                            {label}
-                                                        </Typography>
-                                                    </td>
-                                                    <td
-                                                        className={`${classes} bg-blue-gray-50/50`}>
-                                                        <Typography
-                                                            variant="small"
-                                                            color="blue-gray"
-                                                            className="font-normal">
-                                                            {quantity}
-                                                        </Typography>
-                                                    </td>
-                                                    <td className={classes}>
-                                                        <Typography
-                                                            variant="small"
-                                                            color="blue-gray"
-                                                            className="font-semibold tracking-wider">
-                                                            ${value.toFixed(2)}
-                                                        </Typography>
-                                                    </td>
-                                                </tr>
-                                            )
-                                        },
-                                    )}
-
-                                    <tr>
-                                        <td className="p-4"></td>
-                                        <td className="p-4 border-b"></td>
-                                        <td className="p-4 border-b border-blue-gray-50">
-                                            <Typography variant="small">
-                                                Subtotal
-                                            </Typography>
-                                            <Typography
-                                                variant="small"
-                                                color="blue-gray"
-                                                className="font-semibold tracking-wider">
-                                                $5000.00
-                                            </Typography>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td></td>
-                                        <td className="border-b"></td>
-                                        <td className="p-4 border-b border-blue-gray-50">
-                                            <Typography variant="small">
-                                                TOTAL PRICE
-                                            </Typography>
-                                            <Typography
-                                                variant="h5"
-                                                color="blue"
-                                                className="font-medium tracking-wider">
-                                                $5000.00
-                                            </Typography>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td className="p-4">
-                                            <Typography variant="small">
-                                                AMOUNT DUE
-                                            </Typography>
-                                            <Typography
-                                                variant="h5"
-                                                color="blue"
-                                                className="font-medium tracking-wider">
-                                                $5000.00
-                                            </Typography>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                         
                         </div>
                     </CardBody>
                 </Card>
@@ -258,6 +162,14 @@ const ViewPayment = () => {
                                 </tr>
                             </tbody>
                         </table>
+                    </CardBody>
+                </Card>
+            </div>
+            <div className='lg:col-span-2'>
+                <Card>
+                    <CardBody className='space-y-2'>
+                        <Typography as="h2" variant='h6'>NOTES</Typography>
+                        <Textarea label='Add notes here...'></Textarea>
                     </CardBody>
                 </Card>
             </div>

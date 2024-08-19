@@ -24,11 +24,9 @@ const IndexTable = ({
     tableHeader,
     tabs,
     tbody,
-    drawer
 }) => {
     return (
         <Card className="h-full w-full">
-        {drawer}
             <CardHeader
                 floated={false}
                 shadow={false}
