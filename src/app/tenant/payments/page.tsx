@@ -1,5 +1,6 @@
 'use client'
 import IndexTable from '@/components/globals/IndexTable'
+import { Modal } from '@/components/globals/Modal'
 import {
     Avatar,
     Tooltip,
@@ -8,7 +9,7 @@ import {
     IconButton,
 } from '@/components/MaterialTailwind'
 import { PencilIcon, PlusIcon } from '@heroicons/react/24/outline'
-import { Drawer } from '@material-tailwind/react'
+import { Drawer, Input, Option, Select } from '@material-tailwind/react'
 import { Metadata } from 'next'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
@@ -86,17 +87,37 @@ const tabs = [
 
 const Applications = () => {
     const [openRight, setOpenRight] = useState(false)
-    const openDrawerRight = () => setOpenRight(true)
-    const closeDrawerRight = () => setOpenRight(false)
+    const [selectedRow, setSelectedRow] = useState(null);
+    const openDrawerRight = (row) => {
+        setSelectedRow(row); 
+        setOpenRight(true);
+    };
+
+    const closeDrawerRight = () => {
+        setOpenRight(false);
+        setSelectedRow(null);
+    };
     const router = useRouter()
     const controls = (
         <>
-            <Button
-                onClick={openDrawerRight}
-                className="flex items-center gap-3"
-                size="sm">
-                <PlusIcon strokeWidth={2} className="h-4 w-4" /> Create Payment
-            </Button>
+            <Modal
+                label="Create Payment"
+                size="sm"
+                controls={null}
+                buttonSize="sm"
+                heading="Create Payment"
+                buttonIcon={<PlusIcon className="w-3 h-3" />}>
+                <div className="space-y-4">
+                    <Input type="text" label="Property" required />
+                    <Input type="text" label="Amount" required />
+                    <Select label="Source Account">
+                        <Option>Gulf Bank</Option>
+                        <Option>Maybank</Option>
+                        <Option>HSBC</Option>
+                    </Select>
+                    <Input type="date" label="Created date" required />
+                </div>
+            </Modal>
         </>
     )
     const tbody = tableRows.map(
@@ -111,7 +132,7 @@ const Applications = () => {
                 <tr
                     key={name}
                     className="hover:bg-gray-100 cursor-pointer"
-                    onClick={openDrawerRight}>
+                    onClick={() => openDrawerRight({ img, name, email, property, property_type, date, amount })}>
                     <td className={classes}>
                         <div className="flex items-center gap-3">
                             <Avatar src={img} alt={name} size="sm" />
@@ -187,40 +208,15 @@ const Applications = () => {
                 open={openRight}
                 onClose={closeDrawerRight}
                 className="p-4">
-                <div className="mb-6 flex items-center justify-between">
-                    <Typography variant="h5" color="blue-gray">
-                        Material Tailwind
-                    </Typography>
-                    <IconButton
-                        variant="text"
-                        color="blue-gray"
-                        onClick={closeDrawerRight}>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth={2}
-                            stroke="currentColor"
-                            className="h-5 w-5">
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M6 18L18 6M6 6l12 12"
-                            />
-                        </svg>
-                    </IconButton>
-                </div>
-                <Typography color="gray" className="mb-8 pr-4 font-normal">
-                    Material Tailwind features multiple React and HTML
-                    components, all written with Tailwind CSS classes and
-                    Material Design guidelines.
-                </Typography>
-                <div className="flex gap-2">
-                    <Button size="sm" variant="outlined">
-                        Documentation
-                    </Button>
-                    <Button size="sm">Get Started</Button>
-                </div>
+                    {selectedRow && (
+                    <div className="space-y-4">
+                        <Typography variant="h6">{selectedRow.name}</Typography>
+                        <Typography>  {selectedRow.property}</Typography>
+                        <Typography>  {selectedRow.amount}</Typography>
+                        <Typography> {selectedRow.date} </Typography>
+                        <Typography>{selectedRow.property_type} </Typography>
+                    </div>
+                )}
             </Drawer>
             <IndexTable
                 heading={heading}
