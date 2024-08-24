@@ -8,8 +8,10 @@ import {
     Button,
 } from '@/components/MaterialTailwind'
 import { PencilIcon, PlusIcon } from '@heroicons/react/24/outline'
+import { Drawer } from '@material-tailwind/react'
 import { Metadata } from 'next'
 import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 
 const heading = 'Invoices'
 const subHeading = 'See All Invoices'
@@ -82,7 +84,18 @@ const tabs = [
     },
 ]
 
-const Applications = () => {
+const Invoices = () => {
+    const [openRight, setOpenRight] = useState(false)
+    const [selectedRow, setSelectedRow] = useState(null);
+    const openDrawerRight = (row) => {
+        setSelectedRow(row); 
+        setOpenRight(true);
+    };
+
+    const closeDrawerRight = () => {
+        setOpenRight(false);
+        setSelectedRow(null);
+    };
     const router = useRouter()
     const tbody = tableRows.map(
         (
@@ -93,7 +106,20 @@ const Applications = () => {
             const classes = isLast ? 'p-4' : 'p-4 border-b border-blue-gray-50'
 
             return (
-                <tr key={name}>
+                <tr
+                    key={name}
+                    className="hover:bg-gray-100 cursor-pointer"
+                    onClick={() =>
+                        openDrawerRight({
+                            img,
+                            name,
+                            email,
+                            property,
+                            property_type,
+                            date,
+                            amount,
+                        })
+                    }>
                     <td className={classes}>
                         <div className="flex items-center gap-3">
                             <Avatar src={img} alt={name} size="sm" />
@@ -163,15 +189,35 @@ const Applications = () => {
         },
     )
     return (
-        <IndexTable
-            heading={heading}
-            subHeading={subHeading}
-            tableHeader={tableHeader}
-            controls={null}
-            tabs={tabs}
-            tbody={tbody}
-        />
+        <>
+            <Drawer
+                placement="right"
+                open={openRight}
+                onClose={closeDrawerRight}
+                className="p-4">
+                {selectedRow && (
+                    <div className="space-y-4">
+                        <Typography variant="h6">{selectedRow.name}</Typography>
+                        <Typography> {selectedRow.property}</Typography>
+                        <Typography> {selectedRow.amount}</Typography>
+                        <Typography> {selectedRow.date} </Typography>
+                        <Typography>{selectedRow.property_type} </Typography>
+                        <Button className="w-full" color="blue" variant="gradient" onClick={() => router.push('/tenant/payments')}>
+                            Pay
+                        </Button>
+                    </div>
+                )}
+            </Drawer>
+            <IndexTable
+                heading={heading}
+                subHeading={subHeading}
+                tableHeader={tableHeader}
+                controls={null}
+                tabs={tabs}
+                tbody={tbody}
+            />
+        </>
     )
 }
 
-export default Applications
+export default Invoices
