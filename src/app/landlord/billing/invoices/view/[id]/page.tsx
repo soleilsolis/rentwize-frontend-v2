@@ -81,22 +81,12 @@ const ViewInvoice = () => {
                                             <ArrowDownTrayIcon className="w-5" />
                                         }
                                     />
-
-                                    <Menu>
-                                        <MenuHandler>
-                                            <PrimaryButton
-                                                variant="text"
-                                                icon={
-                                                    <EllipsisHorizontalIcon className="w-5" />
-                                                }
-                                            />
-                                        </MenuHandler>
-                                        <MenuList>
-                                            <MenuItem>Menu Item 1</MenuItem>
-                                            <MenuItem>Menu Item 2</MenuItem>
-                                            <MenuItem>Menu Item 3</MenuItem>
-                                        </MenuList>
-                                    </Menu>
+                                    <PrimaryButton
+                                        variant="text"
+                                        icon={
+                                            <EllipsisHorizontalIcon className="w-5" />
+                                        }
+                                    />
                                 </ClassContext.Provider>
                             </div>
                         </div>
@@ -219,7 +209,7 @@ const ViewInvoice = () => {
             </div>
 
             <div className="space-y-8">
-                <Card className='h-full'>
+                <Card className="h-full">
                     <CardBody className="space-y-4">
                         <Typography variant="h6" as="h2" className="uppercase">
                             Payments
