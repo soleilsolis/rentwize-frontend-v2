@@ -1,9 +1,9 @@
 import useSWR from 'swr'
 import axios from '@/lib/axios'
 import { useEffect } from 'react'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
-declare type AuthMiddleware = 'auth' | 'guest'
+declare type AuthMiddleware = 'auth' | 'guest' | 'dev'
 
 interface IUseAuth {
     middleware: AuthMiddleware
@@ -128,14 +128,18 @@ export const useAuth = ({ middleware, redirectIfAuthenticated }: IUseAuth) => {
     }
 
     useEffect(() => {
-        if (middleware === 'guest' && redirectIfAuthenticated && user)
-            router.push(redirectIfAuthenticated)
-        if (
-            window.location.pathname === '/verify-email' &&
-            user?.email_verified_at
-        )
-            router.push(redirectIfAuthenticated)
-        if (middleware === 'auth' && error) logout()
+
+        if (middleware !== 'dev') {
+            if (middleware === 'guest' && redirectIfAuthenticated && user)
+                router.push(redirectIfAuthenticated)
+            if (
+                window.location.pathname === '/verify-email' &&
+                user?.email_verified_at
+            )
+                router.push(redirectIfAuthenticated)
+            if (middleware === 'auth' && error) logout()
+        }
+       
     }, [user, error])
 
     return {

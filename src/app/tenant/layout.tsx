@@ -3,6 +3,7 @@
 import '@/app/global.css'
 import Breadcrumb from '@/components/globals/Breadcrumb'
 import NotificationAlert from '@/components/globals/NotificationAlert'
+import Loading from '@/app/(app)/Loading'
 
 import Navbar from '@/components/Navbar'
 import {
@@ -11,6 +12,7 @@ import {
     ReceiptPercentIcon,
     UserGroupIcon,
 } from '@heroicons/react/24/outline'
+import { useAuth } from '@/hooks/auth'
 
 const menuLists = [
     [
@@ -38,6 +40,9 @@ const menuLists = [
 ]
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
+
+    const { user } = useAuth({ middleware: 'guest' })
+
     return (
         <>
             <Navbar title={null} menuLists={menuLists}></Navbar>

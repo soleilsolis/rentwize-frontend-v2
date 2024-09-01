@@ -12,7 +12,10 @@ import {
     UserCircleIcon,
 } from '@heroicons/react/24/outline'
 
+import { useAuth } from '@/hooks/auth'
+
 const ProfileMenu = () => {
+    const { logout } = useAuth({ middleware: 'auth' })
     return (
         <Menu>
             <MenuHandler>
@@ -37,7 +40,7 @@ const ProfileMenu = () => {
                     </Typography>
                 </MenuItem>
                 <hr className="my-2 border-blue-gray-50" />
-                <MenuItem className="flex items-center gap-2 ">
+                <MenuItem className="flex items-center gap-2 " onClick={() => logout()}>
                     <ArrowRightStartOnRectangleIcon className="w-6 h-6"></ArrowRightStartOnRectangleIcon>
                     <Typography variant="small" className="font-medium">
                         Sign Out
