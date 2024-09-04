@@ -7,9 +7,11 @@ import Loading from '@/app/(app)/Loading'
 
 import Navbar from '@/components/Navbar'
 import {
+    BanknotesIcon,
     HomeIcon,
     PresentationChartBarIcon,
     ReceiptPercentIcon,
+    ShieldCheckIcon,
     UserGroupIcon,
 } from '@heroicons/react/24/outline'
 import { useAuth } from '@/hooks/auth'
@@ -23,13 +25,18 @@ const menuLists = [
         },
         {
             name: 'Payment',
-            icon: PresentationChartBarIcon,
+            icon: BanknotesIcon,
             link: '/tenant/payments',
         },
         {
             name: 'Invoices',
             icon: HomeIcon,
             link: '/tenant/invoices',
+        },
+        {
+            name: 'Insurance',
+            icon: ShieldCheckIcon,
+            link: '/tenant/insurance',
         },
         {
             name: 'Ticketing',
