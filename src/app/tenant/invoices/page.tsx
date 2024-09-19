@@ -86,16 +86,16 @@ const tabs = [
 
 const Invoices = () => {
     const [openRight, setOpenRight] = useState(false)
-    const [selectedRow, setSelectedRow] = useState(null);
-    const openDrawerRight = (row) => {
-        setSelectedRow(row); 
-        setOpenRight(true);
-    };
+    const [selectedRow, setSelectedRow] = useState(null)
+    const openDrawerRight = row => {
+        setSelectedRow(row)
+        setOpenRight(true)
+    }
 
     const closeDrawerRight = () => {
-        setOpenRight(false);
-        setSelectedRow(null);
-    };
+        setOpenRight(false)
+        setSelectedRow(null)
+    }
     const router = useRouter()
     const tbody = tableRows.map(
         (
@@ -197,12 +197,33 @@ const Invoices = () => {
                 className="p-4">
                 {selectedRow && (
                     <div className="space-y-4">
-                        <Typography variant="h6">{selectedRow.name}</Typography>
-                        <Typography> {selectedRow.property}</Typography>
-                        <Typography> {selectedRow.amount}</Typography>
-                        <Typography> {selectedRow.date} </Typography>
-                        <Typography>{selectedRow.property_type} </Typography>
-                        <Button className="w-full" color="blue" variant="gradient" onClick={() => router.push('/tenant/payments')}>
+                    
+                        <Typography>{selectedRow.name}</Typography>
+      <table className="table-auto w-full border-collapse">
+        <tbody>
+            <tr>
+                <td className="py-2 border-b border-gray-300 text-left">Property:</td>
+                <td className="py-2 border-b border-gray-300 text-right">{selectedRow.property}</td>
+            </tr>
+            <tr>
+                <td className="py-2 border-b border-gray-300 text-left">Property Type:</td>
+                <td className="py-2 border-b border-gray-300 text-right">{selectedRow.property_type}</td>
+            </tr>
+            <tr>
+                <td className="py-2 border-b border-gray-300 text-left">Breakdown:</td>
+                <td className="py-2 border-b border-gray-300 text-right">{selectedRow.amount}</td>
+            </tr>
+            <tr>
+                <td className="py-2 border-b border-gray-300 text-left">Date:</td>
+                <td className="py-2 border-b border-gray-300 text-right">{selectedRow.date}</td>
+            </tr>
+        </tbody>
+    </table>
+                        <Button
+                            className="w-full"
+                            color="blue"
+                            variant="gradient"
+                            onClick={() => router.push('/tenant/payments')}>
                             Pay
                         </Button>
                     </div>
