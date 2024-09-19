@@ -31,7 +31,7 @@ export function Basic() {
         } else {
             setStatus(null)
         }
-        console.log(redirectIfAuthenticated)
+
     })
 
     const submitForm = async event => {

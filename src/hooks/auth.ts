@@ -68,7 +68,8 @@ export const useAuth = ({ middleware, redirectIfAuthenticated }: IUseAuth) => {
     }
 
     const login = async (args: LoginApiRequest) => {
-        const { setErrors, setStatus, setRedirectIfAuthenticated, ...props } = args
+        const { setErrors, setStatus, setRedirectIfAuthenticated, ...props } =
+            args
 
         await csrf()
 
@@ -77,8 +78,9 @@ export const useAuth = ({ middleware, redirectIfAuthenticated }: IUseAuth) => {
 
         axios
             .post('/login', props)
-            .then((response) => {
+            .then(response => {
                 setRedirectIfAuthenticated(response.data.type)
+                // axios.post('/logout')
                 return mutate()
             })
             .catch(error => {
@@ -146,7 +148,9 @@ export const useAuth = ({ middleware, redirectIfAuthenticated }: IUseAuth) => {
             window.location.pathname === '/verify-email' &&
             user?.email_verified_at
         )
-            router.push(redirectIfAuthenticated)
+           router.push(redirectIfAuthenticated)
+            
+
         if (middleware === 'auth' && error) logout()
     }, [user, error])
 
