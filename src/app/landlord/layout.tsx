@@ -4,6 +4,7 @@ import '@/app/global.css'
 import Breadcrumb from '@/components/globals/Breadcrumb'
 
 import Navbar from '@/components/Navbar'
+import NotFoundPage from '@/components/not-found'
 import { DefaultSkeleton } from '@/components/Skeleton'
 
 import { useAuth } from '@/hooks/auth'
@@ -81,9 +82,9 @@ const menuLists = [
 ]
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
-    //const { user } = useAuth({ middleware: 'auth' })
+    const { user } = useAuth({ middleware: 'auth' })
 
-    return (
+    return user?.type !== 'landlord' ? <NotFoundPage /> : (
         <>
             <Navbar title={null} menuLists={menuLists}></Navbar>
             <div className="container mx-auto p-6 py-24 space-y-4">

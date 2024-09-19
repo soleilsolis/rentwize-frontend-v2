@@ -11,12 +11,12 @@ import AuthSessionStatus from '@/app/auth/AuthSessionStatus'
 export function Basic() {
     const [passwordShown, setPasswordShown] = useState(false)
     const togglePasswordVisiblity = () => setPasswordShown(cur => !cur)
-
+    const [redirectIfAuthenticated, setRedirectIfAuthenticated] = useState("")
     const router = useRouter()
 
     const { login } = useAuth({
         middleware: 'guest',
-        redirectIfAuthenticated: '/landlord',
+        redirectIfAuthenticated: redirectIfAuthenticated === "" ? "" : `/${redirectIfAuthenticated}`,
     })
 
     const [email, setEmail] = useState('')
@@ -31,6 +31,7 @@ export function Basic() {
         } else {
             setStatus(null)
         }
+        console.log(redirectIfAuthenticated)
     })
 
     const submitForm = async event => {
@@ -42,6 +43,7 @@ export function Basic() {
             remember: shouldRemember,
             setErrors,
             setStatus,
+            setRedirectIfAuthenticated,
         })
     }
 

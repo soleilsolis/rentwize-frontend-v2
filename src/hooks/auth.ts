@@ -16,6 +16,10 @@ interface IApiRequest {
     [key: string]: any
 }
 
+interface LoginApiRequest extends IApiRequest {
+    setRedirectIfAuthenticated: React.Dispatch<React.SetStateAction<any | null>>
+}
+
 export interface User {
     id?: number
     name?: string
@@ -63,8 +67,8 @@ export const useAuth = ({ middleware, redirectIfAuthenticated }: IUseAuth) => {
             })
     }
 
-    const login = async (args: IApiRequest) => {
-        const { setErrors, setStatus, ...props } = args
+    const login = async (args: LoginApiRequest) => {
+        const { setErrors, setStatus, setRedirectIfAuthenticated, ...props } = args
 
         await csrf()
 
@@ -73,7 +77,10 @@ export const useAuth = ({ middleware, redirectIfAuthenticated }: IUseAuth) => {
 
         axios
             .post('/login', props)
-            .then(() => mutate())
+            .then((response) => {
+                setRedirectIfAuthenticated(response.data.type)
+                return mutate()
+            })
             .catch(error => {
                 if (error.response.status !== 422) throw error
                 setErrors(error.response.data.errors)

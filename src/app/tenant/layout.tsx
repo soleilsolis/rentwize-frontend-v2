@@ -10,10 +10,13 @@ import {
     HomeIcon,
     PresentationChartBarIcon,
     ReceiptPercentIcon,
+
     ShieldCheckIcon,
     UserGroupIcon,
+
 } from '@heroicons/react/24/outline'
 import { useAuth } from '@/hooks/auth'
+import NotFoundPage from '@/components/not-found'
 
 const menuLists = [
     [
@@ -46,9 +49,10 @@ const menuLists = [
 ]
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
-    const { user } = useAuth({ middleware: 'guest' })
 
-    return (
+    const { user } = useAuth({ middleware: 'auth' })
+
+    return user?.type !== "tenant" ? <NotFoundPage />  : (
         <>
             <Navbar title={null} menuLists={menuLists}></Navbar>
             <main className="container mx-auto p-6 py-24 space-y-4 min-h-screen">
