@@ -23,12 +23,17 @@ export interface User {
     email_verified_at?: string
     created_at?: string
     updated_at?: string
+    type?: string
 }
 
 export const useAuth = ({ middleware, redirectIfAuthenticated }: IUseAuth) => {
     const router = useRouter()
 
-    const { data: user, error, mutate } = useSWR<User>('/api/user', () =>
+    const {
+        data: user,
+        error,
+        mutate,
+    } = useSWR<User>('/api/user', () =>
         axios
             .get('/api/user')
             .then(res => res.data)
@@ -128,18 +133,14 @@ export const useAuth = ({ middleware, redirectIfAuthenticated }: IUseAuth) => {
     }
 
     useEffect(() => {
-
-        if (middleware !== 'dev') {
-            if (middleware === 'guest' && redirectIfAuthenticated && user)
-                router.push(redirectIfAuthenticated)
-            if (
-                window.location.pathname === '/verify-email' &&
-                user?.email_verified_at
-            )
-                router.push(redirectIfAuthenticated)
-            if (middleware === 'auth' && error) logout()
-        }
-       
+        if (middleware === 'guest' && redirectIfAuthenticated && user)
+            router.push(redirectIfAuthenticated)
+        if (
+            window.location.pathname === '/verify-email' &&
+            user?.email_verified_at
+        )
+            router.push(redirectIfAuthenticated)
+        if (middleware === 'auth' && error) logout()
     }, [user, error])
 
     return {

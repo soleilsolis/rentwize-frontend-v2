@@ -1,8 +1,6 @@
 'use client'
-import NotificationAlert from '@/components/globals/NotificationAlert'
 import { InformationCircleIcon } from '@heroicons/react/24/outline'
 import { Typography } from '@material-tailwind/react'
-import { useAuth } from '@/hooks/auth'
 const Index = () => {
     return (
         <>

@@ -60,16 +60,10 @@ export function Basic() {
                     <form
                         onSubmit={submitForm}
                         action="#"
-                        className="mx-auto max-w-[24rem] text-left">
+                        className="mx-auto max-w-[28rem] text-left">
                         <div className="mb-6">
-                            <label htmlFor="email">
-                                <Typography
-                                    variant="small"
-                                    className="mb-2 block font-medium text-gray-900">
-                                    Your Email
-                                </Typography>
-                            </label>
                             <Input
+                                label="Your Email"
                                 id="email"
                                 color="gray"
                                 size="lg"
@@ -78,34 +72,25 @@ export function Basic() {
                                 value={email}
                                 onChange={event => setEmail(event.target.value)}
                                 placeholder="name@mail.com"
-                                className="w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200"
-                                labelProps={{
-                                    className: 'hidden',
-                                }}
                             />
-                            <Typography variant='small' className='font-semibold mt-2' color='red'>
+                            <Typography
+                                variant="small"
+                                className="font-semibold mt-2"
+                                color="red">
                                 {errors?.email}
                             </Typography>
                         </div>
                         <div className="mb-6">
-                            <label htmlFor="password">
-                                <Typography
-                                    variant="small"
-                                    className="mb-2 block font-medium text-gray-900">
-                                    Password
-                                </Typography>
-                            </label>
+
                             <Input
                                 size="lg"
-                                placeholder="********"
-                                labelProps={{
-                                    className: 'hidden',
-                                }}
+                     
+                                label='Password'
                                 value={password}
                                 onChange={event =>
                                     setPassword(event.target.value)
                                 }
-                                className="w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200"
+                                className="w-full placeholder:opacity-100 border-t-blue-gray-200"
                                 type={passwordShown ? 'text' : 'password'}
                                 icon={
                                     <i onClick={togglePasswordVisiblity}>
@@ -154,7 +139,7 @@ export function Basic() {
                             color="gray"
                             className="!mt-4 text-center font-normal">
                             Not registered?{' '}
-                            <a href="#" className="font-medium text-gray-900">
+                            <a href="/register" className="font-medium text-gray-900">
                                 Create account
                             </a>
                         </Typography>

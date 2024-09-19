@@ -3,10 +3,38 @@ import { useState } from 'react'
 
 import { Typography, Input, Button } from '@material-tailwind/react'
 import { EyeSlashIcon, EyeIcon } from '@heroicons/react/24/solid'
+import { useAuth } from '@/hooks/auth'
 
 export function Basic() {
     const [passwordShown, setPasswordShown] = useState(false)
     const togglePasswordVisiblity = () => setPasswordShown(cur => !cur)
+
+    const [first_name, setFirstName] = useState('')
+    const [last_name, setLastName] = useState('')
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    const [errors, setErrors] = useState([])
+    const [status, setStatus] = useState(false)
+
+    const { register } = useAuth({
+        middleware: 'guest',
+    })
+
+    const submitForm = (e: { preventDefault: () => void }) => {
+        e.preventDefault()
+
+        register({
+            first_name,
+            last_name,
+            name,
+            email,
+            password,
+            setErrors,
+            setStatus,
+        })
+    }
 
     return (
         <section className="grid text-center h-screen items-center p-8">
@@ -15,45 +43,56 @@ export function Basic() {
                     Register
                 </Typography>
                 <Typography className="mb-16 text-gray-600 font-normal text-[18px]">
-                    Register for Rentwize, streamline you rental business!
+                    Register for Leasewise, streamline you rental business!
                 </Typography>
-                <form action="#" className="mx-auto max-w-[24rem] text-left space-y-6">
+                <form
+                    onSubmit={submitForm}
+                    action="#"
+                    className="mx-auto max-w-[28rem] text-left space-y-6">
+                    <div className="md:flex gap-2.5 space-y-6 md:space-y-0">
+                        <Input
+                            id="first_name"
+                            color="gray"
+                            size="lg"
+                            name="first_name"
+                            label="First Name"
+                            className="min-w-[100px]"
+                        />
+
+                        <Input
+                            id="last_name"
+                            color="gray"
+                            size="lg"
+                            name="last_name"
+                            label="Last Name"
+                            className="min-w-[100px]"
+                        />
+                    </div>
                     <div>
-                        <label htmlFor="email">
-                            <Typography
-                                variant="small"
-                                className="mb-2 block font-medium text-gray-900">
-                                Your Email
-                            </Typography>
-                        </label>
+                        <Input
+                            id="name"
+                            color="gray"
+                            size="lg"
+                            name="name"
+                            label="User Name"
+                        />
+                    </div>
+
+                    <div>
                         <Input
                             id="email"
                             color="gray"
                             size="lg"
                             type="email"
                             name="email"
-                            placeholder="name@mail.com"
-                            className="w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200"
-                            labelProps={{
-                                className: 'hidden',
-                            }}
+                            label="Your Email"
                         />
                     </div>
                     <div>
-                        <label htmlFor="password">
-                            <Typography
-                                variant="small"
-                                className="mb-2 block font-medium text-gray-900">
-                                Password
-                            </Typography>
-                        </label>
                         <Input
+                            name="password"
                             size="lg"
-                            placeholder="********"
-                            labelProps={{
-                                className: 'hidden',
-                            }}
-                            className="w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200"
+                            label="Password"
                             type={passwordShown ? 'text' : 'password'}
                             icon={
                                 <i onClick={togglePasswordVisiblity}>
@@ -69,17 +108,8 @@ export function Basic() {
                     <Button color="gray" size="lg" className="mt-6" fullWidth>
                         register
                     </Button>
-                    <div className="!mt-4 flex justify-end">
-                        <Typography
-                            as="a"
-                            href="#"
-                            color="blue-gray"
-                            variant="small"
-                            className="font-medium">
-                            Forgot password
-                        </Typography>
-                    </div>
                     <Button
+                        type="submit"
                         disabled
                         variant="outlined"
                         size="lg"
@@ -96,9 +126,9 @@ export function Basic() {
                         variant="small"
                         color="gray"
                         className="!mt-4 text-center font-normal">
-                        Not registered?{' '}
-                        <a href="#" className="font-medium text-gray-900">
-                            Create account
+                        Already registered?{' '}
+                        <a href="/login" className="font-medium text-gray-900">
+                            Sign In
                         </a>
                     </Typography>
                 </form>
