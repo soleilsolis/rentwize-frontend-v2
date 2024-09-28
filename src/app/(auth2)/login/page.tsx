@@ -11,12 +11,13 @@ import Image from 'next/image'
 const Basic = () => {
     const [passwordShown, setPasswordShown] = useState(false)
     const togglePasswordVisiblity = () => setPasswordShown(cur => !cur)
-    const [redirectIfAuthenticated, setRedirectIfAuthenticated] = useState("")
+    const [redirectIfAuthenticated, setRedirectIfAuthenticated] = useState('')
     const router = useRouter()
 
     const { login } = useAuth({
         middleware: 'guest',
-        redirectIfAuthenticated: redirectIfAuthenticated === "" ? "" : `/${redirectIfAuthenticated}`,
+        redirectIfAuthenticated:
+            redirectIfAuthenticated === '' ? '' : `/${redirectIfAuthenticated}`,
     })
 
     const [email, setEmail] = useState('')
@@ -24,10 +25,7 @@ const Basic = () => {
     const [errors, setErrors] = useState([])
     const [status, setStatus] = useState(null)
 
-    useEffect(() => {
-     
-
-    })
+    useEffect(() => {})
 
     const submitForm = async event => {
         event.preventDefault()
@@ -47,10 +45,20 @@ const Basic = () => {
 
             <section className="grid text-center h-screen items-center p-8">
                 <div>
-                    <Typography variant="h3" color="blue-gray" className="mb-2">
+                    <Typography
+                        variant="h3"
+                        color="blue-gray"
+                        className="mb-2"
+                        placeholder={undefined}
+                        onPointerEnterCapture={undefined}
+                        onPointerLeaveCapture={undefined}>
                         Sign In
                     </Typography>
-                    <Typography className="mb-16 text-gray-600 font-normal text-[18px]">
+                    <Typography
+                        className="mb-16 text-gray-600 font-normal text-[18px]"
+                        placeholder={undefined}
+                        onPointerEnterCapture={undefined}
+                        onPointerLeaveCapture={undefined}>
                         Enter your email and password to sign in
                     </Typography>
                     <form
@@ -68,36 +76,35 @@ const Basic = () => {
                                 value={email}
                                 onChange={event => setEmail(event.target.value)}
                                 placeholder="name@mail.com"
+                                onPointerEnterCapture={undefined}
+                                onPointerLeaveCapture={undefined}
+                                crossOrigin={undefined}
                             />
                             <Typography
                                 variant="small"
                                 className="font-semibold mt-2"
-                                color="red">
+                                color="red"
+                                placeholder={undefined}
+                                onPointerEnterCapture={undefined}
+                                onPointerLeaveCapture={undefined}>
                                 {errors?.email}
                             </Typography>
                         </div>
                         <div className="mb-6">
-
                             <Input
                                 size="lg"
-                     
-                                label='Password'
+                                label="Password"
                                 value={password}
-                                onChange={event =>
-                                    setPassword(event.target.value)
-                                }
+                                onChange={event => setPassword(event.target.value)}
                                 className="w-full placeholder:opacity-100 border-t-blue-gray-200"
                                 type={passwordShown ? 'text' : 'password'}
-                                icon={
-                                    <i onClick={togglePasswordVisiblity}>
-                                        {passwordShown ? (
-                                            <EyeIcon className="h-5 w-5" />
-                                        ) : (
-                                            <EyeSlashIcon className="h-5 w-5" />
-                                        )}
-                                    </i>
-                                }
-                            />
+                                icon={<i onClick={togglePasswordVisiblity}>
+                                    {passwordShown ? (
+                                        <EyeIcon className="h-5 w-5" />
+                                    ) : (
+                                        <EyeSlashIcon className="h-5 w-5" />
+                                    )}
+                                </i>} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined}                            />
                         </div>
                         <Button
                             type="submit"
@@ -137,7 +144,9 @@ const Basic = () => {
                             color="gray"
                             className="!mt-4 text-center font-normal">
                             Not registered?{' '}
-                            <a href="/register" className="font-medium text-gray-900">
+                            <a
+                                href="/register"
+                                className="font-medium text-gray-900">
                                 Create account
                             </a>
                         </Typography>
