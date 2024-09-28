@@ -25,11 +25,7 @@ const Basic = () => {
     const [status, setStatus] = useState(null)
 
     useEffect(() => {
-        if (router.reset?.length > 0 && errors.length === 0) {
-            setStatus(atob(router.reset))
-        } else {
-            setStatus(null)
-        }
+     
 
     })
 
@@ -131,6 +127,8 @@ const Basic = () => {
                                 src={`https://www.material-tailwind.com/logos/logo-google.png`}
                                 alt="google"
                                 className="h-6 w-6"
+                                height="100"
+                                width="100"
                             />{' '}
                             coming soon
                         </Button>

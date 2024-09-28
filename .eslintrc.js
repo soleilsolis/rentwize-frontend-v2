@@ -38,7 +38,7 @@ module.exports = {
         camelcase: 0,
         'react/self-closing-comp': 1,
         'react/jsx-filename-extension': [2, { 'extensions': ['.js', '.jsx', '.ts', '.tsx'] }],
-
+ 
         'react/prop-types': 0,
         'react/destructuring-assignment': 0,
         'react/jsx-no-comment-textnodes': 0,
