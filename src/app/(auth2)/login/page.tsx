@@ -11,12 +11,13 @@ import Image from 'next/image'
 const Basic = () => {
     const [passwordShown, setPasswordShown] = useState(false)
     const togglePasswordVisiblity = () => setPasswordShown(cur => !cur)
-    const [redirectIfAuthenticated, setRedirectIfAuthenticated] = useState("")
+    const [redirectIfAuthenticated, setRedirectIfAuthenticated] = useState('')
     const router = useRouter()
 
     const { login } = useAuth({
         middleware: 'guest',
-        redirectIfAuthenticated: redirectIfAuthenticated === "" ? "" : `/${redirectIfAuthenticated}`,
+        redirectIfAuthenticated:
+            redirectIfAuthenticated === '' ? '' : `/${redirectIfAuthenticated}`,
     })
 
     const [email, setEmail] = useState('')
@@ -24,10 +25,7 @@ const Basic = () => {
     const [errors, setErrors] = useState([])
     const [status, setStatus] = useState(null)
 
-    useEffect(() => {
-     
-
-    })
+    useEffect(() => {})
 
     const submitForm = async event => {
         event.preventDefault()
@@ -76,7 +74,6 @@ const Basic = () => {
                             </Typography>
                         </div>
                         <div className="mb-6">
-
                             <Input
                                 size="lg"
 
@@ -131,7 +128,9 @@ const Basic = () => {
                             color="gray"
                             className="!mt-4 text-center font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             Not registered?{' '}
-                            <a href="/register" className="font-medium text-gray-900">
+                            <a
+                                href="/register"
+                                className="font-medium text-gray-900">
                                 Create account
                             </a>
                         </Typography>
