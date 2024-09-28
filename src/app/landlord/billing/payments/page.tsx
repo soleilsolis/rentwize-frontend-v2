@@ -1,12 +1,11 @@
 import IndexTable from '@/components/globals/IndexTable'
 import {
-    Button,
     Avatar,
     Typography,
     Tooltip,
     IconButton,
 } from '@/components/MaterialTailwind'
-import { PencilIcon, PlusIcon } from '@heroicons/react/24/outline'
+import { PencilIcon } from '@heroicons/react/24/outline'
 import { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -106,18 +105,18 @@ const table = (
                     <tr key={name}>
                         <td className={classes}>
                             <div className="flex items-center gap-3">
-                                <Avatar src={img} alt={name} size="sm" />
+                                <Avatar src={img} alt={name} size="sm" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />
                                 <div className="flex flex-col">
                                     <Typography
                                         variant="small"
                                         color="blue-gray"
-                                        className="font-normal">
+                                        className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                         {name}
                                     </Typography>
                                     <Typography
                                         variant="small"
                                         color="blue-gray"
-                                        className="font-normal opacity-70">
+                                        className="font-normal opacity-70" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                         {email}
                                     </Typography>
                                 </div>
@@ -128,13 +127,13 @@ const table = (
                                 <Typography
                                     variant="small"
                                     color="blue-gray"
-                                    className="font-normal">
+                                    className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                     {property}
                                 </Typography>
                                 <Typography
                                     variant="small"
                                     color="blue-gray"
-                                    className="font-normal opacity-70">
+                                    className="font-normal opacity-70" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                     {property_type}
                                 </Typography>
                             </div>
@@ -143,7 +142,7 @@ const table = (
                             <Typography
                                 variant="small"
                                 color="blue-gray"
-                                className="font-normal">
+                                className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 {date}
                             </Typography>
                         </td>
@@ -151,14 +150,14 @@ const table = (
                             <Typography
                                 variant="small"
                                 color="blue-gray"
-                                className="font-normal">
+                                className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 ${amount}
                             </Typography>
                         </td>
                         <td className={classes}>
                             <Tooltip content="View Payment">
                                 <Link href="/landlord/billing/payments/view/1">
-                                    <IconButton variant="text">
+                                    <IconButton variant="text" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                         <PencilIcon className="h-4 w-4" />
                                     </IconButton>
                                 </Link>

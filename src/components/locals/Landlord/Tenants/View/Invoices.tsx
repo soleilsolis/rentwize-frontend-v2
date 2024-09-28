@@ -50,13 +50,13 @@ const Invoices = () => {
                                 <Typography
                                     variant="small"
                                     color="blue-gray"
-                                    className="font-normal">
+                                    className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                     # {number}
                                 </Typography>
                                 <Typography
                                     variant="small"
                                     color="blue-gray"
-                                    className="font-normal opacity-70">
+                                    className="font-normal opacity-70" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                     {items[0].label}
                                 </Typography>
                             </div>
@@ -115,7 +115,7 @@ const Invoices = () => {
                     <td className={classes}>
                         <Tooltip content="View Invoice">
                             <Link href="/landlord/billing/invoices/view/1">
-                                <IconButton variant="text">
+                                <IconButton variant="text" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                     <PencilIcon className="h-4 w-4" />
                                 </IconButton>
                             </Link>
@@ -132,8 +132,7 @@ const Invoices = () => {
             heading="Invoices"
             subHeading="List of invoices"
             tableHeader={tableHeader}
-            tbody={tbody}
-        />
+            tbody={tbody} controls={undefined}        />
     )
 }
 

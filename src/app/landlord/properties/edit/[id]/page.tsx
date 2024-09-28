@@ -2,9 +2,6 @@ import Address from '@/components/forms/Landlord/Address'
 import FactsAndFeatures from '@/components/forms/Landlord/FactsAndFeatures'
 import UploadImages from '@/components/forms/Landlord/UploadImages'
 import {
-    Input,
-    Option,
-    Select,
     Typography,
     Textarea,
     Button,
@@ -54,19 +51,19 @@ const EditProperty = () => {
                         <Typography
                             variant="h3"
                             as="h1"
-                            className="text-gray-900">
+                            className="text-gray-900" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             Edit Property
                         </Typography>
                         <Typography
                             color="gray"
                             className="my-2 font-normal"
-                            as="p">
+                            as="p" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             Edit Property Details
                         </Typography>
                     </section>
 
                     <div className="space-y-4">
-                        <Typography variant="h5" as="h2">
+                        <Typography variant="h5" as="h2" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             Address
                         </Typography>
 
@@ -74,14 +71,14 @@ const EditProperty = () => {
                     </div>
 
                     <div className="space-y-4">
-                        <Typography variant="h5" as="header">
+                        <Typography variant="h5" as="header" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             Description
                         </Typography>
 
-                        <Textarea label="Describe your property..." />
+                        <Textarea label="Describe your property..." onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />
                     </div>
                     <div className="space-y-4">
-                        <Typography variant="h5" as="header">
+                        <Typography variant="h5" as="header" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             Features
                         </Typography>
                     </div>
@@ -92,8 +89,8 @@ const EditProperty = () => {
             </div>
 
             <section className="flex gap-2 mt-4 ">
-                <Button color="blue">Save</Button>
-                <Button variant="text">Cancel</Button>
+                <Button color="blue" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Save</Button>
+                <Button variant="text" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Cancel</Button>
             </section>
         </div>
     )

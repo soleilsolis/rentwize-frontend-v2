@@ -21,7 +21,7 @@ const steps = [
         icon: HomeModernIcon,
     },
     {
-        content: <Textarea label="Description"></Textarea>,
+        content: <Textarea label="Description" onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}></Textarea>,
         heading: 'Describe Your Property',
         icon: PencilIcon,
     },
@@ -51,7 +51,7 @@ const NewProperty = () => {
                 <Button
                     variant="gradient"
                     color="blue"
-                    onClick={() => router.push('/landlord/properties/view/1')}>
+                    onClick={() => router.push('/landlord/properties/view/1')} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                     Save
                 </Button>
             </>

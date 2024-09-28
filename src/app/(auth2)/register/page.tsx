@@ -43,10 +43,10 @@ const Basic = () => {
     return (
         <section className="grid text-center h-screen items-center p-8">
             <div>
-                <Typography variant="h3" color="blue-gray" className="mb-2">
+                <Typography variant="h3" color="blue-gray" className="mb-2" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                     Register
                 </Typography>
-                <Typography className="mb-16 text-gray-600 font-normal text-[18px]">
+                <Typography className="mb-16 text-gray-600 font-normal text-[18px]" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                     Register for Leasewise, streamline you rental business!
                 </Typography>
                 <form
@@ -62,10 +62,7 @@ const Basic = () => {
                                 name="first_name"
                                 label="First Name"
                                 className="min-w-[100px]"
-                                onChange={e =>
-                                    setFirstName(e.currentTarget.value)
-                                }
-                            />
+                                onChange={e => setFirstName(e.currentTarget.value)} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined}                            />
                         </div>
 
                         <Input
@@ -75,8 +72,7 @@ const Basic = () => {
                             name="last_name"
                             label="Last Name"
                             className="min-w-[100px]"
-                            onChange={e => setLastName(e.currentTarget.value)}
-                        />
+                            onChange={e => setLastName(e.currentTarget.value)} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined}                        />
                     </div>
 
                     <div>
@@ -86,8 +82,7 @@ const Basic = () => {
                             size="lg"
                             name="name"
                             label="User Name"
-                            onChange={e => setName(e.currentTarget.value)}
-                        />
+                            onChange={e => setName(e.currentTarget.value)} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined}                        />
                     </div>
 
                     <div>
@@ -98,10 +93,7 @@ const Basic = () => {
                             name="company_name"
                             value={company_name}
                             label="Company Name"
-                            onChange={e =>
-                                setCompanyName(e.currentTarget.value)
-                            }
-                        />
+                            onChange={e => setCompanyName(e.currentTarget.value)} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined}                        />
                     </div>
 
                     <div>
@@ -113,8 +105,7 @@ const Basic = () => {
                             name="email"
                             label="Your Email"
                             value={email}
-                            onChange={e => setEmail(e.currentTarget.value)}
-                        />
+                            onChange={e => setEmail(e.currentTarget.value)} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined}                        />
                     </div>
                     <div>
                         <Input
@@ -122,17 +113,14 @@ const Basic = () => {
                             size="lg"
                             label="Password"
                             type={passwordShown ? 'text' : 'password'}
-                            icon={
-                                <i onClick={togglePasswordVisiblity}>
-                                    {passwordShown ? (
-                                        <EyeIcon className="h-5 w-5" />
-                                    ) : (
-                                        <EyeSlashIcon className="h-5 w-5" />
-                                    )}
-                                </i>
-                            }
-                            onChange={e => setPassword(e.currentTarget.value)}
-                        />
+                            icon={<i onClick={togglePasswordVisiblity}>
+                                {passwordShown ? (
+                                    <EyeIcon className="h-5 w-5" />
+                                ) : (
+                                    <EyeSlashIcon className="h-5 w-5" />
+                                )}
+                            </i>}
+                            onChange={e => setPassword(e.currentTarget.value)} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined}                        />
                     </div>
 
                     <div>
@@ -142,17 +130,14 @@ const Basic = () => {
                             label="Confirm Password"
                             type="password"
                             value={password_confirmation}
-                            onChange={e =>
-                                setPasswordConfirmation(e.currentTarget.value)
-                            }
-                        />
+                            onChange={e => setPasswordConfirmation(e.currentTarget.value)} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined}                        />
                     </div>
                     <Button
                         type="submit"
                         color="gray"
                         size="lg"
                         className="mt-6"
-                        fullWidth>
+                        fullWidth placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                         register
                     </Button>
                     <Button
@@ -160,7 +145,7 @@ const Basic = () => {
                         disabled
                         size="lg"
                         className="mt-6 flex h-12 items-center justify-center gap-2"
-                        fullWidth>
+                        fullWidth placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                         <img
                             src={`https://www.material-tailwind.com/logos/logo-google.png`}
                             alt="google"
@@ -171,7 +156,7 @@ const Basic = () => {
                     <Typography
                         variant="small"
                         color="gray"
-                        className="!mt-4 text-center font-normal">
+                        className="!mt-4 text-center font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                         Already registered?{' '}
                         <a href="/login" className="font-medium text-gray-900">
                             Sign In

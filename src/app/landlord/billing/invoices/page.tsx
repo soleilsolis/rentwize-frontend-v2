@@ -9,7 +9,7 @@ import {
     Select,
     Option,
 } from '@/components/MaterialTailwind'
-import { EyeIcon, PencilIcon, PlusIcon } from '@heroicons/react/24/outline'
+import { EyeIcon, PlusIcon } from '@heroicons/react/24/outline'
 import { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -106,25 +106,25 @@ const table = tableRows.map(
                         <Typography
                             variant="small"
                             color="blue-gray"
-                            className="font-normal">
+                            className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             {number}
                         </Typography>
                     </div>
                 </td>
                 <td className={classes}>
                     <div className="flex items-center gap-3">
-                        <Avatar src={img} alt={name} size="sm" />
+                        <Avatar src={img} alt={name} size="sm" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />
                         <div className="flex flex-col">
                             <Typography
                                 variant="small"
                                 color="blue-gray"
-                                className="font-normal">
+                                className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 {name}
                             </Typography>
                             <Typography
                                 variant="small"
                                 color="blue-gray"
-                                className="font-normal opacity-70">
+                                className="font-normal opacity-70" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 {email}
                             </Typography>
                         </div>
@@ -135,13 +135,13 @@ const table = tableRows.map(
                         <Typography
                             variant="small"
                             color="blue-gray"
-                            className="font-normal">
+                            className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             {property}
                         </Typography>
                         <Typography
                             variant="small"
                             color="blue-gray"
-                            className="font-normal opacity-70">
+                            className="font-normal opacity-70" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             {property_type}
                         </Typography>
                     </div>
@@ -150,7 +150,7 @@ const table = tableRows.map(
                     <Typography
                         variant="small"
                         color="blue-gray"
-                        className="font-normal">
+                        className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                         {date}
                     </Typography>
                 </td>
@@ -158,14 +158,14 @@ const table = tableRows.map(
                     <Typography
                         variant="small"
                         color="blue-gray"
-                        className="font-normal">
+                        className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                         ${amount}
                     </Typography>
                 </td>
                 <td className={classes}>
                     <Tooltip content="View Invoice">
                         <Link href="/landlord/billing/invoices/view/1">
-                            <IconButton variant="text">
+                            <IconButton variant="text" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 <EyeIcon className="h-4 w-4" />
                             </IconButton>
                         </Link>
@@ -180,7 +180,7 @@ const Applications = () => {
     const controls = () => {
         const modalControls = (
             <Link href="/landlord/billing/invoices/new/1">
-                <PrimaryButton children="Select" />
+                <PrimaryButton children="Select" onClick={undefined} />
             </Link>
         )
         return (
@@ -190,9 +190,9 @@ const Applications = () => {
                 controls={modalControls}
                 buttonSize="sm"
                 heading="Select Tenant"
-                buttonIcon={<PlusIcon className="w-3 h-3" />}>
-                <Select label="Tenant">
-                    <Option></Option>
+                buttonIcon={<PlusIcon className="w-3 h-3" />} children={undefined} buttonColor={undefined} buttonVariant={undefined}>
+                <Select label="Tenant" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                    <Option children={''}></Option>
                 </Select>
             </Modal>
         )

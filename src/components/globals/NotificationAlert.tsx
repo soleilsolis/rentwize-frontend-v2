@@ -1,4 +1,4 @@
-import { Alert, Button, Typography } from '@material-tailwind/react'
+import { Alert, Typography } from '@material-tailwind/react'
 import { useState } from 'react'
 
 const NotificationAlert = () => {
@@ -11,10 +11,10 @@ const NotificationAlert = () => {
                     className="max-w-lg"
                     icon={null}
                     onClose={() => setOpen(false)} variant="gradient">
-                    <Typography variant="h5" color="white">
+                    <Typography variant="h5" color="white" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                         Success
                     </Typography>
-                    <Typography color="white" className="mt-2 font-normal">
+                    <Typography color="white" className="mt-2 font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                         I don&apos;t know what that word means. I&apos;m happy.
                         But success, that goes back to what in somebody&apos;s
                         eyes success means. For me, success is inner peace.

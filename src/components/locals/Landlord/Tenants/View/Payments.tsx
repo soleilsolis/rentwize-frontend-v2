@@ -26,14 +26,13 @@ const Payments = () => {
     ]
     const tbody = invoices.map(
         (
-            { number, items, amountToPay, total, createdDate, dueDate },
+            { number, amountToPay, createdDate },
             index,
         ) => {
             const isLast = index === invoices.length - 1
             const classes = isLast ? 'p-4' : 'p-4 border-b border-blue-gray-50'
 
             const dateCreated = new Date(createdDate)
-            const due = new Date(dueDate)
             return (
                 <tr key={''}>
                     <td className={classes}>
@@ -42,7 +41,7 @@ const Payments = () => {
                                 <Typography
                                     variant="small"
                                     color="blue-gray"
-                                    className="font-normal">
+                                    className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                     # {number}
                                 </Typography>
                             </div>
@@ -80,7 +79,7 @@ const Payments = () => {
                     <td className={classes}>
                         <Tooltip content="Edit Property">
                             <Link href="/landlord/invoices/view/1">
-                                <IconButton variant="text">
+                                <IconButton variant="text" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                     <PencilIcon className="h-4 w-4" />
                                 </IconButton>
                             </Link>
@@ -97,8 +96,7 @@ const Payments = () => {
             heading="Payments"
             subHeading="List of payments"
             tableHeader={tableHeader}
-            tbody={tbody}
-        />
+            tbody={tbody} controls={undefined}        />
     )
 }
 

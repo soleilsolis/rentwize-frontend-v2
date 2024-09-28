@@ -9,6 +9,7 @@ import {
     WrenchIcon,
     ExclamationCircleIcon,
 } from '@heroicons/react/24/outline'
+import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, AwaitedReactNode, Key } from 'react'
 
 const overviewValues = [
     {
@@ -47,9 +48,9 @@ const propertyManagementValues = [
 ]
 
 const NavButtons = ({ values }) => (
-    <ButtonGroup variant="text" fullWidth size="sm" className="divide-gray-500">
-        {values.map((value, key) => (
-            <Button key={key}>
+    <ButtonGroup variant="text" fullWidth size="sm" className="divide-gray-500" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+        {values.map((value: { icon: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode>; value: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode>; label: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> }, key: Key) => (
+            <Button key={key} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                 <div className="flex items-center gap-2 lg:gap-1 mb-1 justify-center lg:justify-start text-blue-600">
                     {value.icon}
                     <span className="text-2xl font-semibold">
@@ -68,21 +69,21 @@ const Index = () => (
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-y-4 md:gap-4">
         <div>
             <div>
-                <Typography variant="h1" className="mb-6 font-semibold text-xl">
+                <Typography variant="h1" className="mb-6 font-semibold text-xl" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                     Overview
                 </Typography>
                 <NavButtons values={overviewValues} />
             </div>
 
             <div className="mt-6">
-                <Typography variant="h1" className="mb-6 font-semibold text-xl">
+                <Typography variant="h1" className="mb-6 font-semibold text-xl" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                     Property Management
                 </Typography>
                 <NavButtons values={propertyManagementValues} />
             </div>
 
             <div className="mt-6">
-                <Typography variant="h1" className="mb-6 font-semibold text-xl">
+                <Typography variant="h1" className="mb-6 font-semibold text-xl" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                     Inbox
                 </Typography>
                 You have no notifications/messages.
@@ -92,7 +93,7 @@ const Index = () => (
         <div className="col-span-2">
             <Typography
                 variant="h1"
-                className="lg:hidden mb-6 font-semibold text-xl">
+                className="lg:hidden mb-6 font-semibold text-xl" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                 Sales Summary
             </Typography>
         </div>

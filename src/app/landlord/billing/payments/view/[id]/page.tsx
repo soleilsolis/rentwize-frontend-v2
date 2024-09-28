@@ -1,6 +1,5 @@
 'use client'
 import { ClassContext } from '@/components/contexts/ClassContext'
-import AccordionGlobal from '@/components/globals/AccordionGlobal'
 import PrimaryButton from '@/components/globals/PrimaryButton'
 import {
     ArrowDownTrayIcon,
@@ -17,35 +16,25 @@ import {
     MenuHandler,
     MenuList,
     MenuItem,
-    Button,
-    Accordion,
     Textarea,
 } from '@material-tailwind/react'
 import { useRouter } from 'next/navigation'
 
-const TABLE_HEAD = ['Property', 'Qty', 'Total']
 
-const TABLE_ROWS = [
-    {
-        label: '5 Mariveles St., Highway Hills, Mandaluyong',
-        quantity: 1,
-        value: 5000,
-    },
-]
 const ViewPayment = () => {
     const router = useRouter()
     return (
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div>
-                <Card>
-                    <CardBody className="space-y-4">
+                <Card placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                    <CardBody className="space-y-4" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                         <div className="grid grid-cols-1 md:grid-cols-3">
                             <div className="space-y-2 col-span-2">
                                 <Typography
                                     variant="h4"
                                     as="h1"
                                     color="black"
-                                    className="flex items-center gap-2">
+                                    className="flex items-center gap-2" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                     Payment #00001
                                     <Chip color="yellow" value="Unpaid" />
                                     <Chip color="blue" value="Partial" />
@@ -55,16 +44,15 @@ const ViewPayment = () => {
                                     <Avatar
                                         src="https://docs.material-tailwind.com/img/face-2.jpg"
                                         alt="avatar"
-                                        size="sm"
-                                    />
+                                        size="sm" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                                    />
                                     <div>
-                                        <Typography variant="h6">
+                                        <Typography variant="h6" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                             Xuan Ming
                                         </Typography>
                                         <Typography
                                             variant="small"
                                             color="gray"
-                                            className="font-normal">
+                                            className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                             ID: 1
                                         </Typography>
                                     </div>
@@ -76,28 +64,21 @@ const ViewPayment = () => {
                                     value={'h-min rounded-full aspect-1 p-2'}>
                                     <PrimaryButton
                                         variant="text"
-                                        icon={<EnvelopeIcon className="w-5" />}
-                                    />
+                                        icon={<EnvelopeIcon className="w-5" />} children={undefined} onClick={undefined}                                    />
                                     <PrimaryButton
                                         variant="text"
-                                        icon={
-                                            <ArrowDownTrayIcon className="w-5" />
-                                        }
-                                    />
+                                        icon={<ArrowDownTrayIcon className="w-5" />} children={undefined} onClick={undefined}                                    />
 
                                     <Menu>
                                         <MenuHandler>
                                             <PrimaryButton
                                                 variant="text"
-                                                icon={
-                                                    <EllipsisHorizontalIcon className="w-5" />
-                                                }
-                                            />
+                                                icon={<EllipsisHorizontalIcon className="w-5" />} children={undefined} onClick={undefined}                                            />
                                         </MenuHandler>
-                                        <MenuList>
-                                            <MenuItem>Menu Item 1</MenuItem>
-                                            <MenuItem>Menu Item 2</MenuItem>
-                                            <MenuItem>Menu Item 3</MenuItem>
+                                        <MenuList placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                                            <MenuItem placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Menu Item 1</MenuItem>
+                                            <MenuItem placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Menu Item 2</MenuItem>
+                                            <MenuItem placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Menu Item 3</MenuItem>
                                         </MenuList>
                                     </Menu>
                                 </ClassContext.Provider>
@@ -105,13 +86,13 @@ const ViewPayment = () => {
                         </div>
 
                         <div className="space-y-4">
-                            <Typography variant="paragraph">
+                            <Typography variant="paragraph" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 Sender: <strong>Blissful Homes, LLC</strong>
                             </Typography>
-                            <Typography variant="paragraph">
+                            <Typography variant="paragraph" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 Method: <strong>Credit Card</strong>
                             </Typography>
-                            <Typography variant="paragraph">
+                            <Typography variant="paragraph" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 Amount: <strong>$5,000.00</strong>
                             </Typography>
 
@@ -123,9 +104,9 @@ const ViewPayment = () => {
             </div>
 
             <div className="space-y-8">
-                <Card className='h-full'>
-                    <CardBody className="space-y-4">
-                        <Typography variant="h6" as="h2" className="uppercase">
+                <Card className='h-full' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                    <CardBody className="space-y-4" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                        <Typography variant="h6" as="h2" className="uppercase" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             Invoices
                         </Typography>
 
@@ -166,10 +147,10 @@ const ViewPayment = () => {
                 </Card>
             </div>
             <div className='lg:col-span-2'>
-                <Card>
-                    <CardBody className='space-y-2'>
-                        <Typography as="h2" variant='h6'>NOTES</Typography>
-                        <Textarea label='Add notes here...'></Textarea>
+                <Card placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                    <CardBody className='space-y-2' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                        <Typography as="h2" variant='h6' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>NOTES</Typography>
+                        <Textarea label='Add notes here...' onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}></Textarea>
                     </CardBody>
                 </Card>
             </div>

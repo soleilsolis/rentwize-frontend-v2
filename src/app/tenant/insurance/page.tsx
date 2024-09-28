@@ -6,30 +6,30 @@ const ViewInvoice = () => {
     return (
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div>
-                <Card>
-                    <CardBody className="space-y-4">
-                        <Typography variant="h3" as="h4" className="">
+                <Card placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                    <CardBody className="space-y-4" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                        <Typography variant="h3" as="h4" className="" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             Policy Holder's Information
                         </Typography>
                         <div className="grid grid-cols-2">
-                            <Typography variant="h5" as="h4" className="">
+                            <Typography variant="h5" as="h4" className="" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 Policy Holder:
                             </Typography>
-                            <Typography variant="h4" as="h5" className="">
+                            <Typography variant="h4" as="h5" className="" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 Xuan Ming
                             </Typography>
                         </div>
                         <div className="grid grid-cols-2">
-                            <Typography variant="h5" as="h4" className="">
+                            <Typography variant="h5" as="h4" className="" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 Property Address:
                             </Typography>
-                            <Typography variant="h4" as="h5" className="">
+                            <Typography variant="h4" as="h5" className="" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 785 Onitsuka Tiger Vilalge Davao
                             </Typography>
                         </div>
                         <table className="table-auto w-full">
                             <thead>
-                                <Typography variant="h4" as="h5">
+                                <Typography variant="h4" as="h5" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                     Coverages:
                                 </Typography>
                             </thead>
@@ -68,24 +68,24 @@ const ViewInvoice = () => {
             </div>
 
             <div className="space-y-8">
-                <Card className="h-full">
-                    <CardBody className="space-y-4">
-                        <Typography variant="h3" as="h4" className="">
+                <Card className="h-full" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                    <CardBody className="space-y-4" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                        <Typography variant="h3" as="h4" className="" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             Insurance Company's Information
                         </Typography>
                         <div className="grid grid-cols-2">
-                            <Typography variant="h5" as="h4" className="">
+                            <Typography variant="h5" as="h4" className="" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 Address:
                             </Typography>
-                            <Typography variant="h4" as="h5" className="">
+                            <Typography variant="h4" as="h5" className="" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 2234 Makaturing Mandaluyong City
                             </Typography>
                         </div>
                         <div className="grid grid-cols-2">
-                            <Typography variant="h5" as="h4" className="">
+                            <Typography variant="h5" as="h4" className="" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 Contact Number:
                             </Typography>
-                            <Typography variant="h4" as="h5" className="">
+                            <Typography variant="h4" as="h5" className="" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 +63911446255
                             </Typography>
                         </div>
@@ -94,14 +94,14 @@ const ViewInvoice = () => {
             </div>
 
             <div className="lg:col-span-2">
-                <Card>
-                    <CardBody>
+                <Card placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                    <CardBody placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                         <AccordionGlobal
                             heading={
                                 <Typography
                                     variant="h6"
                                     as="h2"
-                                    className="uppercase">
+                                    className="uppercase" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                     PDF Preview
                                 </Typography>
                             }>

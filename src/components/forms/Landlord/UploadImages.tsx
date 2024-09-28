@@ -1,4 +1,5 @@
 import { PhotoIcon, PlusIcon } from '@heroicons/react/24/solid'
+import { Key } from 'react'
 
 const UploadImages = ({ images }) => {
     return (
@@ -16,7 +17,7 @@ const UploadImages = ({ images }) => {
                     </div>
                 </button>
 
-                {images.map(({ imageLink }, index) => (
+                {images.map(({ imageLink }: any, index: Key) => (
                     <div key={index}>
                         <img
                             className="h-40 w-full max-w-full rounded-lg object-cover object-center hover:-translate-y-1 transition-transform "

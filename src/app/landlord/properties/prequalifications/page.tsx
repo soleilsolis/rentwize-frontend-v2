@@ -1,14 +1,12 @@
 'use client'
 import IndexTable from '@/components/globals/IndexTable'
 import {
-    Button,
     Avatar,
     Typography,
     Tooltip,
     IconButton,
 } from '@/components/MaterialTailwind'
-import { PencilIcon, PlusIcon } from '@heroicons/react/24/outline'
-import { Metadata } from 'next'
+import { PencilIcon } from '@heroicons/react/24/outline'
 import { useRouter } from 'next/navigation'
 
 const heading = 'Prequalifications'
@@ -82,7 +80,6 @@ const Applications = () => {
                     { img, name, email, property, property_type, online, date },
                     index,
                 ) => {
-                    const isLast = index === tableRows.length - 1
                     const classes = isLast
                         ? 'p-4'
                         : 'p-4 border-b border-blue-gray-50'
@@ -91,18 +88,18 @@ const Applications = () => {
                         <tr key={name}>
                             <td className={classes}>
                                 <div className="flex items-center gap-3">
-                                    <Avatar src={img} alt={name} size="sm" />
+                                    <Avatar src={img} alt={name} size="sm" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />
                                     <div className="flex flex-col">
                                         <Typography
                                             variant="small"
                                             color="blue-gray"
-                                            className="font-normal">
+                                            className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                             {name}
                                         </Typography>
                                         <Typography
                                             variant="small"
                                             color="blue-gray"
-                                            className="font-normal opacity-70">
+                                            className="font-normal opacity-70" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                             {email}
                                         </Typography>
                                     </div>
@@ -113,13 +110,13 @@ const Applications = () => {
                                     <Typography
                                         variant="small"
                                         color="blue-gray"
-                                        className="font-normal">
+                                        className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                         {property}
                                     </Typography>
                                     <Typography
                                         variant="small"
                                         color="blue-gray"
-                                        className="font-normal opacity-70">
+                                        className="font-normal opacity-70" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                         {property_type}
                                     </Typography>
                                 </div>
@@ -128,7 +125,7 @@ const Applications = () => {
                                 <Typography
                                     variant="small"
                                     color="blue-gray"
-                                    className="font-normal">
+                                    className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                     {date}
                                 </Typography>
                             </td>
@@ -136,11 +133,9 @@ const Applications = () => {
                                 <Tooltip content="Edit User">
                                     <IconButton
                                         variant="text"
-                                        onClick={() =>
-                                            router.push(
-                                                '/landlord/properties/prequalifications/view/1',
-                                            )
-                                        }>
+                                        onClick={() => router.push(
+                                            '/landlord/properties/prequalifications/view/1'
+                                        )} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                         <PencilIcon className="h-4 w-4" />
                                     </IconButton>
                                 </Tooltip>

@@ -8,7 +8,6 @@ import {
     IconButton,
 } from '@/components/MaterialTailwind'
 import { PencilIcon, PlusIcon } from '@heroicons/react/24/outline'
-import { Metadata } from 'next'
 import { useRouter } from 'next/navigation'
 
 // export const metadata: Metadata = {
@@ -78,7 +77,7 @@ const tabs = [
 ]
 
 const controls = (
-    <Button className="flex items-center gap-3" size="sm">
+    <Button className="flex items-center gap-3" size="sm" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
         <PlusIcon strokeWidth={2} className="h-4 w-4" /> Add Tenant
     </Button>
 )
@@ -89,7 +88,7 @@ const Applications = () => {
         <>
             {tableRows.map(
                 (
-                    { img, name, email, property, property_type, online, date },
+                    { img, name, email, property, property_type, date },
                     index,
                 ) => {
                     const isLast = index === tableRows.length - 1
@@ -101,18 +100,18 @@ const Applications = () => {
                         <tr key={name}>
                             <td className={classes}>
                                 <div className="flex items-center gap-3">
-                                    <Avatar src={img} alt={name} size="sm" />
+                                    <Avatar src={img} alt={name} size="sm" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />
                                     <div className="flex flex-col">
                                         <Typography
                                             variant="small"
                                             color="blue-gray"
-                                            className="font-normal">
+                                            className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                             {name}
                                         </Typography>
                                         <Typography
                                             variant="small"
                                             color="blue-gray"
-                                            className="font-normal opacity-70">
+                                            className="font-normal opacity-70" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                             {email}
                                         </Typography>
                                     </div>
@@ -123,13 +122,13 @@ const Applications = () => {
                                     <Typography
                                         variant="small"
                                         color="blue-gray"
-                                        className="font-normal">
+                                        className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                         {property}
                                     </Typography>
                                     <Typography
                                         variant="small"
                                         color="blue-gray"
-                                        className="font-normal opacity-70">
+                                        className="font-normal opacity-70" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                         {property_type}
                                     </Typography>
                                 </div>
@@ -138,7 +137,7 @@ const Applications = () => {
                                 <Typography
                                     variant="small"
                                     color="blue-gray"
-                                    className="font-normal">
+                                    className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                     {date}
                                 </Typography>
                             </td>
@@ -146,11 +145,9 @@ const Applications = () => {
                                 <Tooltip content="Edit User">
                                     <IconButton
                                         variant="text"
-                                        onClick={() =>
-                                            router.push(
-                                                '/landlord/tenants/view/1',
-                                            )
-                                        }>
+                                        onClick={() => router.push(
+                                            '/landlord/tenants/view/1'
+                                        )} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                         <PencilIcon className="h-4 w-4" />
                                     </IconButton>
                                 </Tooltip>

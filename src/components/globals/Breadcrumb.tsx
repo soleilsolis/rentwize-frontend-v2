@@ -10,7 +10,7 @@ const Breadcrumb = () => {
     delete pathname[0]
 
     return pathname[2] ? (
-        <Breadcrumbs>
+        <Breadcrumbs placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
             {pathname.map((page, index) => (
                 <Link
                     href={

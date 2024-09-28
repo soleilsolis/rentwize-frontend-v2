@@ -30,15 +30,15 @@ const ViewInvoice = () => {
     return (
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div>
-                <Card>
-                    <CardBody className="space-y-4">
+                <Card placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                    <CardBody className="space-y-4" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                         <div className="grid grid-cols-1 md:grid-cols-3">
                             <div className="space-y-2 col-span-2">
                                 <Typography
                                     variant="h4"
                                     as="h1"
                                     color="black"
-                                    className="flex items-center gap-2">
+                                    className="flex items-center gap-2" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                     Invoice #00001
                                     <Chip color="blue" value="Unpaid" />
                                 </Typography>
@@ -46,16 +46,15 @@ const ViewInvoice = () => {
                                     <Avatar
                                         src="https://docs.material-tailwind.com/img/face-2.jpg"
                                         alt="avatar"
-                                        size="sm"
-                                    />
+                                        size="sm" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                                    />
                                     <div>
-                                        <Typography variant="h6">
+                                        <Typography variant="h6" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                             Xuan Ming
                                         </Typography>
                                         <Typography
                                             variant="small"
                                             color="gray"
-                                            className="font-normal">
+                                            className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                             ID: 1
                                         </Typography>
                                     </div>
@@ -67,26 +66,19 @@ const ViewInvoice = () => {
                                     value={'h-min rounded-full aspect-1 p-2'}>
                                     <PrimaryButton
                                         variant="text"
-                                        icon={<EnvelopeIcon className="w-5" />}
-                                    />
+                                        icon={<EnvelopeIcon className="w-5" />} children={undefined} onClick={undefined}                                    />
                                     <PrimaryButton
                                         variant="text"
-                                        icon={
-                                            <ArrowDownTrayIcon className="w-5" />
-                                        }
-                                    />
+                                        icon={<ArrowDownTrayIcon className="w-5" />} children={undefined} onClick={undefined}                                    />
                                     <PrimaryButton
                                         variant="text"
-                                        icon={
-                                            <EllipsisHorizontalIcon className="w-5" />
-                                        }
-                                    />
+                                        icon={<EllipsisHorizontalIcon className="w-5" />} children={undefined} onClick={undefined}                                    />
                                 </ClassContext.Provider>
                             </div>
                         </div>
 
                         <div className="space-y-2">
-                            <Typography as="h2" variant="h6">
+                            <Typography as="h2" variant="h6" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 Sender: Blissful Homes, LLC
                             </Typography>
 
@@ -100,7 +92,7 @@ const ViewInvoice = () => {
                                                 <Typography
                                                     variant="small"
                                                     color="blue-gray"
-                                                    className="font-normal leading-none opacity-70">
+                                                    className="font-normal leading-none opacity-70" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                                     {head}
                                                 </Typography>
                                             </th>
@@ -122,7 +114,7 @@ const ViewInvoice = () => {
                                                         <Typography
                                                             variant="small"
                                                             color="blue-gray"
-                                                            className="font-normal">
+                                                            className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                                             {label}
                                                         </Typography>
                                                     </td>
@@ -131,7 +123,7 @@ const ViewInvoice = () => {
                                                         <Typography
                                                             variant="small"
                                                             color="blue-gray"
-                                                            className="font-normal">
+                                                            className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                                             {quantity}
                                                         </Typography>
                                                     </td>
@@ -139,7 +131,7 @@ const ViewInvoice = () => {
                                                         <Typography
                                                             variant="small"
                                                             color="blue-gray"
-                                                            className="font-semibold tracking-wider">
+                                                            className="font-semibold tracking-wider" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                                             ${value.toFixed(2)}
                                                         </Typography>
                                                     </td>
@@ -152,13 +144,13 @@ const ViewInvoice = () => {
                                         <td className="p-4"></td>
                                         <td className="p-4 border-b"></td>
                                         <td className="p-4 border-b border-blue-gray-50">
-                                            <Typography variant="small">
+                                            <Typography variant="small" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                                 Subtotal
                                             </Typography>
                                             <Typography
                                                 variant="small"
                                                 color="blue-gray"
-                                                className="font-semibold tracking-wider">
+                                                className="font-semibold tracking-wider" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                                 $5000.00
                                             </Typography>
                                         </td>
@@ -168,13 +160,13 @@ const ViewInvoice = () => {
                                         <td></td>
                                         <td className="border-b"></td>
                                         <td className="p-4 border-b border-blue-gray-50">
-                                            <Typography variant="small">
+                                            <Typography variant="small" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                                 TOTAL PRICE
                                             </Typography>
                                             <Typography
                                                 variant="h5"
                                                 color="blue"
-                                                className="font-medium tracking-wider">
+                                                className="font-medium tracking-wider" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                                 $5000.00
                                             </Typography>
                                         </td>
@@ -184,13 +176,13 @@ const ViewInvoice = () => {
                                         <td></td>
                                         <td></td>
                                         <td className="p-4">
-                                            <Typography variant="small">
+                                            <Typography variant="small" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                                 AMOUNT DUE
                                             </Typography>
                                             <Typography
                                                 variant="h5"
                                                 color="blue"
-                                                className="font-medium tracking-wider">
+                                                className="font-medium tracking-wider" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                                 $5000.00
                                             </Typography>
                                         </td>
@@ -203,8 +195,8 @@ const ViewInvoice = () => {
             </div>
 
             <div className="space-y-8">
-                <Card className="h-full">
-                    <CardBody className="space-y-4">
+                <Card className="h-full" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                    <CardBody className="space-y-4" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                         <Typography variant="h6" as="h2" className="uppercase">
                             Payments
                         </Typography>
@@ -247,14 +239,14 @@ const ViewInvoice = () => {
             </div>
 
             <div className="lg:col-span-2">
-                <Card>
-                    <CardBody>
+                <Card placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                    <CardBody placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                         <AccordionGlobal
                             heading={
                                 <Typography
                                     variant="h6"
                                     as="h2"
-                                    className="uppercase">
+                                    className="uppercase" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                     PDF Preview
                                 </Typography>
                             }>

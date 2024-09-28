@@ -5,7 +5,6 @@ import Breadcrumb from '@/components/globals/Breadcrumb'
 
 import Navbar from '@/components/Navbar'
 import NotFoundPage from '@/components/not-found'
-import { DefaultSkeleton } from '@/components/Skeleton'
 
 import { useAuth } from '@/hooks/auth'
 import {
@@ -15,7 +14,6 @@ import {
     UserGroupIcon,
 } from '@heroicons/react/24/outline'
 
-import { useParams } from 'next/navigation'
 
 const menuLists = [
     [

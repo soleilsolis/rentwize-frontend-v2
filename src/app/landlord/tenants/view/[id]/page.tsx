@@ -14,15 +14,12 @@ import {
     InformationCircleIcon,
 } from '@heroicons/react/24/outline'
 import { Chip, List, ListItem } from '@material-tailwind/react'
-import { Metadata } from 'next'
-import Link from 'next/link'
-import { useState } from 'react'
+import { SetStateAction, useState } from 'react'
 
 const ViewTenant = () => {
     const [selected, setSelected] = useState(1)
-    const setSelectedItem = value => setSelected(value)
+    const setSelectedItem = (value: SetStateAction<number>) => setSelected(value)
 
-    const activePage = useState(0)
 
     const pages = [
         {
@@ -77,14 +74,14 @@ const ViewTenant = () => {
                     alt=""
                 />
 
-                <List className="p-0">
+                <List className="p-0" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                     {pages.map((page, index) => {
                         return (
                             <a href="#" className="text-initial">
                                 <ListItem
                                     className="gap-2"
                                     selected={selected === index + 1}
-                                    onClick={() => setSelectedItem(index + 1)}>
+                                    onClick={() => setSelectedItem(index + 1)} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                     {page.icon ? (
                                         <page.icon className="w-6 h-6" />
                                     ) : (
@@ -112,10 +109,10 @@ const ViewTenant = () => {
                 <Typography
                     variant="h6"
                     color="gray"
-                    className="mb-4 uppercase">
+                    className="mb-4 uppercase" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                     Tenant
                 </Typography>
-                <Typography variant="h1">Hissune Carly</Typography>
+                <Typography variant="h1" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Hissune Carly</Typography>
 
                 <section className="space-y-8 pt-4">
                     {pages[selected - 1].content}

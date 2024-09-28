@@ -111,16 +111,16 @@ const controls = (
             controls={null}
             buttonSize="sm"
             heading="Create Ticket"
-            buttonIcon={<PlusIcon className="w-3 h-3" />}>
+            buttonIcon={<PlusIcon className="w-3 h-3" />} children={undefined} buttonColor={undefined} buttonVariant={undefined}>
             <div className="space-y-4">
-                <Input type="text" label="Property" required />
-                <Select label="Type">
+                <Input type="text" label="Property" required crossOrigin={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />
+                <Select label="Type" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                     <Option>Plumbing</Option>
                     <Option>Renovation</Option>
                     <Option>Quick Fix</Option>
                 </Select>
-                <Input type="date" label="Created date" required />
-                <Select label="Urgency">
+                <Input type="date" label="Created date" required crossOrigin={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />
+                <Select label="Urgency" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                     <Option>Low</Option>
                     <Option>High</Option>
                     <Option>Medium</Option>
@@ -134,7 +134,7 @@ const Applications = () => {
     const router = useRouter()
     const [openRight, setOpenRight] = useState(false)
     const [selectedRow, setSelectedRow] = useState(null)
-    const openDrawerRight = row => {
+    const openDrawerRight = (row: { img: string; name: string; email: string; property: string; property_type: string; date: string; type: string; urgency: string }) => {
         setSelectedRow(row)
         setOpenRight(true)
     }
@@ -151,7 +151,6 @@ const Applications = () => {
                 email,
                 property,
                 property_type,
-                online,
                 date,
                 type,
                 urgency,
@@ -179,18 +178,18 @@ const Applications = () => {
                     }>
                     <td className={classes}>
                         <div className="flex items-center gap-3">
-                            <Avatar src={img} alt={name} size="sm" />
+                            <Avatar src={img} alt={name} size="sm" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />
                             <div className="flex flex-col">
                                 <Typography
                                     variant="small"
                                     color="blue-gray"
-                                    className="font-normal">
+                                    className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                     {name}
                                 </Typography>
                                 <Typography
                                     variant="small"
                                     color="blue-gray"
-                                    className="font-normal opacity-70">
+                                    className="font-normal opacity-70" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                     {email}
                                 </Typography>
                             </div>
@@ -201,13 +200,13 @@ const Applications = () => {
                             <Typography
                                 variant="small"
                                 color="blue-gray"
-                                className="font-normal">
+                                className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 {property}
                             </Typography>
                             <Typography
                                 variant="small"
                                 color="blue-gray"
-                                className="font-normal opacity-70">
+                                className="font-normal opacity-70" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 {property_type}
                             </Typography>
                         </div>
@@ -216,7 +215,7 @@ const Applications = () => {
                         <Typography
                             variant="small"
                             color="blue-gray"
-                            className="font-normal">
+                            className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             {date}
                         </Typography>
                     </td>
@@ -224,7 +223,7 @@ const Applications = () => {
                         <Typography
                             variant="small"
                             color="blue-gray"
-                            className="font-normal">
+                            className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             {type}
                         </Typography>
                     </td>
@@ -232,7 +231,7 @@ const Applications = () => {
                         <Typography
                             variant="small"
                             color="blue-gray"
-                            className="font-normal">
+                            className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             {urgency}
                         </Typography>
                     </td>
@@ -240,11 +239,9 @@ const Applications = () => {
                         <Tooltip content="Edit User">
                             <IconButton
                                 variant="text"
-                                onClick={() =>
-                                    router.push(
-                                        '/landlord/properties/applications/view/1',
-                                    )
-                                }>
+                                onClick={() => router.push(
+                                    '/landlord/properties/applications/view/1'
+                                )} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 <PencilIcon className="h-4 w-4" />
                             </IconButton>
                         </Tooltip>
@@ -259,15 +256,15 @@ const Applications = () => {
                 placement="right"
                 open={openRight}
                 onClose={closeDrawerRight}
-                className="p-4">
+                className="p-4" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                 {selectedRow && (
                     <div className="space-y-4">
-                        <Typography variant="h6">{selectedRow.name}</Typography>
-                        <Typography> {selectedRow.property}</Typography>
-                        <Typography> {selectedRow.type}</Typography>
-                        <Typography> {selectedRow.date} </Typography>
-                        <Typography>{selectedRow.property_type} </Typography>
-                        <Typography>{selectedRow.urgency} </Typography>
+                        <Typography variant="h6" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>{selectedRow.name}</Typography>
+                        <Typography placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}> {selectedRow.property}</Typography>
+                        <Typography placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}> {selectedRow.type}</Typography>
+                        <Typography placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}> {selectedRow.date} </Typography>
+                        <Typography placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>{selectedRow.property_type} </Typography>
+                        <Typography placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>{selectedRow.urgency} </Typography>
                         <div className='flex flex-nowrap space-x-3'>
                             <Modal
                                 label="Edit"
@@ -275,19 +272,16 @@ const Applications = () => {
                                 controls={null}
                                 buttonSize="sm"
                                 heading="Edit Ticket"
-                                buttonIcon={
-                                    <PencilSquareIcon className="w-3 h-3" />
-                                }>
+                                buttonIcon={<PencilSquareIcon className="w-3 h-3" />} children={undefined} buttonColor={undefined} buttonVariant={undefined}>
                                 <div className="space-y-4">
                                     <Input
                                         type="text"
                                         label="Property"
                                         value={selectedRow.property}
-                                        required
-                                    />
+                                        required crossOrigin={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                                    />
                                     <Select
                                         label="Type"
-                                        value={selectedRow.type}>
+                                        value={selectedRow.type} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                         <Option>Plumbing</Option>
                                         <Option>Renovation</Option>
                                         <Option>Quick Fix</Option>
@@ -296,9 +290,8 @@ const Applications = () => {
                                         type="date"
                                         label="Created date"
                                         value={selectedRow.date}
-                                        required
-                                    />
-                                    <Select label="Urgency" value={selectedRow.urgency}>
+                                        required crossOrigin={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                                    />
+                                    <Select label="Urgency" value={selectedRow.urgency} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                         <Option>Low</Option>
                                         <Option>High</Option>
                                         <Option>Medium</Option>
@@ -306,7 +299,7 @@ const Applications = () => {
                                 </div>
                             </Modal>
 
-                            <Button color='red'>Cancel Ticket</Button>
+                            <Button color='red' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Cancel Ticket</Button>
                         </div>
 
                         

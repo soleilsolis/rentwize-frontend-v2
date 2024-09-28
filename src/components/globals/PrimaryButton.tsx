@@ -13,7 +13,7 @@ const PrimaryButton = ({ children, onClick, ...params }) => {
             onClick={onClick}
             color={params.color ?? 'blue'}
             variant={params.variant ?? 'gradient'}
-            disabled={params.disabled ?? false}>
+            disabled={params.disabled ?? false} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
             {params.icon ?? ''}
 
             {children}

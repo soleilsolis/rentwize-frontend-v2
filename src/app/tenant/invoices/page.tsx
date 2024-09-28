@@ -7,9 +7,8 @@ import {
     IconButton,
     Button,
 } from '@/components/MaterialTailwind'
-import { PencilIcon, PlusIcon } from '@heroicons/react/24/outline'
+import { PencilIcon } from '@heroicons/react/24/outline'
 import { Drawer } from '@material-tailwind/react'
-import { Metadata } from 'next'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
@@ -99,7 +98,7 @@ const Invoices = () => {
     const router = useRouter()
     const tbody = tableRows.map(
         (
-            { img, name, email, property, property_type, online, date, amount },
+            { img, name, email, property, property_type, date, amount },
             index,
         ) => {
             const isLast = index === tableRows.length - 1
@@ -122,18 +121,18 @@ const Invoices = () => {
                     }>
                     <td className={classes}>
                         <div className="flex items-center gap-3">
-                            <Avatar src={img} alt={name} size="sm" />
+                            <Avatar src={img} alt={name} size="sm" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />
                             <div className="flex flex-col">
                                 <Typography
                                     variant="small"
                                     color="blue-gray"
-                                    className="font-normal">
+                                    className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                     {name}
                                 </Typography>
                                 <Typography
                                     variant="small"
                                     color="blue-gray"
-                                    className="font-normal opacity-70">
+                                    className="font-normal opacity-70" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                     {email}
                                 </Typography>
                             </div>
@@ -144,13 +143,13 @@ const Invoices = () => {
                             <Typography
                                 variant="small"
                                 color="blue-gray"
-                                className="font-normal">
+                                className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 {property}
                             </Typography>
                             <Typography
                                 variant="small"
                                 color="blue-gray"
-                                className="font-normal opacity-70">
+                                className="font-normal opacity-70" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 {property_type}
                             </Typography>
                         </div>
@@ -159,7 +158,7 @@ const Invoices = () => {
                         <Typography
                             variant="small"
                             color="blue-gray"
-                            className="font-normal">
+                            className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             {date}
                         </Typography>
                     </td>
@@ -167,7 +166,7 @@ const Invoices = () => {
                         <Typography
                             variant="small"
                             color="blue-gray"
-                            className="font-normal">
+                            className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             {amount}
                         </Typography>
                     </td>
@@ -175,11 +174,9 @@ const Invoices = () => {
                         <Tooltip content="Edit User">
                             <IconButton
                                 variant="text"
-                                onClick={() =>
-                                    router.push(
-                                        '/landlord/properties/applications/view/1',
-                                    )
-                                }>
+                                onClick={() => router.push(
+                                    '/landlord/properties/applications/view/1'
+                                )} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 <PencilIcon className="h-4 w-4" />
                             </IconButton>
                         </Tooltip>
@@ -194,11 +191,11 @@ const Invoices = () => {
                 placement="right"
                 open={openRight}
                 onClose={closeDrawerRight}
-                className="p-4">
+                className="p-4" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                 {selectedRow && (
                     <div className="space-y-4">
                     
-                        <Typography>{selectedRow.name}</Typography>
+                        <Typography placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>{selectedRow.name}</Typography>
       <table className="table-auto w-full border-collapse">
         <tbody>
             <tr>
@@ -223,7 +220,7 @@ const Invoices = () => {
                             className="w-full"
                             color="blue"
                             variant="gradient"
-                            onClick={() => router.push('/tenant/payments')}>
+                            onClick={() => router.push('/tenant/payments')} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             Pay
                         </Button>
                     </div>

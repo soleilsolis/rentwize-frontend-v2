@@ -19,27 +19,26 @@ const NewInvoice = () => {
         <div className="space-y-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <section>
-                    <Typography variant="h3" as="h1" className="text-gray-900">
+                    <Typography variant="h3" as="h1" className="text-gray-900" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                         New Invoice
                     </Typography>
                     <Typography
                         color="gray"
                         className="my-2 font-normal"
-                        as="p">
+                        as="p" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                         Hissune Carly
                     </Typography>
                 </section>
             </div>
 
-            <Card className="max-w-4xl">
-                <CardBody className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Card className="max-w-4xl" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                <CardBody className="grid grid-cols-1 md:grid-cols-2 gap-4" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                     <div className="space-y-4">
                         {!draft ? (
                             <Input
                                 label="Invoice Number"
                                 type="number"
-                                required
-                            />
+                                required onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined}                            />
                         ) : (
                             ''
                         )}
@@ -47,8 +46,7 @@ const NewInvoice = () => {
                             label="Draft invoice?"
                             color="blue"
                             ripple={true}
-                            onChange={() => setDraft(!draft)}
-                        />
+                            onChange={() => setDraft(!draft)} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined}                        />
 
                         <Select
                             label={
@@ -64,12 +62,11 @@ const NewInvoice = () => {
                             label="Proforma invoice?"
                             color="blue"
                             ripple={true}
-                            onChange={() => setProforma(!proforma)}
-                        />
+                            onChange={() => setProforma(!proforma)} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined}                        />
                     </div>
 
                     <div>
-                        <Input type="date" label="Created date" required />
+                        <Input type="date" label="Created date" required onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined} />
                     </div>
                 </CardBody>
             </Card>
@@ -79,11 +76,10 @@ const NewInvoice = () => {
                     <PrimaryButton
                         children="Cancel"
                         variant="text"
-                        color="black"
-                    />
+                        color="black" onClick={undefined}                    />
                 </Link>
                 <Link href="/landlord/billing/invoices/view/1">
-                    <PrimaryButton children="Save" color="gray" />
+                    <PrimaryButton children="Save" color="gray" onClick={undefined} />
                 </Link>
 
                 <Modal
@@ -92,12 +88,9 @@ const NewInvoice = () => {
                     children="Do you want to send the invoice to the tenant?"
                     size="md"
                     heading="Send and Save Invoice?"
-                    controls={
-                        <Link href="/landlord/billing/invoices/view/1">
-                            <PrimaryButton children="Yes" />
-                        </Link>
-                    }
-                />
+                    controls={<Link href="/landlord/billing/invoices/view/1">
+                        <PrimaryButton children="Yes" onClick={undefined} />
+                    </Link>} buttonVariant={undefined} buttonSize={undefined} buttonIcon={undefined}                />
             </section>
         </div>
     )

@@ -46,13 +46,13 @@ const NavbarSimple = ({ title, menuLists }) => {
     return (
         <>
             <header className="sticky top-0 w-full z-30">
-                <Navbar className="absolute mx-auto max-w-full px-6 py-3 rounded-none shadow-none border-gray-200 border-b">
+                <Navbar className="absolute mx-auto max-w-full px-6 py-3 rounded-none shadow-none border-gray-200 border-b" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                     <div className="flex items-center justify-between text-blue-gray-900 gap-2">
                         <div className="flex items-center text-blue-gray-900 gap-2">
                             <IconButton
                                 variant="text"
                                 size="lg"
-                                onClick={openDrawer}>
+                                onClick={openDrawer} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 {isDrawerOpen ? (
                                     <XMarkIcon className="h-8 w-8 stroke-2" />
                                 ) : (
@@ -63,7 +63,7 @@ const NavbarSimple = ({ title, menuLists }) => {
                                 as="a"
                                 href="#"
                                 variant="h5"
-                                className="mr-4 cursor-pointer py-1.5">
+                                className="mr-4 cursor-pointer py-1.5" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 {title}
                             </Typography>
                         </div>
@@ -72,7 +72,7 @@ const NavbarSimple = ({ title, menuLists }) => {
                             <Link href="/landlord/settings">
                                 <IconButton
                                     variant="text"
-                                    className="rounded-full">
+                                    className="rounded-full" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                     <Cog6ToothIcon className="h-7 w-7 m-2"></Cog6ToothIcon>
                                 </IconButton>
                             </Link>
@@ -84,31 +84,30 @@ const NavbarSimple = ({ title, menuLists }) => {
                 </Navbar>
             </header>
 
-            <Drawer open={isDrawerOpen} onClose={closeDrawer}>
+            <Drawer open={isDrawerOpen} onClose={closeDrawer} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                 <Card
                     color="transparent"
                     shadow={false}
-                    className="h-[calc(100vh-2rem)] w-full p-4">
+                    className="h-[calc(100vh-2rem)] w-full p-4" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                     <div className="mb-2 flex items-center gap-4 p-4">
                         <img
                             src="https://docs.material-tailwind.com/img/logo-ct-dark.png"
                             alt="brand"
                             className="h-8 w-8"
                         />
-                        <Typography variant="h5" color="blue-gray">
+                        <Typography variant="h5" color="blue-gray" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             Leasewize
                         </Typography>
                     </div>
                     <div className="p-2">
                         <Input
                             icon={<MagnifyingGlassIcon className="h-5 w-5" />}
-                            label="Search"
-                        />
+                            label="Search" onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined}                        />
                     </div>
 
                     <nav>
                         {menuLists.map((list, listKey) => (
-                            <List key={listKey}>
+                            <List key={listKey} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 {list.map((listItem, listItemKey) => (
                                     <>
                                         {!listItem.items ? (
@@ -117,66 +116,55 @@ const NavbarSimple = ({ title, menuLists }) => {
                                                 onClick={() => {
                                                     setIsDrawerOpen(false)
                                                     router.push(listItem.link)
-                                                }}>
-                                                <ListItemPrefix>
+                                                } } placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                                                <ListItemPrefix placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                                     <listItem.icon className="w-5 h-5" />
                                                 </ListItemPrefix>
                                                 {listItem.name}
                                             </ListItem>
                                         ) : (
                                             <Accordion
-                                                key={listItemKey}
-                                                open={open === listItemKey}
-                                                icon={
-                                                    <ChevronDownIcon
-                                                        strokeWidth={2.5}
-                                                        className={`mx-auto h-4 w-4 transition-transform ${
-                                                            open === listItemKey
-                                                                ? 'rotate-180'
-                                                                : ''
-                                                        }`}
-                                                    />
-                                                }>
-                                                <ListItem
                                                     key={listItemKey}
-                                                    className="p-0"
-                                                    selected={
-                                                        open === listItemKey
-                                                    }>
+                                                    open={open === listItemKey}
+                                                    icon={<ChevronDownIcon
+                                                        strokeWidth={2.5}
+                                                        className={`mx-auto h-4 w-4 transition-transform ${open === listItemKey
+                                                                ? 'rotate-180'
+                                                                : ''}`} />} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                                                <ListItem
+                                                        key={listItemKey}
+                                                        className="p-0"
+                                                        selected={open === listItemKey} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                                     <AccordionHeader
-                                                        onClick={() =>
-                                                            handleOpen(
-                                                                listItemKey,
-                                                            )
-                                                        }
-                                                        className="border-b-0 p-3">
-                                                        <ListItemPrefix>
+                                                            onClick={() => handleOpen(
+                                                                listItemKey
+                                                            )}
+                                                            className="border-b-0 p-3" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                                                        <ListItemPrefix placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                                             <listItem.icon className="w-5 h-5" />
                                                         </ListItemPrefix>
                                                         <Typography
-                                                            color="blue-gray"
-                                                            className="mr-auto font-normal w-full">
+                                                                color="blue-gray"
+                                                                className="mr-auto font-normal w-full" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                                             {listItem.name}
                                                         </Typography>
                                                     </AccordionHeader>
                                                 </ListItem>
                                                 <AccordionBody className="py-1">
-                                                    <List className="p-0">
+                                                    <List className="p-0" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                                         {listItem.items.map(
                                                             (item, itemKey) => (
                                                                 <ListItem
-                                                                    key={
-                                                                        itemKey
-                                                                    }
+                                                                    key={itemKey}
                                                                     onClick={() => {
                                                                         router.push(
-                                                                            item.link,
+                                                                            item.link
                                                                         )
                                                                         setIsDrawerOpen(
-                                                                            false,
+                                                                            false
                                                                         )
-                                                                    }}>
-                                                                    <ListItemPrefix>
+                                                                    } } placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                                                                    <ListItemPrefix placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                                                         <MinusIcon
                                                                             strokeWidth={
                                                                                 3
@@ -203,12 +191,12 @@ const NavbarSimple = ({ title, menuLists }) => {
                         className="mt-auto"
                         onClose={() => setOpenAlert(false)}>
                         <CubeTransparentIcon className="mb-4 h-12 w-12" />
-                        <Typography variant="h6" className="mb-1">
+                        <Typography variant="h6" className="mb-1" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             Welcome to Leasewize
                         </Typography>
                         <Typography
                             variant="small"
-                            className="font-normal opacity-80">
+                            className="font-normal opacity-80" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             You can explore the other pages by clicking links on
                             the navigation
                         </Typography>
@@ -218,14 +206,14 @@ const NavbarSimple = ({ title, menuLists }) => {
                                 href="#"
                                 variant="small"
                                 className="font-medium opacity-80"
-                                onClick={() => setOpenAlert(false)}>
+                                onClick={() => setOpenAlert(false)} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 Dismiss
                             </Typography>
                             <Typography
                                 as="a"
                                 href="#"
                                 variant="small"
-                                className="hidden font-medium">
+                                className="hidden font-medium" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 Upgrade Now
                             </Typography>
                         </div>

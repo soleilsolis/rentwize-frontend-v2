@@ -129,7 +129,7 @@ function AreaChart({
         <Chart
             type="area"
             height={height}
-            series={series as ApexAxisChartSeries}
+            series={series as unknown as ApexAxisChartSeries}
             options={chartOptions as any}
         />
     )
@@ -138,10 +138,10 @@ function AreaChart({
 const ChartsExample5 = () => {
     return (
         <section>
-            <Card>
-                <CardBody className="!p-2">
+            <Card placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                <CardBody className="!p-2" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                     <div className="flex gap-2 flex-wrap justify-between px-4 !mt-4 ">
-                        <Typography variant="h3" color="blue-gray">
+                        <Typography variant="h3" color="blue-gray" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             $127,092.22
                         </Typography>
                         <div className="flex items-center gap-6">
@@ -149,7 +149,7 @@ const ChartsExample5 = () => {
                                 <span className="h-2 w-2 bg-blue-500 rounded-full"></span>
                                 <Typography
                                     variant="small"
-                                    className="font-normal text-gray-600">
+                                    className="font-normal text-gray-600" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                     2022
                                 </Typography>
                             </div>
@@ -157,7 +157,7 @@ const ChartsExample5 = () => {
                                 <span className="h-2 w-2 bg-green-500 rounded-full"></span>
                                 <Typography
                                     variant="small"
-                                    className="font-normal text-gray-600">
+                                    className="font-normal text-gray-600" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                     2023
                                 </Typography>
                             </div>
@@ -202,18 +202,18 @@ const ChartsExample5 = () => {
                         ]}
                     />
                 </CardBody>
-                <CardFooter className="flex gap-6 flex-wrap items-center justify-between">
+                <CardFooter className="flex gap-6 flex-wrap items-center justify-between" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                     <div>
-                        <Typography variant="h6" color="blue-gray">
+                        <Typography variant="h6" color="blue-gray" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             Annual Sales Performance
                         </Typography>
                         <Typography
                             variant="small"
-                            className="font-normal text-gray-600 mt-1">
+                            className="font-normal text-gray-600 mt-1" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             Year-to-Date sales comparison
                         </Typography>
                     </div>
-                    <Button variant="outlined">View report</Button>
+                    <Button variant="outlined" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>View report</Button>
                 </CardFooter>
             </Card>
         </section>

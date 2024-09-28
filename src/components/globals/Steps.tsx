@@ -2,7 +2,7 @@
 
 import { Stepper, Step, Button, Typography } from '@material-tailwind/react'
 
-import { useState } from 'react'
+import { AwaitedReactNode, JSX, JSXElementConstructor, ReactElement, ReactNode, ReactPortal, SetStateAction, useState } from 'react'
 import { Modal } from './Modal'
 
 const Steps = ({ steps, confirmation }) => {
@@ -19,17 +19,15 @@ const Steps = ({ steps, confirmation }) => {
                 activeStep={activeStep}
                 isLastStep={value => setIsLastStep(value)}
                 isFirstStep={value => setIsFirstStep(value)}
-                className="mt-10">
-                {steps.map((step, index) => (
+                className="mt-10" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                {steps.map((step: { heading: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode>; icon: JSX.IntrinsicAttributes }, index: SetStateAction<number>) => (
                     <Step
                         className="bg-blue-gray-50"
-                        onClick={() => setActiveStep(index)}>
+                        onClick={() => setActiveStep(index)} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                         <div className="hidden lg:block absolute bottom-[3.5rem] w-max text-center">
                             <Typography
-                                color={
-                                    activeStep === index ? 'blue-gray' : 'gray'
-                                }
-                                className="font-sm">
+                                color={activeStep === index ? 'blue-gray' : 'gray'}
+                                className="font-sm" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 {step.heading}
                             </Typography>
                         </div>
@@ -42,10 +40,10 @@ const Steps = ({ steps, confirmation }) => {
                     <Typography
                         variant="lead"
                         color="gray"
-                        className="text-lg tracking-wide capitalize">
+                        className="text-lg tracking-wide capitalize" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                         STEP {activeStep + 1}
                     </Typography>
-                    <Typography variant="h3">
+                    <Typography variant="h3" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                         {steps[activeStep]['heading']}
                     </Typography>
                 </div>
@@ -56,7 +54,7 @@ const Steps = ({ steps, confirmation }) => {
                 <Button
                     variant="text"
                     onClick={handlePrev}
-                    disabled={isFirstStep}>
+                    disabled={isFirstStep} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                     Prev
                 </Button>
 
@@ -66,15 +64,15 @@ const Steps = ({ steps, confirmation }) => {
                         size="md"
                         label="Finish"
                         controls={confirmation.controls}
-                        buttonColor="blue">
+                        buttonColor="blue" children={undefined} buttonVariant={undefined} buttonSize={undefined} buttonIcon={undefined}>
                         {confirmation.content}
                     </Modal>
                 ) : (
                     <Button
-                        variant="gradient"
-                        color="blue"
-                        onClick={handleNext}
-                        disabled={isLastStep}>
+                            variant="gradient"
+                            color="blue"
+                            onClick={handleNext}
+                            disabled={isLastStep} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                         Next
                     </Button>
                 )}

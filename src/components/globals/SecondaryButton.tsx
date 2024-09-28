@@ -7,7 +7,7 @@ const SecondaryButton = ({ children, ...params }) => (
         size={params.size}
         onClick={params.onClick}
         color={params.color ?? "black"}
-        variant="text">
+        variant="text" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
         {params.icon ?? ''}
 
         {children}

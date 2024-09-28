@@ -36,24 +36,22 @@ export function Modal({
             />
 
             <Dialog
-                open={
-                    dialogSize === 'xs' ||
+                open={dialogSize === 'xs' ||
                     dialogSize === 'sm' ||
                     dialogSize === 'md' ||
                     dialogSize === 'lg' ||
                     dialogSize === 'xl' ||
-                    dialogSize === 'xxl'
-                }
+                    dialogSize === 'xxl'}
                 size={dialogSize || 'md'}
-                handler={handleOpen}>
-                <DialogHeader>{heading}</DialogHeader>
-                <DialogBody>{children}</DialogBody>
-                <DialogFooter>
+                handler={handleOpen} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                <DialogHeader placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>{heading}</DialogHeader>
+                <DialogBody placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>{children}</DialogBody>
+                <DialogFooter placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                     <Button
                         variant="text"
-                    
+
                         onClick={() => handleOpen(null)}
-                        className="mr-1">
+                        className="mr-1" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                         <span>Cancel</span>
                     </Button>
 

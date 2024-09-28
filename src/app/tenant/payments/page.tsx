@@ -4,13 +4,11 @@ import { Modal } from '@/components/globals/Modal'
 import {
     Avatar,
     Tooltip,
-    Button,
     Typography,
     IconButton,
 } from '@/components/MaterialTailwind'
 import { PencilIcon, PlusIcon } from '@heroicons/react/24/outline'
 import { Drawer, Input, Option, Select } from '@material-tailwind/react'
-import { Metadata } from 'next'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
@@ -88,7 +86,7 @@ const tabs = [
 const Applications = () => {
     const [openRight, setOpenRight] = useState(false)
     const [selectedRow, setSelectedRow] = useState(null);
-    const openDrawerRight = (row) => {
+    const openDrawerRight = (row: { img: string; name: string; email: string; property: string; property_type: string; date: string; amount: string }) => {
         setSelectedRow(row); 
         setOpenRight(true);
     };
@@ -106,23 +104,23 @@ const Applications = () => {
                 controls={null}
                 buttonSize="sm"
                 heading="Create Payment"
-                buttonIcon={<PlusIcon className="w-3 h-3" />}>
+                buttonIcon={<PlusIcon className="w-3 h-3" />} children={undefined} buttonColor={undefined} buttonVariant={undefined}>
                 <div className="space-y-4">
-                    <Input type="text" label="Property" required />
-                    <Input type="text" label="Amount" required />
-                    <Select label="Source Account">
+                    <Input type="text" label="Property" required onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined} />
+                    <Input type="text" label="Amount" required onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined} />
+                    <Select label="Source Account" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                         <Option>Gulf Bank</Option>
                         <Option>Maybank</Option>
                         <Option>HSBC</Option>
                     </Select>
-                    <Input type="date" label="Created date" required />
+                    <Input type="date" label="Created date" required onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined} />
                 </div>
             </Modal>
         </>
     )
     const tbody = tableRows.map(
         (
-            { img, name, email, property, property_type, online, date, amount },
+            { img, name, email, property, property_type, date, amount },
             index,
         ) => {
             const isLast = index === tableRows.length - 1
@@ -135,18 +133,18 @@ const Applications = () => {
                     onClick={() => openDrawerRight({ img, name, email, property, property_type, date, amount })}>
                     <td className={classes}>
                         <div className="flex items-center gap-3">
-                            <Avatar src={img} alt={name} size="sm" />
+                            <Avatar src={img} alt={name} size="sm" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />
                             <div className="flex flex-col">
                                 <Typography
                                     variant="small"
                                     color="blue-gray"
-                                    className="font-normal">
+                                    className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                     {name}
                                 </Typography>
                                 <Typography
                                     variant="small"
                                     color="blue-gray"
-                                    className="font-normal opacity-70">
+                                    className="font-normal opacity-70" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                     {email}
                                 </Typography>
                             </div>
@@ -157,13 +155,13 @@ const Applications = () => {
                             <Typography
                                 variant="small"
                                 color="blue-gray"
-                                className="font-normal">
+                                className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 {property}
                             </Typography>
                             <Typography
                                 variant="small"
                                 color="blue-gray"
-                                className="font-normal opacity-70">
+                                className="font-normal opacity-70" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 {property_type}
                             </Typography>
                         </div>
@@ -172,7 +170,7 @@ const Applications = () => {
                         <Typography
                             variant="small"
                             color="blue-gray"
-                            className="font-normal">
+                            className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             {date}
                         </Typography>
                     </td>
@@ -180,7 +178,7 @@ const Applications = () => {
                         <Typography
                             variant="small"
                             color="blue-gray"
-                            className="font-normal">
+                            className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             {amount}
                         </Typography>
                     </td>
@@ -188,11 +186,9 @@ const Applications = () => {
                         <Tooltip content="Edit User">
                             <IconButton
                                 variant="text"
-                                onClick={() =>
-                                    router.push(
-                                        '/landlord/properties/applications/view/1',
-                                    )
-                                }>
+                                onClick={() => router.push(
+                                    '/landlord/properties/applications/view/1'
+                                )} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 <PencilIcon className="h-4 w-4" />
                             </IconButton>
                         </Tooltip>
@@ -207,14 +203,14 @@ const Applications = () => {
                 placement="right"
                 open={openRight}
                 onClose={closeDrawerRight}
-                className="p-4">
+                className="p-4" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                     {selectedRow && (
                     <div className="space-y-4">
-                        <Typography variant="h6">{selectedRow.name}</Typography>
-                        <Typography>  {selectedRow.property}</Typography>
-                        <Typography>  {selectedRow.amount}</Typography>
-                        <Typography> {selectedRow.date} </Typography>
-                        <Typography>{selectedRow.property_type} </Typography>
+                        <Typography variant="h6" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>{selectedRow.name}</Typography>
+                        <Typography placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>  {selectedRow.property}</Typography>
+                        <Typography placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>  {selectedRow.amount}</Typography>
+                        <Typography placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}> {selectedRow.date} </Typography>
+                        <Typography placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>{selectedRow.property_type} </Typography>
                     </div>
                 )}
             </Drawer>
