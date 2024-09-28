@@ -38,8 +38,7 @@ const NewInvoice = () => {
                             <Input
                                 label="Invoice Number"
                                 type="number"
-                                required
-                            />
+                                required onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined}                            />
                         ) : (
                             ''
                         )}
