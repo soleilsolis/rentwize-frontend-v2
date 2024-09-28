@@ -96,7 +96,7 @@ const NavbarSimple = ({ title, menuLists }) => {
                             className="h-8 w-8"
                         />
                         <Typography variant="h5" color="blue-gray">
-                            Rentwize
+                            Leasewize
                         </Typography>
                     </div>
                     <div className="p-2">
@@ -204,7 +204,7 @@ const NavbarSimple = ({ title, menuLists }) => {
                         onClose={() => setOpenAlert(false)}>
                         <CubeTransparentIcon className="mb-4 h-12 w-12" />
                         <Typography variant="h6" className="mb-1">
-                            Welcome to Rentwize
+                            Welcome to Leasewize
                         </Typography>
                         <Typography
                             variant="small"

@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react'
 
 import { Typography, Input, Button } from '@material-tailwind/react'
 import { EyeSlashIcon, EyeIcon } from '@heroicons/react/24/solid'
-import Link from 'next/link'
 import { useAuth } from '@/hooks/auth'
 import { useRouter } from 'next/navigation'
-import AuthSessionStatus from '@/app/auth/AuthSessionStatus'
+import AuthSessionStatus from '../AuthSessionStatus'
+import Image from 'next/image'
 
 export function Basic() {
     const [passwordShown, setPasswordShown] = useState(false)
@@ -21,7 +21,6 @@ export function Basic() {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [shouldRemember, setShouldRemember] = useState(false)
     const [errors, setErrors] = useState([])
     const [status, setStatus] = useState(null)
 
@@ -40,7 +39,6 @@ export function Basic() {
         login({
             email,
             password,
-            remember: shouldRemember,
             setErrors,
             setStatus,
             setRedirectIfAuthenticated,
@@ -129,7 +127,7 @@ export function Basic() {
                             size="lg"
                             className="mt-6 flex h-12 items-center justify-center gap-2"
                             fullWidth>
-                            <img
+                            <Image
                                 src={`https://www.material-tailwind.com/logos/logo-google.png`}
                                 alt="google"
                                 className="h-6 w-6"

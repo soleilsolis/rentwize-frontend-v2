@@ -28,6 +28,7 @@ module.exports = {
             presets: ['@babel/preset-react'],
         },
     },
+
     rules: {
         'import/prefer-default-export': 0,
         'no-console': 'warn',
@@ -36,7 +37,8 @@ module.exports = {
         'no-unused-expressions': ['error', { allowTernary: true }],
         camelcase: 0,
         'react/self-closing-comp': 1,
-        'react/jsx-filename-extension': [1, { extensions: ['.js', 'jsx'] }],
+        'react/jsx-filename-extension': [2, { 'extensions': ['.js', '.jsx', '.ts', '.tsx'] }],
+
         'react/prop-types': 0,
         'react/destructuring-assignment': 0,
         'react/jsx-no-comment-textnodes': 0,

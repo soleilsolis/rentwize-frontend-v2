@@ -1,44 +1,14 @@
 'use client'
-import { ClassContext } from '@/components/contexts/ClassContext'
 import AccordionGlobal from '@/components/globals/AccordionGlobal'
-import PrimaryButton from '@/components/globals/PrimaryButton'
-import {
-    ArrowDownTrayIcon,
-    EllipsisHorizontalIcon,
-    EnvelopeIcon,
-} from '@heroicons/react/24/outline'
-import {
-    Avatar,
-    Card,
-    CardBody,
-    Chip,
-    Typography,
-    Menu,
-    MenuHandler,
-    MenuList,
-    MenuItem,
-    Button,
-    Accordion,
-} from '@material-tailwind/react'
-import { useRouter } from 'next/navigation'
+import { Card, CardBody, Typography } from '@material-tailwind/react'
 
-const TABLE_HEAD = ['Property', 'Qty', 'Total']
-
-const TABLE_ROWS = [
-    {
-        label: '5 Mariveles St., Highway Hills, Mandaluyong',
-        quantity: 1,
-        value: 5000,
-    },
-]
 const ViewInvoice = () => {
-    const router = useRouter()
     return (
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div>
                 <Card>
                     <CardBody className="space-y-4">
-                    <Typography variant="h3" as="h4" className="">
+                        <Typography variant="h3" as="h4" className="">
                             Policy Holder's Information
                         </Typography>
                         <div className="grid grid-cols-2">

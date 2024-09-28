@@ -76,14 +76,12 @@ const NewInvoice = () => {
 
             <section className="flex gap-2 mt-4 ">
                 <Link href="/landlord/billing/invoices">
-                    <PrimaryButton
-                        children="Cancel"
-                        variant="text"
-                        color="black"
-                    />
+                    <PrimaryButton onClick="" variant="text" color="black">
+                        Cancel
+                    </PrimaryButton>
                 </Link>
                 <Link href="/landlord/billing/invoices/view/1">
-                    <PrimaryButton children="Save" color="gray" />
+                    <PrimaryButton onClick="" color="gray" >Save</PrimaryButton>
                 </Link>
 
                 <Modal
@@ -94,7 +92,7 @@ const NewInvoice = () => {
                     heading="Send and Save Invoice?"
                     controls={
                         <Link href="/landlord/billing/invoices/view/1">
-                            <PrimaryButton children="Yes" />
+                            <PrimaryButton onClick="" >Yes</PrimaryButton>
                         </Link>
                     }
                 />

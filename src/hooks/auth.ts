@@ -152,6 +152,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated }: IUseAuth) => {
             
 
         if (middleware === 'auth' && error) logout()
+
     }, [user, error])
 
     return {

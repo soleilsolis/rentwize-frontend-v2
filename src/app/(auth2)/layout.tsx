@@ -1,15 +1,15 @@
-"use client"
-import { useAuth } from "@/hooks/auth"
-import { useRouter } from "next/navigation"
+'use client'
+import { useAuth } from '@/hooks/auth'
+import { useRouter } from 'next/navigation'
 
-const Auth = ({children}) => {
+const Auth = ({ children }) => {
     const { user } = useAuth({
-        middleware: 'guest'
+        middleware: 'guest',
     })
-    
+
     const router = useRouter()
-    
-    return  !user ? children : router.push(`/${user?.type}`)
+
+    return !user ? children : router.push(`/${user?.type}`)
 }
 
 export default Auth

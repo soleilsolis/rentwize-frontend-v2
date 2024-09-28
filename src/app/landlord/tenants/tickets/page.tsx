@@ -10,7 +10,7 @@ import { PencilIcon, PlusIcon } from '@heroicons/react/24/outline'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: 'All Properties > Landlord - Rentwize',
+    title: 'All Properties > Landlord - Leasewize',
 }
 
 const heading = 'Maintenance'

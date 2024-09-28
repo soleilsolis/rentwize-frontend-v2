@@ -11,9 +11,11 @@ export function Basic() {
 
     const [first_name, setFirstName] = useState('')
     const [last_name, setLastName] = useState('')
+    const [company_name, setCompanyName] = useState('')
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [password_confirmation, setPasswordConfirmation] = useState('')
 
     const [errors, setErrors] = useState([])
     const [status, setStatus] = useState(false)
@@ -22,7 +24,7 @@ export function Basic() {
         middleware: 'guest',
     })
 
-    const submitForm = (e: { preventDefault: () => void }) => {
+    const submitForm = e => {
         e.preventDefault()
 
         register({
@@ -31,6 +33,8 @@ export function Basic() {
             name,
             email,
             password,
+            company_name,
+            password_confirmation,
             setErrors,
             setStatus,
         })
@@ -50,14 +54,19 @@ export function Basic() {
                     action="#"
                     className="mx-auto max-w-[28rem] text-left space-y-6">
                     <div className="md:flex gap-2.5 space-y-6 md:space-y-0">
-                        <Input
-                            id="first_name"
-                            color="gray"
-                            size="lg"
-                            name="first_name"
-                            label="First Name"
-                            className="min-w-[100px]"
-                        />
+                        <div>
+                            <Input
+                                id="first_name"
+                                color="gray"
+                                size="lg"
+                                name="first_name"
+                                label="First Name"
+                                className="min-w-[100px]"
+                                onChange={e =>
+                                    setFirstName(e.currentTarget.value)
+                                }
+                            />
+                        </div>
 
                         <Input
                             id="last_name"
@@ -66,8 +75,10 @@ export function Basic() {
                             name="last_name"
                             label="Last Name"
                             className="min-w-[100px]"
+                            onChange={e => setLastName(e.currentTarget.value)}
                         />
                     </div>
+
                     <div>
                         <Input
                             id="name"
@@ -75,6 +86,21 @@ export function Basic() {
                             size="lg"
                             name="name"
                             label="User Name"
+                            onChange={e => setName(e.currentTarget.value)}
+                        />
+                    </div>
+
+                    <div>
+                        <Input
+                            id="company_name"
+                            color="gray"
+                            size="lg"
+                            name="company_name"
+                            value={company_name}
+                            label="Company Name"
+                            onChange={e =>
+                                setCompanyName(e.currentTarget.value)
+                            }
                         />
                     </div>
 
@@ -86,6 +112,8 @@ export function Basic() {
                             type="email"
                             name="email"
                             label="Your Email"
+                            value={email}
+                            onChange={e => setEmail(e.currentTarget.value)}
                         />
                     </div>
                     <div>
@@ -103,15 +131,33 @@ export function Basic() {
                                     )}
                                 </i>
                             }
+                            onChange={e => setPassword(e.currentTarget.value)}
                         />
                     </div>
-                    <Button color="gray" size="lg" className="mt-6" fullWidth>
+
+                    <div>
+                        <Input
+                            name="password_confirmation"
+                            size="lg"
+                            label="Confirm Password"
+                            type="password"
+                            value={password_confirmation}
+                            onChange={e =>
+                                setPasswordConfirmation(e.currentTarget.value)
+                            }
+                        />
+                    </div>
+                    <Button
+                        type="submit"
+                        color="gray"
+                        size="lg"
+                        className="mt-6"
+                        fullWidth>
                         register
                     </Button>
                     <Button
-                        type="submit"
-                        disabled
                         variant="outlined"
+                        disabled
                         size="lg"
                         className="mt-6 flex h-12 items-center justify-center gap-2"
                         fullWidth>

@@ -12,7 +12,7 @@ import { Metadata } from 'next'
 import { useRouter } from 'next/navigation'
 
 // export const metadata: Metadata = {
-//     title: 'All Properties > Landlord - Rentwize',
+//     title: 'All Properties > Landlord - Leasewize',
 // }
 
 const heading = 'Tenants'

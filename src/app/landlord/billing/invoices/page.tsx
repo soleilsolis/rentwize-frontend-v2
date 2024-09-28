@@ -14,7 +14,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-    title: 'All Properties > Landlord - Rentwize',
+    title: 'All Properties > Landlord - Leasewize',
 }
 
 const heading = 'Invoices'
