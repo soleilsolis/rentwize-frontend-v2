@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation'
 import AuthSessionStatus from '../AuthSessionStatus'
 import Image from 'next/image'
 
-export function Basic() {
+const Basic = () => {
     const [passwordShown, setPasswordShown] = useState(false)
     const togglePasswordVisiblity = () => setPasswordShown(cur => !cur)
     const [redirectIfAuthenticated, setRedirectIfAuthenticated] = useState("")

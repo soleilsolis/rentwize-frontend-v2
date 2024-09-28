@@ -5,7 +5,7 @@ import { Typography, Input, Button } from '@material-tailwind/react'
 import { EyeSlashIcon, EyeIcon } from '@heroicons/react/24/solid'
 import { useAuth } from '@/hooks/auth'
 
-export function Basic() {
+const Basic = () => {
     const [passwordShown, setPasswordShown] = useState(false)
     const togglePasswordVisiblity = () => setPasswordShown(cur => !cur)
 
