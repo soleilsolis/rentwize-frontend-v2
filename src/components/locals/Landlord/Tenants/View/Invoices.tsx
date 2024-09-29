@@ -65,9 +65,9 @@ const Invoices = () => {
                     <td className={classes}>
                         <div className="flex items-center gap-3">
                             <Typography
-                                variant="large"
+                                variant="h5"
                                 color="blue-gray"
-                                className="font-bold">
+                                className="font-bold"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 ${total.toFixed(2)}
                             </Typography>
                         </div>
@@ -75,9 +75,9 @@ const Invoices = () => {
                     <td className={classes}>
                         <div className="flex items-center gap-3">
                             <Typography
-                                variant="large"
+                                variant="h5"
                                 color="blue-gray"
-                                className="font-bold">
+                                className="font-bold"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 ${amountToPay.toFixed(2)}
                             </Typography>
                         </div>
@@ -86,9 +86,9 @@ const Invoices = () => {
                     <td className={classes}>
                         <div className="flex items-center gap-3">
                             <Typography
-                                variant="large"
+                                variant="h5"
                                 color="blue-gray"
-                                className="font-bold">
+                                className="font-bold"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 {dateCreated.toLocaleDateString('en-US', {
                                     year: 'numeric',
                                     month: 'long',
@@ -100,9 +100,9 @@ const Invoices = () => {
                     <td className={classes}>
                         <div className="flex items-center gap-3">
                             <Typography
-                                variant="large"
+                                variant="h5"
                                 color="blue-gray"
-                                className="font-bold">
+                                className="font-bold"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 {due.toLocaleDateString('en-US', {
                                     year: 'numeric',
                                     month: 'long',

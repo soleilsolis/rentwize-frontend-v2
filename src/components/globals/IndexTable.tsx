@@ -69,7 +69,7 @@ const IndexTable = ({
                         <tr>
                             {tableHeader.map((head: boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | Promise<AwaitedReactNode> | Key, index: number) => (
                                 <th
-                                    key={head}
+                                    // key={head}
                                     className="cursor-pointer border-y border-blue-gray-100 bg-blue-gray-50/50 p-4 transition-colors hover:bg-blue-gray-50">
                                     <Typography
                                         variant="small"

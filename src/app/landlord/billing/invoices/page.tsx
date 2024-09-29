@@ -190,7 +190,7 @@ const Applications = () => {
                 controls={modalControls}
                 buttonSize="sm"
                 heading="Select Tenant"
-                buttonIcon={<PlusIcon className="w-3 h-3" />} children={undefined} buttonColor={undefined} buttonVariant={undefined}>
+                buttonIcon={<PlusIcon className="w-3 h-3" />} buttonColor={undefined} buttonVariant={undefined}>
                 <Select label="Tenant" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                     <Option children={''}></Option>
                 </Select>

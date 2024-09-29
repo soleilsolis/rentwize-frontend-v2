@@ -80,7 +80,8 @@ const Applications = () => {
                     { img, name, email, property, property_type, online, date },
                     index,
                 ) => {
-                    const classes = isLast
+                    const isLast = index === tableRows.length - 1
+                    const classes = isLast 
                         ? 'p-4'
                         : 'p-4 border-b border-blue-gray-50'
 

@@ -197,7 +197,7 @@ const ViewInvoice = () => {
             <div className="space-y-8">
                 <Card className="h-full" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                     <CardBody className="space-y-4" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                        <Typography variant="h6" as="h2" className="uppercase">
+                        <Typography variant="h6" as="h2" className="uppercase" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             Payments
                         </Typography>
 

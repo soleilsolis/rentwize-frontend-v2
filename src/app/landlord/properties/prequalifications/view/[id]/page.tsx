@@ -62,7 +62,7 @@ const ViewApplication = () => {
                                 color="blue" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 Yes
                             </Button>}
-                            size="md" children={undefined} buttonVariant={undefined} buttonSize={undefined} buttonIcon={undefined}>
+                            size="md" buttonVariant={undefined} buttonSize={undefined} buttonIcon={undefined}>
                             <span className="font-medium">
                                 Move In Hisun to the Property?
                             </span>
@@ -83,7 +83,7 @@ const ViewApplication = () => {
                                 )} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 Yes
                             </Button>}
-                            size="md" children={undefined} buttonSize={undefined} buttonIcon={undefined}>
+                            size="md" buttonSize={undefined} buttonIcon={undefined}>
                             <span className="font-medium">
                                 Reject Hissune Carly as an Applicant?
                             </span>

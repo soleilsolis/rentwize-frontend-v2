@@ -66,7 +66,7 @@ const ViewApplication = () => {
                             controls={<Button color="blue" variant="gradient" onClick={() => router.push('/landlord/properties/prequalifications')} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 Yes
                             </Button>}
-                            size="md" children={undefined} buttonVariant={undefined} buttonSize={undefined} buttonIcon={undefined}>
+                            size="md" buttonVariant={undefined} buttonSize={undefined} buttonIcon={undefined}>
                             <span className="font-medium">
                                 Accept Hissune Carly to Prequalify?
                             </span>
@@ -82,7 +82,7 @@ const ViewApplication = () => {
                             controls={<Button color="blue" variant="gradient" onClick={() => router.push('/landlord/properties/applications')} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 Yes
                             </Button>}
-                            size="md" children={undefined} buttonVariant={undefined} buttonSize={undefined} buttonIcon={undefined}>
+                            size="md" buttonVariant={undefined} buttonSize={undefined} buttonIcon={undefined}>
                             <span className="font-medium">
                                 Reject Hissune Carly as an Applicant?
                             </span>

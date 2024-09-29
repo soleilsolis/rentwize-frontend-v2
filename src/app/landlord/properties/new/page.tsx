@@ -18,22 +18,22 @@ const steps = [
     {
         content: <Address />,
         heading: 'Set the Address for your Property',
-        icon: HomeModernIcon,
+        icon: <HomeModernIcon className='h-5' />,
     },
     {
         content: <Textarea label="Description" onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}></Textarea>,
         heading: 'Describe Your Property',
-        icon: PencilIcon,
+        icon: <PencilIcon className="h-5 w-5" />,
     },
     {
         content: <UploadImages images={images}></UploadImages>,
         heading: 'Upload Images',
-        icon: PhotoIcon,
+        icon: <PhotoIcon className="h-5 w-5" />,
     },
     {
         content: <FactsAndFeatures />,
         heading: 'Add Facts and Features (Optional)',
-        icon: BuildingLibraryIcon,
+        icon: <BuildingLibraryIcon className='h-5 w-5' />,
     },
 ]
 

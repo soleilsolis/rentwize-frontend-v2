@@ -68,9 +68,9 @@ const Properties = () => {
                     <td className={classes}>
                         <div className="flex items-center gap-3">
                             <Typography
-                                variant="large"
+                                variant="h4"
                                 color="blue-gray"
-                                className="font-bold">
+                                className="font-bold" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 ${price}
                             </Typography>
                         </div>
@@ -137,7 +137,7 @@ const Properties = () => {
             subHeading="See All of Your Properties"
             tableHeader={tableHeader}
             controls={controls}
-            tabs={tabs}
+            tabs={null}
             tbody={tbody}
         />
     )

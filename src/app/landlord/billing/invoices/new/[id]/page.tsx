@@ -49,12 +49,9 @@ const NewInvoice = () => {
                             onChange={() => setDraft(!draft)} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined}                        />
 
                         <Select
-                            label={
-                                !proforma
-                                    ? 'Proforma Invoice Template'
-                                    : 'Invoice Template'
-                            }
-                            required>
+                            label={!proforma
+                                ? 'Proforma Invoice Template'
+                                : 'Invoice Template'} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                             <Option>sdf</Option>
                         </Select>
 

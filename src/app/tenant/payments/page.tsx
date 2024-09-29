@@ -104,7 +104,7 @@ const Applications = () => {
                 controls={null}
                 buttonSize="sm"
                 heading="Create Payment"
-                buttonIcon={<PlusIcon className="w-3 h-3" />} children={undefined} buttonColor={undefined} buttonVariant={undefined}>
+                buttonIcon={<PlusIcon className="w-3 h-3" />} buttonColor={undefined} buttonVariant={undefined}>
                 <div className="space-y-4">
                     <Input type="text" label="Property" required onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined} />
                     <Input type="text" label="Amount" required onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined} />

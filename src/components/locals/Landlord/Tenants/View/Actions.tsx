@@ -23,7 +23,7 @@ const Actions = () => {
                 buttonIcon={<UserMinusIcon className="w-6 h-6" />}
                 label="Remove Tenant"
                 heading="Remove Tenant"
-                controls={controls} children={undefined} buttonVariant={undefined} buttonSize={undefined}>
+                controls={controls} buttonVariant={undefined} buttonSize={undefined}>
                 <div className="space-y-2">
                     <Select label="Reason for Removal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                         <Option>Eviction</Option>

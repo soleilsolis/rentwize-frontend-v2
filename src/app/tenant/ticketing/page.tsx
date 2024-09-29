@@ -111,7 +111,7 @@ const controls = (
             controls={null}
             buttonSize="sm"
             heading="Create Ticket"
-            buttonIcon={<PlusIcon className="w-3 h-3" />} children={undefined} buttonColor={undefined} buttonVariant={undefined}>
+            buttonIcon={<PlusIcon className="w-3 h-3" />}  buttonColor={undefined} buttonVariant={undefined}>
             <div className="space-y-4">
                 <Input type="text" label="Property" required crossOrigin={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />
                 <Select label="Type" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
@@ -272,7 +272,7 @@ const Applications = () => {
                                 controls={null}
                                 buttonSize="sm"
                                 heading="Edit Ticket"
-                                buttonIcon={<PencilSquareIcon className="w-3 h-3" />} children={undefined} buttonColor={undefined} buttonVariant={undefined}>
+                                buttonIcon={<PencilSquareIcon className="w-3 h-3" />} buttonColor={undefined} buttonVariant={undefined}>
                                 <div className="space-y-4">
                                     <Input
                                         type="text"

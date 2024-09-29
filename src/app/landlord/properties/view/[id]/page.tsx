@@ -97,7 +97,7 @@ const ViewProperty = ({ }: { params: { id: string } }) => {
         },
     ]
 
-    return <DetailedProperty data={data} />
+    return <DetailedProperty data={data} params={null} />
 }
 
 export default ViewProperty

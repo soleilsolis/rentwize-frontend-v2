@@ -14,13 +14,13 @@ const Steps = ({ steps, confirmation }) => {
     const handlePrev = () => !isFirstStep && setActiveStep(cur => cur - 1)
 
     return (
-        <div className="w-full lg:px-24 py-4 ">
+        <div className="w-full lg:px-24 py-4">
             <Stepper
                 activeStep={activeStep}
                 isLastStep={value => setIsLastStep(value)}
                 isFirstStep={value => setIsFirstStep(value)}
                 className="mt-10" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                {steps.map((step: { heading: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode>; icon: JSX.IntrinsicAttributes }, index: SetStateAction<number>) => (
+                {steps.map((step: { heading: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode>; icon: JSX.Element }, index: SetStateAction<number>) => (
                     <Step
                         className="bg-blue-gray-50"
                         onClick={() => setActiveStep(index)} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
@@ -31,7 +31,7 @@ const Steps = ({ steps, confirmation }) => {
                                 {step.heading}
                             </Typography>
                         </div>
-                        <step.icon className="h-5 w-5" />
+                        {step.icon}
                     </Step>
                 ))}
             </Stepper>
@@ -64,7 +64,7 @@ const Steps = ({ steps, confirmation }) => {
                         size="md"
                         label="Finish"
                         controls={confirmation.controls}
-                        buttonColor="blue" children={undefined} buttonVariant={undefined} buttonSize={undefined} buttonIcon={undefined}>
+                        buttonColor="blue"  buttonVariant={undefined} buttonSize={undefined} buttonIcon={undefined}>
                         {confirmation.content}
                     </Modal>
                 ) : (

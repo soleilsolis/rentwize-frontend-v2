@@ -25,10 +25,7 @@ const Payments = () => {
         },
     ]
     const tbody = invoices.map(
-        (
-            { number, amountToPay, createdDate },
-            index,
-        ) => {
+        ({ number, amountToPay, createdDate }, index) => {
             const isLast = index === invoices.length - 1
             const classes = isLast ? 'p-4' : 'p-4 border-b border-blue-gray-50'
 
@@ -41,7 +38,10 @@ const Payments = () => {
                                 <Typography
                                     variant="small"
                                     color="blue-gray"
-                                    className="font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                                    className="font-normal"
+                                    placeholder={undefined}
+                                    onPointerEnterCapture={undefined}
+                                    onPointerLeaveCapture={undefined}>
                                     # {number}
                                 </Typography>
                             </div>
@@ -49,7 +49,12 @@ const Payments = () => {
                     </td>
                     <td className={classes}>
                         <div className="flex items-center gap-3">
-                            <Typography variant="large" color="blue-gray">
+                            <Typography
+                                variant="h5"
+                                color="blue-gray"
+                                placeholder={undefined}
+                                onPointerEnterCapture={undefined}
+                                onPointerLeaveCapture={undefined}>
                                 Cash
                             </Typography>
                         </div>
@@ -57,9 +62,12 @@ const Payments = () => {
                     <td className={classes}>
                         <div className="flex items-center gap-3">
                             <Typography
-                                variant="large"
+                                variant="h5"
                                 color="blue-gray"
-                                className="font-bold">
+                                className="font-bold"
+                                placeholder={undefined}
+                                onPointerEnterCapture={undefined}
+                                onPointerLeaveCapture={undefined}>
                                 ${amountToPay.toFixed(2)}
                             </Typography>
                         </div>
@@ -67,7 +75,12 @@ const Payments = () => {
 
                     <td className={classes}>
                         <div className="flex items-center gap-3">
-                            <Typography variant="large" color="blue-gray">
+                            <Typography
+                                variant="h5"
+                                color="blue-gray"
+                                placeholder={undefined}
+                                onPointerEnterCapture={undefined}
+                                onPointerLeaveCapture={undefined}>
                                 {dateCreated.toLocaleDateString('en-US', {
                                     year: 'numeric',
                                     month: 'long',
@@ -79,7 +92,11 @@ const Payments = () => {
                     <td className={classes}>
                         <Tooltip content="Edit Property">
                             <Link href="/landlord/invoices/view/1">
-                                <IconButton variant="text" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                                <IconButton
+                                    variant="text"
+                                    placeholder={undefined}
+                                    onPointerEnterCapture={undefined}
+                                    onPointerLeaveCapture={undefined}>
                                     <PencilIcon className="h-4 w-4" />
                                 </IconButton>
                             </Link>
@@ -96,7 +113,9 @@ const Payments = () => {
             heading="Payments"
             subHeading="List of payments"
             tableHeader={tableHeader}
-            tbody={tbody} controls={undefined}        />
+            tbody={tbody}
+            controls={undefined}
+        />
     )
 }
 

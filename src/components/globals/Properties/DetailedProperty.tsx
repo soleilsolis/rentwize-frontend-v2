@@ -18,7 +18,7 @@ import {
 
 import { useRouter } from 'next/navigation'
 
-const ViewProperty = ({ data }: { params: { id: string }; data: [] }) => {
+const ViewProperty = ({ data }: { params: { id: string }; data: any[] }) => {
     const router = useRouter()
     return (
         <div className="space-y-6">
