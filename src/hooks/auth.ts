@@ -106,24 +106,24 @@ export const useAuth = ({ middleware, redirectIfAuthenticated }: IUseAuth) => {
             })
     }
 
-    // const resetPassword = async (args: IApiRequest) => {
-    //     const { setErrors, setStatus, ...props } = args
-    //     await csrf()
+    const resetPassword = async (args: IApiRequest) => {
+        const { setErrors, setStatus, ...props } = args
+        await csrf()
 
-    //     setErrors([])
-    //     setStatus(null)
+        setErrors([])
+        setStatus(null)
 
-    //     axios
-    //         .post('/reset-password', { token: router.query.token, ...props })
-    //         .then(response =>
-    //             router.push('/login?reset=' + btoa(response.data.status)),
-    //         )
-    //         .catch(error => {
-    //             if (error.response.status !== 422) throw error
+        axios
+            .post('/reset-password', { token: router.query.token, ...props })
+            .then(response =>
+                router.push('/login?reset=' + btoa(response.data.status)),
+            )
+            .catch(error => {
+                if (error.response.status !== 422) throw error
 
-    //             setErrors(error.response.data.errors)
-    //         })
-    // }
+                setErrors(error.response.data.errors)
+            })
+    }
 
     const resendEmailVerification = (args: IApiRequest) => {
         const { setStatus } = args
@@ -160,7 +160,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated }: IUseAuth) => {
         register,
         login,
         forgotPassword,
-        // resetPassword,
+        resetPassword,
         resendEmailVerification,
         logout,
     }
