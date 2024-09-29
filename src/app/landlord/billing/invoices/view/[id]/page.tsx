@@ -25,7 +25,9 @@ const TABLE_ROWS = [
         value: 5000,
     },
 ]
-const ViewInvoice = () => {
+
+
+const ViewInvoice = ({ params }) => {
     const router = useRouter()
     return (
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-8">

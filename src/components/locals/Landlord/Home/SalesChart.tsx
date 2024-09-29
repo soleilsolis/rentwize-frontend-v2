@@ -33,106 +33,106 @@ function AreaChart({
     colors,
     options,
 }: Partial<ChartsPropsType> & { colors: string | string[] }) {
-    const chartOptions = React.useMemo(
-        () => ({
-            colors,
-            ...merge(
-                {
-                    chart: {
-                        height: height,
-                        type: 'area',
-                        zoom: {
-                            enabled: false,
-                        },
-                        toolbar: {
-                            show: false,
-                        },
-                    },
-                    title: {
-                        show: '',
-                    },
-                    dataLabels: {
-                        enabled: false,
-                    },
-                    legend: {
-                        show: false,
-                    },
-                    markers: {
-                        size: 0,
-                        strokeWidth: 0,
-                        strokeColors: 'transparent',
-                    },
-                    stroke: {
-                        curve: 'smooth',
-                        width: 2,
-                    },
-                    grid: {
-                        show: true,
-                        borderColor: '#EEEEEE',
-                        strokeDashArray: 5,
-                        xaxis: {
-                            lines: {
-                                show: true,
-                            },
-                        },
-                        padding: {
-                            top: 5,
-                            right: 20,
-                        },
-                    },
-                    tooltip: {
-                        theme: 'light',
-                    },
-                    yaxis: {
-                        labels: {
-                            style: {
-                                colors: '#757575',
-                                fontSize: '12px',
-                                fontFamily: 'inherit',
-                                fontWeight: 300,
-                            },
-                        },
-                    },
-                    xaxis: {
-                        axisTicks: {
-                            show: false,
-                        },
-                        axisBorder: {
-                            show: false,
-                        },
-                        labels: {
-                            style: {
-                                colors: '#757575',
-                                fontSize: '12px',
-                                fontFamily: 'inherit',
-                                fontWeight: 300,
-                            },
-                        },
-                    },
-                    fill: {
-                        type: 'gradient',
-                        gradient: {
-                            shadeIntensity: 1,
-                            opacityFrom: 0,
-                            opacityTo: 0,
-                            stops: [0, 100],
-                        },
-                    },
-                },
-                options ? options : {},
-            ),
-        }),
-        [height, colors, options],
-    )
+    // const chartOptions = React.useMemo(
+    //     () => ({
+    //         colors,
+    //         ...merge(
+    //             {
+    //                 chart: {
+    //                     height: height,
+    //                     type: 'area',
+    //                     zoom: {
+    //                         enabled: false,
+    //                     },
+    //                     toolbar: {
+    //                         show: false,
+    //                     },
+    //                 },
+    //                 title: {
+    //                     show: '',
+    //                 },
+    //                 dataLabels: {
+    //                     enabled: false,
+    //                 },
+    //                 legend: {
+    //                     show: false,
+    //                 },
+    //                 markers: {
+    //                     size: 0,
+    //                     strokeWidth: 0,
+    //                     strokeColors: 'transparent',
+    //                 },
+    //                 stroke: {
+    //                     curve: 'smooth',
+    //                     width: 2,
+    //                 },
+    //                 grid: {
+    //                     show: true,
+    //                     borderColor: '#EEEEEE',
+    //                     strokeDashArray: 5,
+    //                     xaxis: {
+    //                         lines: {
+    //                             show: true,
+    //                         },
+    //                     },
+    //                     padding: {
+    //                         top: 5,
+    //                         right: 20,
+    //                     },
+    //                 },
+    //                 tooltip: {
+    //                     theme: 'light',
+    //                 },
+    //                 yaxis: {
+    //                     labels: {
+    //                         style: {
+    //                             colors: '#757575',
+    //                             fontSize: '12px',
+    //                             fontFamily: 'inherit',
+    //                             fontWeight: 300,
+    //                         },
+    //                     },
+    //                 },
+    //                 xaxis: {
+    //                     axisTicks: {
+    //                         show: false,
+    //                     },
+    //                     axisBorder: {
+    //                         show: false,
+    //                     },
+    //                     labels: {
+    //                         style: {
+    //                             colors: '#757575',
+    //                             fontSize: '12px',
+    //                             fontFamily: 'inherit',
+    //                             fontWeight: 300,
+    //                         },
+    //                     },
+    //                 },
+    //                 fill: {
+    //                     type: 'gradient',
+    //                     gradient: {
+    //                         shadeIntensity: 1,
+    //                         opacityFrom: 0,
+    //                         opacityTo: 0,
+    //                         stops: [0, 100],
+    //                     },
+    //                 },
+    //             },
+    //             options ? options : {},
+    //         ),
+    //     }),
+    //     [height, colors, options],
+    // )
 
-    return (
-        <Chart
-            type="area"
-            height={height}
-            series={series as unknown as ApexAxisChartSeries}
-            options={chartOptions as any}
-        />
-    )
+    // return (
+    //     <Chart
+    //         type="area"
+    //         height={height}
+    //         series={series as unknown as ApexAxisChartSeries}
+    //         options={chartOptions as any}
+    //     />
+    // )
 }
 
 const ChartsExample5 = () => {
@@ -164,7 +164,7 @@ const ChartsExample5 = () => {
                         </div>
                     </div>
                     {/** chart */}
-                    <AreaChart
+                    {/* <AreaChart
                         colors={['#4CAF50', '#2196F3']}
                         options={{
                             xaxis: {
@@ -200,7 +200,7 @@ const ChartsExample5 = () => {
                                 ],
                             },
                         ]}
-                    />
+                    /> */}
                 </CardBody>
                 <CardFooter className="flex gap-6 flex-wrap items-center justify-between" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                     <div>
